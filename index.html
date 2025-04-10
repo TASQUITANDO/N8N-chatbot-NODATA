@@ -4,35 +4,188 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NODATA Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #f8f9fa; color: #333; }
-    header { background: #00264d; color: white; padding: 2rem; text-align: center; }
-    nav { background: #003366; display: flex; justify-content: center; padding: 0.5rem 0; }
-    nav a { color: white; margin: 0 1rem; text-decoration: none; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
-    main { padding: 2rem; max-width: 1000px; margin: auto; }
-    section { margin-bottom: 2rem; }
-    h2 { color: #00264d; }
-    .service-block { margin-bottom: 1.5rem; }
-    footer { background: #00264d; color: white; text-align: center; padding: 1rem; }
-    .chat-bubble {
-      position: fixed; bottom: 20px; right: 20px;
-      background: #003366; color: white; border-radius: 50%;
-      width: 60px; height: 60px; font-size: 28px;
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer; z-index: 999;
+    :root {
+      --primary-dark: #0a192f;
+      --accent: #00d1b2;
+      --light-bg: #f5f7fa;
+      --chat-user-bg: #d8f3ff;
+      --chat-bot-bg: #eeeeee;
+      --font: 'Montserrat', sans-serif;
     }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font);
+      background-color: var(--light-bg);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary-dark);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    nav {
+      background: #112240;
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      color: var(--primary-dark);
+      margin-bottom: 1rem;
+    }
+
+    .service {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .service img {
+      width: 100%;
+      height: auto;
+    }
+
+    .service-content {
+      padding: 1.5rem;
+    }
+
+    .service-content h3 {
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+
+    footer {
+      background: var(--primary-dark);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .chat-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+
     #chatbox {
-      position: fixed; bottom: 90px; right: 20px;
-      width: 320px; background: white; border: 1px solid #ccc; border-radius: 8px;
-      display: none; flex-direction: column; box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      z-index: 999;
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 340px;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      display: none;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      z-index: 1000;
     }
-    #chatlog { padding: 1rem; max-height: 240px; overflow-y: auto; font-size: 14px; }
-    #userinput { display: flex; border-top: 1px solid #ccc; }
-    #userinput input { flex: 1; padding: 0.5rem; border: none; border-radius: 0 0 0 8px; }
-    #userinput button { padding: 0.5rem 1rem; background: #003366; color: white; border: none; border-radius: 0 0 8px 0; }
-    .hero-image { background: url('https://images.unsplash.com/photo-1581090700227-1e8eec3f96af?fit=crop&w=1350&q=80') no-repeat center center; background-size: cover; height: 300px; }
+
+    #chatlog {
+      padding: 1rem;
+      max-height: 300px;
+      overflow-y: auto;
+      font-size: 14px;
+    }
+
+    .chat-message {
+      margin: 0.5rem 0;
+      padding: 0.7rem 1rem;
+      border-radius: 20px;
+      max-width: 80%;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .user-msg {
+      background: var(--chat-user-bg);
+      margin-left: auto;
+      text-align: right;
+    }
+
+    .bot-msg {
+      background: var(--chat-bot-bg);
+      margin-right: auto;
+    }
+
+    #userinput {
+      display: flex;
+      border-top: 1px solid #ccc;
+    }
+
+    #userinput input {
+      flex: 1;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 0 0 0 10px;
+    }
+
+    #userinput button {
+      padding: 0.8rem;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 0 0 10px 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .service {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -40,56 +193,33 @@
     <h1>NODATA Solutions</h1>
     <p>Consultoría tecnológica con sentido</p>
   </header>
-
-  <div class="hero-image"></div>
-
   <nav>
     <a href="#servicios">Servicios</a>
-    <a href="#nosotros">Nosotros</a>
+    <a href="#nosotros">Sobre Nosotros</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
   <main>
     <section id="servicios">
-      <h2>Servicios Detallados</h2>
-      <div class="service-block">
-        <h3>1. Consultoría IT y Transformación Digital</h3>
-        <p>Auditorías TI, roadmap tecnológico, migraciones cloud, gobierno del dato y cumplimiento (ENS, ISO, RGPD).</p>
+      <h2>Servicios Destacados</h2>
+      <div class="service">
+        <img src="https://source.unsplash.com/400x300/?technology,consulting" alt="Consultoría IT">
+        <div class="service-content">
+          <h3>Consultoría IT y Transformación Digital</h3>
+          <p>Auditorías tecnológicas, planes de transformación digital, cloud computing, gobierno del dato y más. <a href="consultoria.html">Leer más...</a></p>
+        </div>
       </div>
-      <div class="service-block">
-        <h3>2. Ciberseguridad Proactiva</h3>
-        <p>Pentesting, segmentación de red, hardening, respuesta a incidentes, certificaciones ENS e ISO 27001.</p>
-      </div>
-      <div class="service-block">
-        <h3>3. Desarrollo de Software a Medida</h3>
-        <p>Aplicaciones seguras en Node.js, Python, Java. Frontend en React/Angular. CI/CD, APIs REST, bases de datos SQL/NoSQL.</p>
-      </div>
-      <div class="service-block">
-        <h3>4. Sistemas y Redes</h3>
-        <p>Virtualización, Docker, Kubernetes, backup, VPN, cloud híbrido, alta disponibilidad y monitorización (Zabbix, Grafana).</p>
-      </div>
-      <div class="service-block">
-        <h3>5. Servicios Gestionados (MSP)</h3>
-        <p>Soporte 24/7, HelpDesk, actualizaciones, backup, ITSM, SLA personalizados y gestión de activos.</p>
-      </div>
-      <div class="service-block">
-        <h3>6. Inteligencia Artificial y Datos</h3>
-        <p>Modelos predictivos, cuadros de mando, integración de datos, RPA, Power BI, TensorFlow, PyTorch, NLP.</p>
-      </div>
-      <div class="service-block">
-        <h3>7. Formación Técnica Especializada</h3>
-        <p>Capacitación personalizada en ciberseguridad, desarrollo, cloud, IA, DevOps, ENS e ISO 27001.</p>
-      </div>
+      <!-- Repetir estructura para cada servicio -->
     </section>
 
     <section id="nosotros">
-      <h2>Nosotros</h2>
-      <p>En NODATA Solutions combinamos ingeniería, ciberseguridad, automatización e inteligencia artificial con una visión ética y pedagógica para ayudar a nuestros clientes a transformarse tecnológicamente con sentido y eficiencia.</p>
+      <h2>Sobre NODATA</h2>
+      <p>NODATA Solutions es una empresa con visión ética y técnica que ofrece soluciones de consultoría, ciberseguridad, desarrollo de software e inteligencia artificial para empresas de todos los tamaños.</p>
     </section>
 
     <section id="contacto">
       <h2>Contacto</h2>
-      <p>Para más información o presupuestos personalizados, escríbenos a <strong>info@nodata.tech</strong> o contacta directamente con nuestro asistente virtual.</p>
+      <p>¿Tienes dudas? Escríbenos a contacto@nodatasolutions.tech</p>
     </section>
   </main>
 
@@ -97,11 +227,11 @@
     &copy; 2025 NODATA Solutions. Todos los derechos reservados.
   </footer>
 
-  <div class="chat-bubble" onclick="toggleChat()">✨</div>
+  <button class="chat-toggle" onclick="toggleChat()">💬</button>
   <div id="chatbox">
     <div id="chatlog"></div>
     <div id="userinput">
-      <input type="text" id="usermsg" placeholder="Escribe tu mensaje..." />
+      <input type="text" id="usermsg" placeholder="Escribe tu mensaje...">
       <button onclick="sendMessage()">Enviar</button>
     </div>
   </div>
@@ -115,14 +245,30 @@
       document.getElementById('chatbox').style.display = chatVisible ? 'flex' : 'none';
     }
 
+    function appendToChat(text, sender = 'bot') {
+      const chatlog = document.getElementById('chatlog');
+      const message = document.createElement('div');
+      message.className = `chat-message ${sender === 'user' ? 'user-msg' : 'bot-msg'}`;
+      message.textContent = text;
+      chatlog.appendChild(message);
+      chatlog.scrollTop = chatlog.scrollHeight;
+    }
+
+    function removeLastBotMessage() {
+      const log = document.getElementById('chatlog');
+      if (log.lastChild && log.lastChild.classList.contains('bot-msg') && log.lastChild.textContent === '...') {
+        log.removeChild(log.lastChild);
+      }
+    }
+
     async function sendMessage() {
-      const msg = document.getElementById('usermsg').value;
-      if (!msg.trim()) return;
+      const input = document.getElementById('usermsg');
+      const msg = input.value.trim();
+      if (!msg) return;
 
-      appendToChat('Tú: ' + msg);
-      document.getElementById('usermsg').value = '';
-
-      appendToChat('NODATA Assistant: ...');
+      appendToChat(msg, 'user');
+      input.value = '';
+      appendToChat('...', 'bot');
 
       try {
         const res = await fetch('https://abb4-2a02-9130-2ef-a5eb-4185-3c35-e508-5210.ngrok-free.app/webhook/b34494ec-97a2-4570-a977-b98930dbfbe4', {
@@ -130,29 +276,16 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ user_id: userId, message: msg })
         });
+
         const data = await res.json();
         removeLastBotMessage();
-        appendToChat('NODATA Assistant: ' + data.respuesta);
+        appendToChat(data.respuesta || '⚠️ No se recibió respuesta del asistente.', 'bot');
       } catch (error) {
         removeLastBotMessage();
-        appendToChat('❌ Error al conectar con el asistente.');
-      }
-    }
-
-    function appendToChat(text) {
-      const log = document.getElementById('chatlog');
-      const line = document.createElement('div');
-      line.textContent = text;
-      log.appendChild(line);
-      log.scrollTop = log.scrollHeight;
-    }
-
-    function removeLastBotMessage() {
-      const log = document.getElementById('chatlog');
-      if (log.lastChild && log.lastChild.textContent.includes('NODATA Assistant: ...')) {
-        log.removeChild(log.lastChild);
+        appendToChat('❌ Error al conectar con el asistente.', 'bot');
       }
     }
   </script>
 </body>
 </html>
+
