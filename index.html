@@ -13,6 +13,7 @@
       --chat-user-bg: #d8f3ff;
       --chat-bot-bg: #eeeeee;
       --font: 'Montserrat', sans-serif;
+      --transition-speed: 0.3s;
     }
 
     * {
@@ -33,24 +34,60 @@
       color: white;
       padding: 2rem;
       text-align: center;
+      animation: fadeIn 1s ease-in;
     }
 
     nav {
       background: #112240;
+      padding: 1rem;
+      position: relative;
+    }
+    
+    nav ul {
+      list-style: none;
       display: flex;
       justify-content: center;
-      padding: 1rem;
+      align-items: center;
     }
-
+    
+    nav ul li {
+      position: relative;
+      margin: 0 1rem;
+    }
+    
     nav a {
       color: white;
-      margin: 0 1rem;
       text-decoration: none;
       font-weight: 600;
+      transition: color var(--transition-speed);
     }
-
+    
     nav a:hover {
       color: var(--accent);
+    }
+    
+    /* Dropdown (submenu) para Servicios */
+    nav ul li .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #112240;
+      padding: 0.5rem 0;
+      border-radius: 4px;
+      min-width: 150px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 100;
+    }
+
+    nav ul li:hover .dropdown {
+      display: block;
+      animation: fadeIn 0.3s ease-in;
+    }
+
+    nav ul li .dropdown a {
+      display: block;
+      padding: 0.5rem 1rem;
     }
 
     main {
@@ -61,6 +98,7 @@
 
     section {
       margin-bottom: 3rem;
+      animation: slideIn 0.8s ease-in-out;
     }
 
     h2 {
@@ -76,12 +114,22 @@
       background: white;
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .service:hover {
+      transform: translateY(-5px);
     }
 
     .service img {
       width: 100%;
       height: auto;
+      transition: transform 0.3s;
+    }
+
+    .service img:hover {
+      transform: scale(1.05);
     }
 
     .service-content {
@@ -93,13 +141,42 @@
       color: var(--accent);
     }
 
+    /* Estilos para el acordeón (sección desplegable) */
+    .accordion {
+      background: #f1f1f1;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      transition: background var(--transition-speed);
+    }
+
+    .accordion:hover {
+      background: #e0e0e0;
+    }
+
+    .panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background: #fff;
+      padding: 0 1rem;
+      border-radius: 0 0 8px 8px;
+    }
+
+    .panel p {
+      padding: 1rem 0;
+    }
+
     footer {
       background: var(--primary-dark);
       color: white;
       text-align: center;
       padding: 1rem;
+      animation: fadeIn 1s ease-in;
     }
 
+    /* Estilos del Chat */
     .chat-toggle {
       position: fixed;
       bottom: 20px;
@@ -112,7 +189,7 @@
       height: 60px;
       font-size: 24px;
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       z-index: 1000;
     }
 
@@ -126,7 +203,7 @@
       border-radius: 10px;
       display: none;
       flex-direction: column;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       z-index: 1000;
     }
 
@@ -177,13 +254,24 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 768px) {
       .service {
         grid-template-columns: 1fr;
+      }
+      nav ul {
+        flex-direction: column;
+      }
+      nav ul li {
+        margin: 0.5rem 0;
       }
     }
   </style>
@@ -194,32 +282,84 @@
     <p>Consultoría tecnológica con sentido</p>
   </header>
   <nav>
-    <a href="#servicios">Servicios</a>
-    <a href="#nosotros">Sobre Nosotros</a>
-    <a href="#contacto">Contacto</a>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li>
+        <a href="#">Servicios &#9662;</a>
+        <div class="dropdown">
+          <a href="consultoria.html">Consultoría IT</a>
+          <a href="desarrollo.html">Desarrollo de Software</a>
+          <a href="ciberseguridad.html">Ciberseguridad</a>
+          <a href="data_science.html">Data Science &amp; IA</a>
+          <a href="cloud.html">Infraestructura IT &amp; Cloud</a>
+        </div>
+      </li>
+      <li><a href="nosotros.html">Sobre Nosotros</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
   </nav>
 
   <main>
     <section id="servicios">
       <h2>Servicios Destacados</h2>
+
       <div class="service">
         <img src="https://source.unsplash.com/400x300/?technology,consulting" alt="Consultoría IT">
         <div class="service-content">
           <h3>Consultoría IT y Transformación Digital</h3>
-          <p>Auditorías tecnológicas, planes de transformación digital, cloud computing, gobierno del dato y más. <a href="consultoria.html">Leer más...</a></p>
+          <p>
+            Auditorías tecnológicas, planes de transformación digital, cloud computing, gobierno del dato y más. 
+            <a href="consultoria.html">Leer más...</a>
+          </p>
         </div>
       </div>
-      <!-- Repetir estructura para cada servicio -->
+
+      <div class="service">
+        <img src="https://source.unsplash.com/400x300/?software,development" alt="Desarrollo de Software">
+        <div class="service-content">
+          <h3>Desarrollo de Software y Plataformas Escalables</h3>
+          <p>
+            Aplicaciones a medida, microservicios, integración de APIs y soluciones de backend robustas. 
+            <a href="desarrollo.html">Leer más...</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="service">
+        <img src="https://source.unsplash.com/400x300/?cybersecurity,protection" alt="Ciberseguridad">
+        <div class="service-content">
+          <h3>Ciberseguridad y Gobernanza del Riesgo</h3>
+          <p>
+            Implementación de marcos regulatorios, SOC, y análisis de amenazas en tiempo real. 
+            <a href="ciberseguridad.html">Leer más...</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Sección desplegable para servicios adicionales -->
+      <div class="accordion">Ver más servicios</div>
+      <div class="panel">
+        <p>
+          Explora otros servicios como Data Science &amp; IA, Infraestructura IT, Automatización Robótica, LegalTech y Compliance Digital, entre otros.
+        </p>
+        <p>
+          Visita la sección <a href="otros-servicios.html">Otros Servicios</a> para más información.
+        </p>
+      </div>
     </section>
 
     <section id="nosotros">
       <h2>Sobre NODATA</h2>
-      <p>NODATA Solutions es una empresa con visión ética y técnica que ofrece soluciones de consultoría, ciberseguridad, desarrollo de software e inteligencia artificial para empresas de todos los tamaños.</p>
+      <p>
+        NODATA Solutions es una empresa con visión ética y técnica que ofrece soluciones de consultoría, ciberseguridad, desarrollo de software e inteligencia artificial para empresas de todos los tamaños.
+      </p>
     </section>
 
     <section id="contacto">
       <h2>Contacto</h2>
-      <p>¿Tienes dudas? Escríbenos a contacto@nodatasolutions.tech</p>
+      <p>
+        ¿Tienes dudas? Escríbenos a <a href="mailto:contacto@nodatasolutions.tech">contacto@nodatasolutions.tech</a>
+      </p>
     </section>
   </main>
 
@@ -237,6 +377,7 @@
   </div>
 
   <script>
+    // Gestión de visibilidad del chat
     let chatVisible = false;
     const userId = 'user_' + Math.floor(Math.random() * 1000000);
 
@@ -245,23 +386,29 @@
       document.getElementById('chatbox').style.display = chatVisible ? 'flex' : 'none';
     }
 
-     function appendToChat(text, sender = 'bot') {
+    // Función para agregar mensajes al chat
+    function appendToChat(text, sender = 'bot') {
       const chatlog = document.getElementById('chatlog');
       const message = document.createElement('div');
       message.className = `chat-message ${sender === 'user' ? 'user-msg' : 'bot-msg'}`;
-      message.innerHTML = text; // Aquí se permite contenido HTML
+      message.innerHTML = text; // Se permite contenido HTML
       chatlog.appendChild(message);
       chatlog.scrollTop = chatlog.scrollHeight;
-}
+    }
 
-
+    // Remueve mensaje de espera "..." del bot
     function removeLastBotMessage() {
       const log = document.getElementById('chatlog');
-      if (log.lastChild && log.lastChild.classList.contains('bot-msg') && log.lastChild.textContent === '...') {
+      if (
+        log.lastChild &&
+        log.lastChild.classList.contains('bot-msg') &&
+        log.lastChild.textContent === '...'
+      ) {
         log.removeChild(log.lastChild);
       }
     }
 
+    // Envío de mensaje a través de fetch a ngrok
     async function sendMessage() {
       const input = document.getElementById('usermsg');
       const msg = input.value.trim();
@@ -277,7 +424,6 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ user_id: userId, message: msg })
         });
-
         const data = await res.json();
         removeLastBotMessage();
         appendToChat(data.respuesta || '⚠️ No se recibió respuesta del asistente.', 'bot');
@@ -286,7 +432,19 @@
         appendToChat('❌ Error al conectar con el asistente.', 'bot');
       }
     }
+
+    // Funcionalidad para el acordeón de "Ver más servicios"
+    const accordion = document.querySelector('.accordion');
+    const panel = document.querySelector('.panel');
+
+    accordion.addEventListener('click', function() {
+      this.classList.toggle('active');
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
   </script>
 </body>
 </html>
-
