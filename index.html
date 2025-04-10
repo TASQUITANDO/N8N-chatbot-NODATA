@@ -245,14 +245,15 @@
       document.getElementById('chatbox').style.display = chatVisible ? 'flex' : 'none';
     }
 
-    function appendToChat(text, sender = 'bot') {
+     function appendToChat(text, sender = 'bot') {
       const chatlog = document.getElementById('chatlog');
       const message = document.createElement('div');
       message.className = `chat-message ${sender === 'user' ? 'user-msg' : 'bot-msg'}`;
-      message.textContent = text;
+      message.innerHTML = text; // Aquí se permite contenido HTML
       chatlog.appendChild(message);
       chatlog.scrollTop = chatlog.scrollHeight;
-    }
+}
+
 
     function removeLastBotMessage() {
       const log = document.getElementById('chatlog');
