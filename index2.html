@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>NODATA Solutions</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 0; background: #f8f9fa; }
+    header { background: #003366; color: white; padding: 1rem; text-align: center; }
+    main { padding: 2rem; }
+    .chat-bubble {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #003366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 999;
+    }
+    #chatbox {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 300px;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      display: none;
+      flex-direction: column;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      z-index: 999;
+    }
+    #chatlog {
+      padding: 1rem;
+      max-height: 200px;
+      overflow-y: auto;
+      font-size: 14px;
+    }
+    #userinput {
+      display: flex;
+      border-top: 1px solid #ccc;
+    }
+    #userinput input {
+      flex: 1;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 0 0 0 8px;
+    }
+    #userinput button {
+      padding: 0.5rem 1rem;
+      background: #003366;
+      color: white;
+      border: none;
+      border-radius: 0 0 8px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NODATA Solutions</h1>
+    <p>Consultoría tecnológica con sentido.</p>
+  </header>
+
+  <main>
+    <p>Bienvenido a NODATA Solutions. Ofrecemos servicios de consultoría IT, ciberseguridad, desarrollo, sistemas, y más.</p>
+    <p><strong>¿Tienes dudas?</strong> Haz clic en el botón flotante y chatea con nuestro asistente.</p>
+  </main>
+
+  <div class="chat-bubble" onclick="toggleChat()">💬</div>
+
+  <div id="chatbox">
+    <div id="chatlog"></div>
+    <div id="userinput">
+      <input type="text" id="usermsg" placeholder="Escribe tu mensaje..." />
+      <button onclick="sendMessage()">Enviar</button>
+    </div>
+  </div>
+
+  <script>
+    let chatVisible = false;
+    const userId = 'user_' + Math.floor(Math.random() * 1000000); // ID único para memoria de sesión
+
+    function toggleChat() {
+      chatVisible = !chatVisible;
+      document.getElementById('chatbox').style.display = chatVisible ? 'flex' : 'none';
+    }
+
+    async function sendMessage() {
+      const msg = document.getElementById('usermsg').value;
+      if (!msg.trim()) return;
+
+      appendToChat(`👤 Tú: ${msg}`);
+      document.getElementById('usermsg').value = '';
+
+      appendToChat(`🤖 NODATA Assistant: ...`); // Loading placeholder
+
+      try {
+        const res = await fetch('http://localhost:5678/webhook/b34494ec-97a2-4570-a977-b98930dbfbe4', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ user_id: userId, message: msg })
+        });
+        const data = await res.json();
+        removeLastBotMessage();
+        appendToChat(`🤖 NODATA Assistant: ${data.respuesta}`);
+      } catch (error) {
+        removeLastBotMessage();
+        appendToChat(`❌ Error al conectar con el asistente.`);
+      }
+    }
+
+    function appendToChat(text) {
+      const log = document.getElementById('chatlog');
+      const line = document.createElement('div');
+      line.textContent = text;
+      log.appendChild(line);
+      log.scrollTop = log.scrollHeight;
+    }
+
+    function removeLastBotMessage() {
+      const log = document.getElementById('chatlog');
+      if (log.lastChild && log.lastChild.textContent.includes('NODATA Assistant: ...')) {
+        log.removeChild(log.lastChild);
+      }
+    }
+  </script>
+</body>
+</html>
