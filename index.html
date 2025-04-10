@@ -4,32 +4,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NODATA Solutions</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Roboto', sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f4f6f9;
+      background: #f4f6f8;
       color: #333;
     }
     header {
-      background: #002244;
+      background: #002b5c;
       color: white;
-      padding: 1.5rem;
+      padding: 2rem 1rem;
       text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
-    main {
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #004080;
+      padding: 0.5rem 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
       padding: 2rem;
-      max-width: 800px;
+      max-width: 1000px;
       margin: auto;
+    }
+    .hero {
+      background-image: url('https://images.unsplash.com/photo-1537432376769-00a4fc55c5fb');
+      background-size: cover;
+      background-position: center;
+      padding: 5rem 2rem;
+      color: white;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+    }
+    .service-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
     }
     .chat-bubble {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: #002244;
+      background: #003366;
       color: white;
       border-radius: 50%;
       width: 60px;
@@ -39,7 +79,6 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       z-index: 999;
     }
     #chatbox {
@@ -48,35 +87,18 @@
       right: 20px;
       width: 320px;
       background: white;
-      border-radius: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
       display: none;
       flex-direction: column;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
       z-index: 999;
     }
     #chatlog {
       padding: 1rem;
-      max-height: 280px;
+      max-height: 200px;
       overflow-y: auto;
       font-size: 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .message {
-      padding: 0.6rem 1rem;
-      border-radius: 10px;
-      max-width: 85%;
-      word-wrap: break-word;
-    }
-    .user {
-      align-self: flex-end;
-      background: #d0e6ff;
-    }
-    .bot {
-      align-self: flex-start;
-      background: #e8e8e8;
     }
     #userinput {
       display: flex;
@@ -84,38 +106,76 @@
     }
     #userinput input {
       flex: 1;
-      padding: 0.8rem;
+      padding: 0.5rem;
       border: none;
-      font-size: 14px;
-      outline: none;
+      border-radius: 0 0 0 8px;
     }
     #userinput button {
-      padding: 0 1rem;
-      background: #002244;
+      padding: 0.5rem 1rem;
+      background: #003366;
       color: white;
       border: none;
-      font-weight: 600;
-      cursor: pointer;
+      border-radius: 0 0 8px 0;
+    }
+    footer {
+      background: #002b5c;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>NODATA Solutions</h1>
-    <p>Consultoría tecnológica con sentido humano y digital.</p>
+    <p>Consultoría tecnológica con sentido</p>
   </header>
-  <main>
-    <p>Bienvenido a <strong>NODATA Solutions</strong>. Ofrecemos servicios personalizados de ciberseguridad, desarrollo, sistemas y automatización.</p>
-    <p><strong>¿Tienes dudas?</strong> Haz clic en el botón flotante para hablar con nuestro asistente virtual.</p>
-  </main>
+  <nav>
+    <a href="#servicios">Servicios</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <section class="hero">
+    <h2>Soluciones inteligentes para un mundo digital</h2>
+    <p>Expertos en ciberseguridad, desarrollo de software, IA y más.</p>
+  </section>
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <div class="service-card">
+      <h3>Ciberseguridad</h3>
+      <p>Protegemos tu infraestructura con las mejores prácticas y auditorías expertas.</p>
+    </div>
+    <div class="service-card">
+      <h3>Desarrollo de Software</h3>
+      <p>Soluciones a medida, escalables y seguras adaptadas a tu negocio.</p>
+    </div>
+    <div class="service-card">
+      <h3>Inteligencia Artificial</h3>
+      <p>Integramos IA y automatización para impulsar tus procesos.</p>
+    </div>
+  </section>
+  <section id="nosotros">
+    <h2>Sobre Nosotros</h2>
+    <p>Somos una consultora tecnológica nacida en Bilbao en 2018. Desde entonces, trabajamos en soluciones innovadoras con una perspectiva humana, ética y sostenible.</p>
+  </section>
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>Puedes hablar directamente con nuestro asistente flotante para resolver dudas o escribirnos a contacto@nodatasolutions.com</p>
+  </section>
+
   <div class="chat-bubble" onclick="toggleChat()">💬</div>
   <div id="chatbox">
     <div id="chatlog"></div>
     <div id="userinput">
-      <input type="text" id="usermsg" placeholder="Escribe tu mensaje..." />
+      <input type="text" id="usermsg" placeholder="Escribe tu mensaje...">
       <button onclick="sendMessage()">Enviar</button>
     </div>
   </div>
+
+  <footer>
+    <p>&copy; 2025 NODATA Solutions. Todos los derechos reservados.</p>
+  </footer>
 
   <script>
     let chatVisible = false;
@@ -130,10 +190,9 @@
       const msg = document.getElementById('usermsg').value;
       if (!msg.trim()) return;
 
-      appendToChat(msg, 'user');
+      appendToChat(`👤 Tú: ${msg}`);
       document.getElementById('usermsg').value = '';
-
-      appendToChat('...', 'bot');
+      appendToChat(`🤖 NODATA Assistant: ...`);
 
       try {
         const res = await fetch('https://5bdc-2a02-9130-2ef-a5eb-9464-11c6-cc41-88e5.ngrok-free.app/webhook/b34494ec-97a2-4570-a977-b98930dbfbe4', {
@@ -143,27 +202,25 @@
         });
         const data = await res.json();
         removeLastBotMessage();
-        appendToChat(data.respuesta, 'bot');
+        appendToChat(`🤖 NODATA Assistant: ${data.respuesta}`);
       } catch (error) {
         removeLastBotMessage();
-        appendToChat('❌ Error al conectar con el asistente.', 'bot');
+        appendToChat(`❌ Error al conectar con el asistente.`);
       }
     }
 
-    function appendToChat(text, sender) {
+    function appendToChat(text) {
       const log = document.getElementById('chatlog');
-      const message = document.createElement('div');
-      message.className = 'message ' + sender;
-      message.textContent = text;
-      log.appendChild(message);
+      const line = document.createElement('div');
+      line.textContent = text;
+      log.appendChild(line);
       log.scrollTop = log.scrollHeight;
     }
 
     function removeLastBotMessage() {
       const log = document.getElementById('chatlog');
-      const last = log.lastChild;
-      if (last && last.classList.contains('bot') && last.textContent === '...') {
-        log.removeChild(last);
+      if (log.lastChild && log.lastChild.textContent.includes('NODATA Assistant: ...')) {
+        log.removeChild(log.lastChild);
       }
     }
   </script>
