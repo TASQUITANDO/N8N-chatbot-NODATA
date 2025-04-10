@@ -101,7 +101,7 @@
       appendToChat(`🤖 NODATA Assistant: ...`); // Loading placeholder
 
       try {
-        const res = await fetch('http://localhost:5678/webhook/b34494ec-97a2-4570-a977-b98930dbfbe4', {
+        const res = await fetch('https://5bdc-2a02-9130-2ef-a5eb-9464-11c6-cc41-88e5.ngrok-free.app/webhook/b34494ec-97a2-4570-a977-b98930dbfbe4', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ user_id: userId, message: msg })
