@@ -3,32 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NODATA Solutions</title>
+  <title>Nubia - Educación Humana y Visual</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary-dark: #0a192f;
-      --accent: #00d1b2;
+      --accent: #ff9933; /* Terracotta */
       --light-bg: #f5f7fa;
       --chat-user-bg: #d8f3ff;
       --chat-bot-bg: #eeeeee;
       --font: 'Montserrat', sans-serif;
       --transition-speed: 0.3s;
     }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       font-family: var(--font);
       background-color: var(--light-bg);
       color: #333;
       line-height: 1.6;
     }
-
     header {
       background: var(--primary-dark);
       color: white;
@@ -36,36 +33,30 @@
       text-align: center;
       animation: fadeIn 1s ease-in;
     }
-
     nav {
       background: #112240;
       padding: 1rem;
       position: relative;
     }
-    
     nav ul {
       list-style: none;
       display: flex;
       justify-content: center;
       align-items: center;
     }
-    
     nav ul li {
       position: relative;
       margin: 0 1rem;
     }
-    
     nav a {
       color: white;
       text-decoration: none;
       font-weight: 600;
       transition: color var(--transition-speed);
     }
-    
     nav a:hover {
       color: var(--accent);
     }
-    
     /* Dropdown (submenu) para Servicios */
     nav ul li .dropdown {
       display: none;
@@ -79,33 +70,27 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       z-index: 100;
     }
-
     nav ul li:hover .dropdown {
       display: block;
       animation: fadeIn 0.3s ease-in;
     }
-
     nav ul li .dropdown a {
       display: block;
       padding: 0.5rem 1rem;
     }
-
     main {
       max-width: 1200px;
       margin: auto;
       padding: 2rem;
     }
-
     section {
       margin-bottom: 3rem;
       animation: slideIn 0.8s ease-in-out;
     }
-
     h2 {
       color: var(--primary-dark);
       margin-bottom: 1rem;
     }
-
     .service {
       display: grid;
       grid-template-columns: 1fr 2fr;
@@ -117,30 +102,24 @@
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s;
     }
-
     .service:hover {
       transform: translateY(-5px);
     }
-
     .service img {
       width: 100%;
       height: auto;
       transition: transform 0.3s;
     }
-
     .service img:hover {
       transform: scale(1.05);
     }
-
     .service-content {
       padding: 1.5rem;
     }
-
     .service-content h3 {
       margin-bottom: 0.5rem;
       color: var(--accent);
     }
-
     /* Estilos para el acordeón (sección desplegable) */
     .accordion {
       background: #f1f1f1;
@@ -150,11 +129,9 @@
       cursor: pointer;
       transition: background var(--transition-speed);
     }
-
     .accordion:hover {
       background: #e0e0e0;
     }
-
     .panel {
       max-height: 0;
       overflow: hidden;
@@ -163,11 +140,9 @@
       padding: 0 1rem;
       border-radius: 0 0 8px 8px;
     }
-
     .panel p {
       padding: 1rem 0;
     }
-
     footer {
       background: var(--primary-dark);
       color: white;
@@ -175,7 +150,6 @@
       padding: 1rem;
       animation: fadeIn 1s ease-in;
     }
-
     /* Estilos del Chat */
     .chat-toggle {
       position: fixed;
@@ -192,7 +166,6 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       z-index: 1000;
     }
-
     #chatbox {
       position: fixed;
       bottom: 90px;
@@ -206,14 +179,12 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       z-index: 1000;
     }
-
     #chatlog {
       padding: 1rem;
       max-height: 300px;
       overflow-y: auto;
       font-size: 14px;
     }
-
     .chat-message {
       margin: 0.5rem 0;
       padding: 0.7rem 1rem;
@@ -221,30 +192,25 @@
       max-width: 80%;
       animation: fadeIn 0.3s ease-in-out;
     }
-
     .user-msg {
       background: var(--chat-user-bg);
       margin-left: auto;
       text-align: right;
     }
-
     .bot-msg {
       background: var(--chat-bot-bg);
       margin-right: auto;
     }
-
     #userinput {
       display: flex;
       border-top: 1px solid #ccc;
     }
-
     #userinput input {
       flex: 1;
       padding: 0.8rem;
       border: none;
       border-radius: 0 0 0 10px;
     }
-
     #userinput button {
       padding: 0.8rem;
       background: var(--accent);
@@ -252,17 +218,14 @@
       border: none;
       border-radius: 0 0 10px 0;
     }
-
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
-
     @keyframes slideIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
     @media (max-width: 768px) {
       .service {
         grid-template-columns: 1fr;
@@ -277,96 +240,123 @@
   </style>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
-    <h1>NODATA Solutions</h1>
-    <p>Consultoría tecnológica con sentido</p>
+    <img src="assets/logo-nubia.png" alt="Nubia Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li>
+          <a href="#">Explora &#9662;</a>
+          <div class="dropdown">
+            <a href="services/sobre-el-proyecto.html">Sobre el proyecto</a>
+            <a href="services/capsulas-educativas.html">Cápsulas educativas</a>
+            <a href="services/bitacora-blog.html">Bitácora / Blog</a>
+            <a href="services/recursos-comunidad.html">Recursos &amp; Comunidad</a>
+            <a href="services/contacto-legal.html">Contacto &amp; Legal</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <button class="cta-button">Explorar</button>
   </header>
- <nav>
-  <ul>
-    <li><a href="index.html">Inicio</a></li>
-    <li>
-      <a href="#">Servicios &#9662;</a>
-      <div class="dropdown">
-        <a href="services/consultoria.html">Consultoría IT</a>
-        <a href="services/desarrollo.html">Desarrollo de Software</a>
-        <a href="services/ciberseguridad.html">Ciberseguridad</a>
-        <a href="services/data_science.html">Data Science &amp; IA</a>
-      </div>
-    </li>
-    <li><a href="nosotros.html">Sobre Nosotros</a></li>
-    <li><a href="contacto.html">Contacto</a></li>
-  </ul>
-</nav>
-  
-  <main>
-    <section id="servicios">
-      <h2>Servicios Destacados</h2>
 
-      <div class="service">
-        <img src="https://source.unsplash.com/400x300/?technology,consulting" alt="Consultoría IT">
-        <div class="service-content">
-          <h3>Consultoría IT y Transformación Digital</h3>
-          <p>
-            Auditorías tecnológicas, planes de transformación digital, cloud computing, gobierno del dato y más. 
-            <a href="consultoria.html">Leer más...</a>
-          </p>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <h1>Bienvenido a Nubia</h1>
+    <p>Donde la educación humana y visual se encuentran.</p>
+  </section>
+
+  <!-- Value Proposition -->
+  <section class="value-proposition">
+    <div class="container">
+      <h2>Propuesta de valor</h2>
+      <p>Nubia te ofrece una experiencia educativa única, centrada en el aprendizaje humano, visual y ético.</p>
+    </div>
+  </section>
+
+  <!-- Content Mosaic -->
+  <section class="content-mosaic">
+    <div class="container">
+      <div class="content-card">
+        <img src="assets/icon-tree-mode.png" alt="Tree Mode">
+        <div class="card-body">
+          <h3>Tema Árbol</h3>
+          <p>Descubre cómo crecer con las raíces más profundas.</p>
+          <button class="cta">Ver</button>
         </div>
       </div>
-
-      <div class="service">
-        <img src="https://source.unsplash.com/400x300/?software,development" alt="Desarrollo de Software">
-        <div class="service-content">
-          <h3>Desarrollo de Software y Plataformas Escalables</h3>
-          <p>
-            Aplicaciones a medida, microservicios, integración de APIs y soluciones de backend robustas. 
-            <a href="desarrollo.html">Leer más...</a>
-          </p>
+      <div class="content-card">
+        <img src="assets/icon-analytic-mode.png" alt="Analytic Mode">
+        <div class="card-body">
+          <h3>Tema Análisis</h3>
+          <p>Desentraña los datos para tomar decisiones informadas.</p>
+          <button class="cta">Ver</button>
         </div>
       </div>
-
-      <div class="service">
-        <img src="https://source.unsplash.com/400x300/?cybersecurity,protection" alt="Ciberseguridad">
-        <div class="service-content">
-          <h3>Ciberseguridad y Gobernanza del Riesgo</h3>
-          <p>
-            Implementación de marcos regulatorios, SOC, y análisis de amenazas en tiempo real. 
-            <a href="ciberseguridad.html">Leer más...</a>
-          </p>
+      <div class="content-card">
+        <img src="assets/icon-secure-mode.png" alt="Secure Mode">
+        <div class="card-body">
+          <h3>Tema Seguridad</h3>
+          <p>Aprende a proteger lo que más importa.</p>
+          <button class="cta">Ver</button>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Sección desplegable para servicios adicionales -->
-      <div class="accordion">Ver más servicios</div>
-      <div class="panel">
-        <p>
-          Explora otros servicios como Data Science &amp; IA, Infraestructura IT, Automatización Robótica, LegalTech y Compliance Digital, entre otros.
-        </p>
-        <p>
-          Visita la sección <a href="otros-servicios.html">Otros Servicios</a> para más información.
-        </p>
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>Testimonios</h2>
+      <div class="testimonial">
+        <p>"Nubia ha cambiado mi forma de aprender."</p>
+        <span class="testimonial-author">Juan Pérez</span>
       </div>
-    </section>
+      <div class="testimonial">
+        <p>"Una plataforma innovadora y accesible."</p>
+        <span class="testimonial-author">María Gómez</span>
+      </div>
+    </div>
+  </section>
 
-    <section id="nosotros">
-      <h2>Sobre NODATA</h2>
-      <p>
-        NODATA Solutions es una empresa con visión ética y técnica que ofrece soluciones de consultoría, ciberseguridad, desarrollo de software e inteligencia artificial para empresas de todos los tamaños.
-      </p>
-    </section>
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Suscríbete a nuestro boletín</h2>
+      <form action="#" method="post">
+        <input type="email" placeholder="Tu correo electrónico" required>
+        <button type="submit">Suscribirse</button>
+      </form>
+    </div>
+  </section>
 
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <p>
-        ¿Tienes dudas? Escríbenos a <a href="mailto:contacto@nodatasolutions.tech">contacto@nodatasolutions.tech</a>
-      </p>
-    </section>
-  </main>
-
+  <!-- Footer -->
   <footer>
-    &copy; 2025 NODATA Solutions. Todos los derechos reservados.
+    <div class="container">
+      <div class="footer-links">
+        <a href="#">Términos de uso</a>
+        <a href="#">Política de privacidad</a>
+        <a href="#">Aviso legal</a>
+      </div>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <div class="contact-info">
+        <p>Contacto: info@nubia.edu</p>
+        <p>Teléfono: +1 234 567 890</p>
+      </div>
+    </div>
   </footer>
 
+  <!-- Chat Toggle -->
   <button class="chat-toggle" onclick="toggleChat()">💬</button>
+
+  <!-- Chat Box -->
   <div id="chatbox">
     <div id="chatlog"></div>
     <div id="userinput">
@@ -379,12 +369,10 @@
     // Gestión de visibilidad del chat
     let chatVisible = false;
     const userId = 'user_' + Math.floor(Math.random() * 1000000);
-
     function toggleChat() {
       chatVisible = !chatVisible;
       document.getElementById('chatbox').style.display = chatVisible ? 'flex' : 'none';
     }
-
     // Función para agregar mensajes al chat
     function appendToChat(text, sender = 'bot') {
       const chatlog = document.getElementById('chatlog');
@@ -394,7 +382,6 @@
       chatlog.appendChild(message);
       chatlog.scrollTop = chatlog.scrollHeight;
     }
-
     // Remueve mensaje de espera "..." del bot
     function removeLastBotMessage() {
       const log = document.getElementById('chatlog');
@@ -406,17 +393,14 @@
         log.removeChild(log.lastChild);
       }
     }
-
     // Envío de mensaje a través de fetch a ngrok
     async function sendMessage() {
       const input = document.getElementById('usermsg');
       const msg = input.value.trim();
       if (!msg) return;
-
       appendToChat(msg, 'user');
       input.value = '';
       appendToChat('...', 'bot');
-
       try {
         const res = await fetch('https://abb4-2a02-9130-2ef-a5eb-4185-3c35-e508-5210.ngrok-free.app/webhook/b34494ec-97a2-4570-a977-b98930dbfbe4', {
           method: 'POST',
@@ -431,11 +415,9 @@
         appendToChat('❌ Error al conectar con el asistente.', 'bot');
       }
     }
-
     // Funcionalidad para el acordeón de "Ver más servicios"
     const accordion = document.querySelector('.accordion');
     const panel = document.querySelector('.panel');
-
     accordion.addEventListener('click', function() {
       this.classList.toggle('active');
       if (panel.style.maxHeight) {
@@ -445,5 +427,6 @@
       }
     });
   </script>
+
 </body>
 </html>
