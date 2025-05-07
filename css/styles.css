@@ -1,0 +1,164 @@
+/* styles.css */
+:root {
+  --primary-dark: #0a192f;
+  --accent: #ff9933;
+  --light-bg: #f9f5e7;
+  --white: #fff;
+  --font-main: 'Montserrat', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--font-main);
+  background-color: var(--light-bg);
+  color: #333;
+  line-height: 1.6;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+.fixed-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--primary-dark);
+  padding: 1rem 0;
+  z-index: 1000;
+}
+.logo {
+  height: 40px;
+  float: left;
+}
+.main-nav {
+  list-style: none;
+  display: flex;
+  float: right;
+  gap: 20px;
+}
+.main-nav li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+.cta-button {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+}
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  padding-top: 20vh;
+}
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  display: inline-block;
+}
+.content-mosaic {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 50px 0;
+}
+.mosaic-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+.mosaic-card img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+.cta-newsletter {
+  background: var(--accent);
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+}
+.newsletter-form input {
+  padding: 10px;
+  width: 300px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+}
+.newsletter-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: white;
+  color: var(--accent);
+  cursor: pointer;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  padding: 40px 0;
+}
+.footer-bottom {
+  text-align: center;
+  padding: 20px;
+  background: var(--primary-dark);
+  color: white;
+}
+.chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+}
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;
+  }
+}
