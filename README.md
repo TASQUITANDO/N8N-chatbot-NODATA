@@ -8,18 +8,19 @@ Este repositorio contiene el código fuente de la **página web principal de Nub
 ## 🧩 ¿Qué encontrarás aquí?
 
 nubia-web/
-├── index.html # Página principal (Landing)
-├── about.html # Filosofía y principios del proyecto
-├── contact.html # Formulario, preguntas frecuentes, enlaces
+├── index.html            # Página principal (Landing)
+├── about.html            # Filosofía y principios del proyecto
+├── contact.html          # Formulario, preguntas frecuentes, enlaces
 ├── css/
-│ └── styles.css # Estilos visuales globales
+│   └── styles.css        # Estilos visuales globales
 ├── js/
-│ └── scripts.js # Lógica interactiva (chatbot, animaciones)
+│   └── scripts.js        # Lógica interactiva (chatbot, animaciones)
 ├── assets/
-│ ├── images/ # Logotipo, íconos de los Modos Nubia, fondos
-│ ├── videos/ # Clips introductorios o hero
-│ └── fonts/ # Tipografías personalizadas si aplican
-└── README.md # Este archivo 📖
+│   ├── images/           # Logotipo, íconos de los Modos Nubia, fondos
+│   ├── videos/           # Clips introductorios o hero
+│   └── fonts/            # Tipografías personalizadas si aplican
+└── README.md             # Este archivo 📖
+
 
 
 ## 🛠️ Tecnologías utilizadas
