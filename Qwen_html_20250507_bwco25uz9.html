@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sobre Nubia - Educación Visual</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body class="about-page">
+
+  <!-- Header -->
+  <header class="fixed-header">
+    <div class="container">
+      <img src="../assets/images/logo-nubia.png" alt="Logo Nubia" class="logo" />
+      <nav>
+        <ul class="main-nav">
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="#" class="active">Sobre Nubia</a></li>
+          <li><a href="../contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <button class="cta-button">Explorar</button>
+    </div>
+  </header>
+
+  <!-- Hero About -->
+  <section class="hero-small">
+    <h1>Historia y Valores</h1>
+    <p>El origen de un proyecto transformador basado en humanismo digital y aprendizaje visual.</p>
+  </section>
+
+  <!-- Story Timeline -->
+  <section class="timeline-section container">
+    <h2>Nuestra Historia</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="year">2020</div>
+        <div class="event">Fundación del proyecto Nubia por un equipo multidisciplinar.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2021</div>
+        <div class="event">Lanzamiento de las primeras cápsulas educativas interactivas.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2023</div>
+        <div class="event">Expansión a comunidades educativas locales y nacionales.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="year">2025</div>
+        <div class="event">Integración con herramientas de IA accesible para todos.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="values-section">
+    <div class="container">
+      <h2>Nuestros Valores</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <h3>Humanismo</h3>
+          <p>La persona siempre al centro del aprendizaje tecnológico.</p>
+        </div>
+        <div class="value-card">
+          <h3>Inclusión</h3>
+          <p>Diseños adaptados para todos los niveles y capacidades educativas.</p>
+        </div>
+        <div class="value-card">
+          <h3>Ética</h3>
+          <p>Transparencia absoluta en el uso de datos y herramientas educativas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team-section">
+    <div class="container">
+      <h2>Conoce al Equipo</h2>
+      <div class="team-members">
+        <div class="member-card">
+          <img src="../assets/images/team-member1.jpg" alt="Nombre Apellido" />
+          <h4>María Gómez</h4>
+          <p>Educadora e Innovadora Tecnológica</p>
+        </div>
+        <div class="member-card">
+          <img src="../assets/images/team-member2.jpg" alt="Nombre Apellido" />
+          <h4>Juan Pérez</h4>
+          <p>Desarrollador y Experto en Datos</p>
+        </div>
+        <div class="member-card">
+          <img src="../assets/images/team-member3.jpg" alt="Nombre Apellido" />
+          <h4>Laura Torres</h4>
+          <p>Diseñadora UX & Pedagoga Visual</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="../assets/images/logo-nubia.png" alt="Logo Nubia" width="150" />
+        <p>Educación visual, humana y ética.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Enlaces Rápidos</h4>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="#">Sobre Nubia</a></li>
+          <li><a href="../contact.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contacto</h4>
+        <p>Email: contacto@nubia.education</p>
+        <p>Teléfono: +34 900 000 000</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Nubia Education Project. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <!-- Chatbot -->
+  <button class="chat-toggle" onclick="toggleChat()">💬</button>
+  <div id="chatbox">
+    <div id="chatlog"></div>
+    <div id="userinput">
+      <input type="text" id="usermsg" placeholder="Escribe tu mensaje...">
+      <button onclick="sendMessage()">Enviar</button>
+    </div>
+  </div>
+
+  <script src="../js/scripts.js"></script>
+</body>
+</html>
