@@ -1,293 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Nubia - Educación Humana y Visual</title>
+  <link rel="stylesheet" href="css/styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary-dark: #0a192f;
-      --accent: #ff9933; /* Terracotta */
-      --light-bg: #f5f7fa;
-      --chat-user-bg: #d8f3ff;
-      --chat-bot-bg: #eeeeee;
-      --font: 'Montserrat', sans-serif;
-      --transition-speed: 0.3s;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: var(--font);
-      background-color: var(--light-bg);
-      color: #333;
-      line-height: 1.6;
-    }
-    a {
-      text-decoration: none;
-      color: #fff;
-    }
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 20px;
-    }
-
-    /* Header styles */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      padding: 10px 0;
-      z-index: 1000;
-    }
-    .logo {
-      float: left;
-      width: 150px;
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      float: right;
-    }
-    nav ul li {
-      display: inline-block;
-      margin-left: 20px;
-    }
-    nav ul li a {
-      color: #fff;
-      font-size: 16px;
-      transition: color 0.3s ease;
-    }
-    nav ul li a:hover {
-      color: var(--accent);
-    }
-    .cta-button {
-      background-color: var(--accent);
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .cta-button:hover {
-      background-color: #e68a2e;
-    }
-
-    /* Hero section styles */
-    .hero-section {
-      height: 80vh;
-      background-image: url('assets/nubia-hero.jpg');
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #fff;
-      padding: 50px;
-    }
-    .hero-section h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-    .hero-section p {
-      font-size: 24px;
-      margin-bottom: 30px;
-    }
-
-    /* Value proposition section */
-    .value-proposition {
-      background-color: #fff;
-      padding: 50px 0;
-    }
-    .value-proposition h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-    .value-proposition p {
-      font-size: 20px;
-      line-height: 1.6;
-    }
-
-    /* Content mosaic */
-    .content-mosaic {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      padding: 50px 0;
-    }
-    .content-card {
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      transition: transform 0.3s ease;
-    }
-    .content-card:hover {
-      transform: scale(1.05);
-    }
-    .content-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    .content-card .card-body {
-      padding: 20px;
-    }
-    .content-card h3 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-    .content-card p {
-      font-size: 16px;
-      line-height: 1.6;
-    }
-    .content-card .cta {
-      background-color: var(--accent);
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .content-card .cta:hover {
-      background-color: #e68a2e;
-    }
-
-    /* Testimonials section */
-    .testimonials {
-      background-color: #f9f5e7;
-      padding: 50px 0;
-    }
-    .testimonial {
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-    .testimonial p {
-      font-size: 18px;
-      line-height: 1.6;
-    }
-    .testimonial-author {
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    /* CTA section */
-    .cta-section {
-      background-color: var(--accent);
-      color: #fff;
-      text-align: center;
-      padding: 50px 0;
-    }
-    .cta-section h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-    .cta-section form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .cta-section input[type="email"] {
-      padding: 10px;
-      font-size: 16px;
-      margin-bottom: 20px;
-      width: 100%;
-      max-width: 400px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    .cta-section button {
-      background-color: #fff;
-      color: var(--accent);
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .cta-section button:hover {
-      background-color: #e68a2e;
-    }
-
-    /* Footer styles */
-    footer {
-      background-color: var(--primary-dark);
-      color: #fff;
-      padding: 50px 0;
-    }
-    footer .footer-links {
-      display: flex;
-      justify-content: space-around;
-      margin-bottom: 20px;
-    }
-    footer .footer-links a {
-      color: #fff;
-      font-size: 16px;
-      transition: color 0.3s ease;
-    }
-    footer .footer-links a:hover {
-      color: var(--accent);
-    }
-    footer .social-icons {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-    footer .social-icons a {
-      margin: 0 10px;
-      font-size: 24px;
-    }
-    footer .contact-info {
-      text-align: center;
-    }
-
-    /* Responsive design */
-    @media (max-width: 768px) {
-      header nav ul {
-        display: none;
-      }
-      header .menu-toggle {
-        display: block;
-        float: right;
-        margin-top: 10px;
-        font-size: 24px;
-        cursor: pointer;
-      }
-      .content-mosaic {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
 </head>
-<body>
+<body class="home">
 
   <!-- Header -->
-  <header>
+  <header class="fixed-header">
     <div class="container">
-      <img src="assets/logo-nubia.png" alt="Nubia Logo" class="logo">
+      <img src="assets/images/logo-nubia.png" alt="Logo Nubia" class="logo" />
       <nav>
-        <ul>
-          <li><a href="#about">Sobre el proyecto</a></li>
-          <li><a href="#capsulas">Cápsulas educativas</a></li>
-          <li><a href="#blog">Bitácora / Blog</a></li>
-          <li><a href="#recursos">Recursos & Comunidad</a></li>
-          <li><a href="#contact">Contacto</a></li>
+        <ul class="main-nav">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="about.html">Sobre Nubia</a></li>
+          <li><a href="contact.html">Contacto</a></li>
         </ul>
       </nav>
       <button class="cta-button">Explorar</button>
@@ -295,70 +25,50 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero-section">
-    <h1>Bienvenido a Nubia</h1>
-    <p>Donde la educación humana y visual se encuentran.</p>
+  <section class="hero">
+    <video autoplay muted loop class="hero-video">
+      <source src="assets/videos/intro.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Donde la educación humana y visual se encuentran</h1>
+      <p>Transformamos conocimiento en experiencias visuales éticas y aplicables.</p>
+      <a href="#services" class="btn-primary">Descubre más</a>
+    </div>
   </section>
 
   <!-- Value Proposition -->
-  <section class="value-proposition">
-    <div class="container">
-      <h2>Propuesta de valor</h2>
-      <p>Nubia te ofrece una experiencia educativa única, centrada en el aprendizaje humano, visual y ético.</p>
-    </div>
+  <section class="value-proposition container" id="services">
+    <h2>Nuestra Propuesta EduTec</h2>
+    <p>En Nubia creamos experiencias educativas que combinan tecnología, humanismo y diseño visual.</p>
   </section>
 
   <!-- Content Mosaic -->
   <section class="content-mosaic">
-    <div class="container">
-      <div class="content-card">
-        <img src="assets/icon-tree-mode.png" alt="Tree Mode">
-        <div class="card-body">
-          <h3>Tema Árbol</h3>
-          <p>Descubre cómo crecer con las raíces más profundas.</p>
-          <button class="cta">Ver</button>
-        </div>
-      </div>
-      <div class="content-card">
-        <img src="assets/icon-analytic-mode.png" alt="Analytic Mode">
-        <div class="card-body">
-          <h3>Tema Análisis</h3>
-          <p>Desentraña los datos para tomar decisiones informadas.</p>
-          <button class="cta">Ver</button>
-        </div>
-      </div>
-      <div class="content-card">
-        <img src="assets/icon-secure-mode.png" alt="Secure Mode">
-        <div class="card-body">
-          <h3>Tema Seguridad</h3>
-          <p>Aprende a proteger lo que más importa.</p>
-          <button class="cta">Ver</button>
-        </div>
-      </div>
+    <div class="mosaic-card">
+      <img src="assets/images/icon-tree-mode.png" alt="Modo Árbol">
+      <h3>Aprendizaje Profundo</h3>
+      <p>Crecemos desde las raíces del conocimiento hacia una comprensión integral.</p>
+    </div>
+    <div class="mosaic-card">
+      <img src="assets/images/icon-analytic-mode.png" alt="Modo Analítico">
+      <h3>Pensamiento Crítico</h3>
+      <p>Herramientas visuales para desentrañar complejidades sin perder claridad.</p>
+    </div>
+    <div class="mosaic-card">
+      <img src="assets/images/icon-secure-mode.png" alt="Modo Seguridad">
+      <h3>Educación Ética</h3>
+      <p>Construimos bases sólidas sobre privacidad, derechos digitales y responsabilidad.</p>
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="testimonials">
-    <div class="container">
-      <h2>Testimonios</h2>
-      <div class="testimonial">
-        <p>"Nubia ha cambiado mi forma de aprender."</p>
-        <span class="testimonial-author">Juan Pérez</span>
-      </div>
-      <div class="testimonial">
-        <p>"Una plataforma innovadora y accesible."</p>
-        <span class="testimonial-author">María Gómez</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="cta-section">
+  <!-- CTA Newsletter -->
+  <section class="cta-newsletter">
     <div class="container">
       <h2>Suscríbete a nuestro boletín</h2>
-      <form action="#" method="post">
-        <input type="email" placeholder="Tu correo electrónico" required>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Tu correo electrónico" required />
         <button type="submit">Suscribirse</button>
       </form>
     </div>
@@ -366,29 +76,32 @@
 
   <!-- Footer -->
   <footer>
-    <div class="container">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo-nubia.png" alt="Logo Nubia" width="150" />
+        <p>Educación visual, humana y ética.</p>
+      </div>
       <div class="footer-links">
-        <a href="#">Términos de uso</a>
-        <a href="#">Política de privacidad</a>
-        <a href="#">Aviso legal</a>
+        <h4>Enlaces Rápidos</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="about.html">Sobre Nubia</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
       </div>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
+      <div class="footer-contact">
+        <h4>Contacto</h4>
+        <p>Email: contacto@nubia.education</p>
+        <p>Teléfono: +34 900 000 000</p>
       </div>
-      <div class="contact-info">
-        <p>Contacto: info@nubia.edu</p>
-        <p>Teléfono: +1 234 567 890</p>
-      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Nubia Education Project. Todos los derechos reservados.
     </div>
   </footer>
 
-  <!-- Chat Toggle -->
+  <!-- Chatbot -->
   <button class="chat-toggle" onclick="toggleChat()">💬</button>
-
-  <!-- Chat Box -->
   <div id="chatbox">
     <div id="chatlog"></div>
     <div id="userinput">
@@ -397,57 +110,6 @@
     </div>
   </div>
 
-  <script>
-    // Gestión de visibilidad del chat
-    let chatVisible = false;
-    const userId = 'user_' + Math.floor(Math.random() * 1000000);
-    function toggleChat() {
-      chatVisible = !chatVisible;
-      document.getElementById('chatbox').style.display = chatVisible ? 'flex' : 'none';
-    }
-    // Función para agregar mensajes al chat
-    function appendToChat(text, sender = 'bot') {
-      const chatlog = document.getElementById('chatlog');
-      const message = document.createElement('div');
-      message.className = `chat-message ${sender === 'user' ? 'user-msg' : 'bot-msg'}`;
-      message.innerHTML = text; // Se permite contenido HTML
-      chatlog.appendChild(message);
-      chatlog.scrollTop = chatlog.scrollHeight;
-    }
-    // Remueve mensaje de espera "..." del bot
-    function removeLastBotMessage() {
-      const log = document.getElementById('chatlog');
-      if (
-        log.lastChild &&
-        log.lastChild.classList.contains('bot-msg') &&
-        log.lastChild.textContent === '...'
-      ) {
-        log.removeChild(log.lastChild);
-      }
-    }
-    // Envío de mensaje a través de fetch a ngrok
-    async function sendMessage() {
-      const input = document.getElementById('usermsg');
-      const msg = input.value.trim();
-      if (!msg) return;
-      appendToChat(msg, 'user');
-      input.value = '';
-      appendToChat('...', 'bot');
-      try {
-        const res = await fetch('https://abb4-2a02-9130-2ef-a5eb-4185-3c35-e508-5210.ngrok-free.app/webhook/b34494ec-97a2-4570-a977-b98930dbfbe4', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ user_id: userId, message: msg })
-        });
-        const data = await res.json();
-        removeLastBotMessage();
-        appendToChat(data.respuesta || '⚠️ No se recibió respuesta del asistente.', 'bot');
-      } catch (error) {
-        removeLastBotMessage();
-        appendToChat('❌ Error al conectar con el asistente.', 'bot');
-      }
-    }
-  </script>
-
+  <script src="js/scripts.js"></script>
 </body>
 </html>
