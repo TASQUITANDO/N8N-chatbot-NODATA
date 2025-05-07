@@ -1,39 +1,40 @@
-# NODATA Solutions - Proyecto con n8n
+# 🌐 Nubia Web – Educación con alma técnica
 
-Este repositorio contiene la maqueta de la página web de NODATA Solutions, 
-incluyendo un flujo de chatbot con n8n y un set de servicios organizados en una carpeta dedicada.
+🎓 **Donde la educación humana y visual se encuentran**
 
-## Estructura de Carpetas
+Este repositorio contiene el código fuente de la **página web principal de Nubia**, una iniciativa pedagógica que transforma la forma de aprender tecnología, ciencia y sostenibilidad. Aquí no solo enseñamos, sino que **hacemos que se entienda, se aplique y se viva**, con estética, ética y emoción.
 
-- **index.html**: Página principal
-- **services/**: Contiene los archivos HTML de cada servicio
-  - `consultoria.html`
-  - `desarrollo.html`
-  - `ciberseguridad.html`
-  - `data_science.html`
-- **N8N.html**: Ejemplo de flujo o integración con n8n (por definir)
-- **README.md**: Este archivo con la descripción del proyecto
 
-## Uso
+## 🧩 ¿Qué encontrarás aquí?
 
-Para visualizar el proyecto en tu entorno local:
-1. Clona este repositorio.
-2. Abre la carpeta del proyecto en tu editor.
-3. Puedes usar un servidor web local (e.g., Live Server de VSCode o `python -m http.server`) 
-   para abrir `index.html`.
+nubia-web/
+├── index.html # Página principal (Landing)
+├── about.html # Filosofía y principios del proyecto
+├── contact.html # Formulario, preguntas frecuentes, enlaces
+├── css/
+│ └── styles.css # Estilos visuales globales
+├── js/
+│ └── scripts.js # Lógica interactiva (chatbot, animaciones)
+├── assets/
+│ ├── images/ # Logotipo, íconos de los Modos Nubia, fondos
+│ ├── videos/ # Clips introductorios o hero
+│ └── fonts/ # Tipografías personalizadas si aplican
+└── README.md # Este archivo 📖
 
-## Flujo de Chatbot con n8n
 
-En el archivo `N8N.html` (a definir o modificar), encontrarás la referencia al flujo de chatbot que 
-integra con n8n. Asegúrate de configurar tu webhook y credenciales correctamente.
+## 🛠️ Tecnologías utilizadas
 
-## Contribuciones
+- **HTML5** – Estructura semántica accesible  
+- **CSS3** – Estilizado limpio con variables, grid y media queries  
+- **JavaScript Vanilla** – Funcionalidad básica sin frameworks  
+- **Montserrat** – Tipografía clara y profesional  
+- **Responsive Design** – Adaptado a todos los dispositivos  
+- **Chatbot integrado** – Con endpoint configurable (ngrok, Rasa, etc.)
 
-Si deseas contribuir:
-1. Haz un fork del proyecto.
-2. Crea una nueva rama (`feature/nueva-funcionalidad`).
-3. Haz tus cambios y envía un Pull Request.
 
-## Licencia
+## 🚀 ¿Cómo lanzar el proyecto?
 
-MIT (o la que corresponda). Consulta el archivo [LICENSE](LICENSE) para más detalles.
+git clone https://github.com/tu-usuario/nubia-web.git
+cd nubia-web
+open index.html
+
