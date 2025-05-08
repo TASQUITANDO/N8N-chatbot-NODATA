@@ -1,7 +1,4 @@
-# Updating scripts.js to include mobile menu toggle
-
-updated_js = """
-// scripts.js
+// assets/js/scripts.js
 
 // Genera un ID de usuario único para la sesión
 const userId = 'user_' + Math.floor(Math.random() * 1e6);
@@ -26,6 +23,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const isOpen = navMain.classList.toggle('open');
       menuToggle.setAttribute('aria-expanded', isOpen);
     });
+  }
+});
+
+// Cambia fondo del header al hacer scroll
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('header');
+  if (window.scrollY > 50) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
   }
 });
 
@@ -84,8 +91,3 @@ async function sendMessage() {
     console.error('Chat error:', error);
   }
 }
-"""
-
-# Display the updated code for the user
-print(updated_js)
-
