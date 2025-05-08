@@ -74,8 +74,9 @@ header {
 }
 
 .logo {
-  height: 60px;      /* reduce el tamaño del logo */
+  height: 80px;      /* reduce el tamaño del logo */
   width: auto;
+  display: block;
 }
 
 .main-nav {
