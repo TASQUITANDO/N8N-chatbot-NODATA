@@ -422,3 +422,83 @@ header {
     grid-template-columns: 1fr;
   }
 }
+
+/* ----------------------------------------------------
+   Header: layout y menú móvil
+---------------------------------------------------- */
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Oculta el botón hamburguesa en pantallas grandes */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--white);
+  cursor: pointer;
+}
+
+/* Sitúa el nav y el CTA a la derecha */
+.nav-main,
+.cta-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Media query para móvil: convierte el menú en dropdown */
+@media (max-width: 768px) {
+  /* muestra hamburguesa */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* oculta nav de inicio */
+  .nav-main {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-dark);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 0;
+    display: none;
+  }
+
+  .nav-main.open {
+    display: flex;
+  }
+
+  .nav-main .main-nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-main .main-nav li {
+    width: 100%;
+    margin: 0;
+  }
+
+  .nav-main .main-nav li a {
+    display: block;
+    padding: 0.75rem 1rem;
+  }
+
+  /* Coloca el CTA debajo del menú o dentro si prefieres */
+  .cta-container {
+    display: none;
+  }
+
+  .nav-main.open + .cta-container {
+    /* si quieres que la CTA aparezca dentro del dropdown: */
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+}
+
