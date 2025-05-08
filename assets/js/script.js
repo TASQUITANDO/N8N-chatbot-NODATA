@@ -1,10 +1,14 @@
+# Updating scripts.js to include mobile menu toggle
+
+updated_js = """
 // scripts.js
 
 // Genera un ID de usuario único para la sesión
 const userId = 'user_' + Math.floor(Math.random() * 1e6);
 
-// Control de visibilidad del chat
+// Control de visibilidad del chat + menú hamburguesa
 document.addEventListener('DOMContentLoaded', () => {
+  // Chat toggle
   const chatToggle = document.querySelector('.chat-toggle');
   const chatbox = document.getElementById('chatbox');
   let chatVisible = false;
@@ -13,6 +17,16 @@ document.addEventListener('DOMContentLoaded', () => {
     chatVisible = !chatVisible;
     chatbox.style.display = chatVisible ? 'flex' : 'none';
   });
+
+  // Mobile menu toggle
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMain = document.querySelector('.nav-main');
+  if (menuToggle && navMain) {
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navMain.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+    });
+  }
 });
 
 // Función para añadir mensajes al chat
@@ -70,3 +84,8 @@ async function sendMessage() {
     console.error('Chat error:', error);
   }
 }
+"""
+
+# Display the updated code for the user
+print(updated_js)
+
