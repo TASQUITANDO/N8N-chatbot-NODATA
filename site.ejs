@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nubia – Educación Humana y Visual</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/favicon.png" />
+
+  <!-- Normalize -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+  />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Tu CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <% include service/partials/header.html %>
+
+  <!-- Hero -->
+  <% include service/partials/hero.html %>
+
+  <!-- About -->
+  <% include service/partials/about.html %>
+
+  <!-- Mosaico de cápsulas -->
+  <section id="capsulas" class="content-mosaic">
+    <div class="container">
+      <% cards.forEach(card => { %>
+        <% include service/partials/capsule-card.html %>
+      <% }) %>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section class="testimonials">
+    <div class="container">
+      <% testimonials.forEach(t => { %>
+        <% include service/partials/testimonial.html %>
+      <% }) %>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <% include service/partials/newsletter.html %>
+
+  <!-- Footer -->
+  <% include service/partials/footer.html %>
+
+  <!-- Chat widget -->
+  <% include service/partials/chat.html %>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script> AOS.init({ duration: 600, once: true }); </script>
+  <script src="assets/js/scripts.js" defer></script>
+</body>
+</html>
