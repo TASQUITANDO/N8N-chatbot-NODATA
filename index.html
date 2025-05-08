@@ -8,7 +8,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/favicon.png" />
 
-  <!-- Normalize CSS -->
+  <!-- Normalize -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -35,12 +35,15 @@
   <header>
     <div class="container">
       <a href="#">
-        <img
-          src="assets/images/logo-nubia.jpg"
-          alt="Nubia Logo"
-          class="logo"
-          loading="lazy"
-        />
+        <picture>
+          <source type="image/webp" srcset="assets/images/logo-nubia.webp">
+          <img
+            src="assets/images/logo-nubia.jpg"
+            alt="Logo Nubia"
+            class="logo"
+            loading="lazy"
+          />
+        </picture>
       </a>
       <nav>
         <ul class="main-nav">
@@ -56,13 +59,19 @@
   </header>
 
   <!-- Hero Section -->
-  <section
-    class="hero-section"
-    data-aos="fade-in"
-    style="background-image: url('assets/images/hero.jpg');"
-  >
-    <h1>Bienvenido a Nubia</h1>
-    <p>Donde la educación humana y visual se encuentran.</p>
+  <section class="hero-section" id="hero">
+    <picture>
+      <source type="image/webp" srcset="assets/images/hero.webp">
+      <img
+        src="assets/images/hero.jpg"
+        alt="Hero Nubia – educación humana y visual"
+        loading="lazy"
+      />
+    </picture>
+    <div class="hero-content">
+      <h1>Bienvenido a Nubia</h1>
+      <p>Donde la educación humana y visual se encuentran.</p>
+    </div>
   </section>
 
   <!-- Propuesta de valor -->
@@ -79,42 +88,55 @@
   <!-- Mosaico de contenidos -->
   <section class="content-mosaic" id="capsulas" data-aos="fade-up">
     <div class="container">
+
       <div class="content-card" data-aos="zoom-in">
-        <img
-          src="assets/images/icon-tree-mode.jpg"
-          alt="Personaje Árbol"
-          loading="lazy"
-        />
+        <picture>
+          <source type="image/webp" srcset="assets/images/icon-tree-mode.webp">
+          <img
+            src="assets/images/icon-tree-mode.jpg"
+            alt="Personaje Árbol"
+            loading="lazy"
+          />
+        </picture>
         <div class="card-body">
           <h3>Tema Árbol</h3>
           <p>Descubre cómo crecer con las raíces más profundas.</p>
           <button class="cta">Ver</button>
         </div>
       </div>
+
       <div class="content-card" data-aos="zoom-in" data-aos-delay="100">
-        <img
-          src="assets/images/icon-analytic-mode.jpg"
-          alt="Personaje Analítico"
-          loading="lazy"
-        />
+        <picture>
+          <source type="image/webp" srcset="assets/images/icon-analytic-mode.webp">
+          <img
+            src="assets/images/icon-analytic-mode.jpg"
+            alt="Personaje Analítico"
+            loading="lazy"
+          />
+        </picture>
         <div class="card-body">
           <h3>Tema Análisis</h3>
           <p>Desentraña los datos para tomar decisiones informadas.</p>
           <button class="cta">Ver</button>
         </div>
       </div>
+
       <div class="content-card" data-aos="zoom-in" data-aos-delay="200">
-        <img
-          src="assets/images/icon-secure-mode.jpg"
-          alt="Personaje Seguridad"
-          loading="lazy"
-        />
+        <picture>
+          <source type="image/webp" srcset="assets/images/icon-secure-mode.webp">
+          <img
+            src="assets/images/icon-secure-mode.jpg"
+            alt="Personaje Seguridad"
+            loading="lazy"
+          />
+        </picture>
         <div class="card-body">
           <h3>Tema Seguridad</h3>
           <p>Aprende a proteger lo que más importa.</p>
           <button class="cta">Ver</button>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -175,28 +197,19 @@
     </div>
   </footer>
 
-  <!-- Toggle chat -->
+  <!-- Chat toggle & box -->
   <button class="chat-toggle" onclick="toggleChat()">💬</button>
-
-  <!-- Chat box -->
   <div id="chatbox">
     <div id="chatlog"></div>
     <div id="userinput">
-      <input
-        type="text"
-        id="usermsg"
-        placeholder="Escribe tu mensaje..."
-      />
+      <input type="text" id="usermsg" placeholder="Escribe tu mensaje…" />
       <button onclick="sendMessage()">Enviar</button>
     </div>
   </div>
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 600, once: true });
-  </script>
+  <script> AOS.init({ duration: 600, once: true }); </script>
   <script src="scripts.js" defer></script>
 </body>
 </html>
-
