@@ -1,20 +1,43 @@
-<header>
-  <div class="container">
-    <a href="#">
-      <picture>
-        <source type="image/webp" srcset="assets/images/logo-nubia.webp">
-        <img src="assets/images/logo-nubia.jpg" alt="Logo Nubia" class="logo" loading="lazy">
-      </picture>
-    </a>
-    <nav>
+<header role="banner">
+  <div class="container header-inner">
+    <!-- Logo -->
+    <div class="logo-container">
+      <a href="/" aria-label="Inicio - Nubia">
+        <picture>
+          <source type="image/webp" srcset="assets/images/logo-nubia.webp">
+          <img
+            src="assets/images/logo-nubia.jpg"
+            alt="Logo Nubia"
+            class="logo"
+            loading="lazy"
+          />
+        </picture>
+      </a>
+    </div>
+
+    <!-- Botón hamburguesa para móvil -->
+    <button
+      class="menu-toggle"
+      aria-label="Abrir menú de navegación"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
+    <!-- Navegación principal -->
+    <nav role="navigation" class="nav-main">
       <ul class="main-nav">
         <li><a href="#about">Sobre el proyecto</a></li>
         <li><a href="#capsulas">Cápsulas educativas</a></li>
         <li><a href="#blog">Bitácora / Blog</a></li>
-        <li><a href="#recursos">Recursos & Comunidad</a></li>
+        <li><a href="#recursos">Recursos &amp; Comunidad</a></li>
         <li><a href="#contact">Contacto</a></li>
       </ul>
     </nav>
-    <button class="cta-button">Explorar</button>
+
+    <!-- Llamada a la acción -->
+    <div class="cta-container">
+      <button class="cta-button">Explorar</button>
+    </div>
   </div>
 </header>
