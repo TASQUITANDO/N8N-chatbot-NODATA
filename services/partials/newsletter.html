@@ -1,9 +1,51 @@
-<section class="cta-section" data-aos="fade-up">
+<section id="newsletter" class="newsletter-section" data-aos="fade-up">
   <div class="container">
-    <h2>Suscríbete a nuestro boletín</h2>
-    <form action="#" method="post" class="newsletter-form">
-      <input type="email" placeholder="Tu correo electrónico" required />
-      <button type="submit">Suscribirse</button>
+    <!-- Encabezado de sección -->
+    <header class="section-header">
+      <svg
+        class="section-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="48"
+        height="48"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M4 4h16v16H4z"></path>
+        <polyline points="4,8 12,13 20,8"></polyline>
+      </svg>
+      <h2 class="section-title">Únete a nuestro boletín</h2>
+      <p class="section-subtitle">
+        Recibe novedades, recursos y cápsulas exclusivas directamente en tu correo.
+      </p>
+    </header>
+
+    <!-- Formulario de suscripción -->
+    <form
+      class="newsletter-form"
+      action="#"
+      method="post"
+      novalidate
+      aria-labelledby="newsletter-label"
+    >
+      <div class="form-group">
+        <label for="newsletter-email" id="newsletter-label" class="visually-hidden">
+          Correo electrónico para suscripción
+        </label>
+        <input
+          type="email"
+          id="newsletter-email"
+          name="email"
+          placeholder="Tu correo electrónico"
+          required
+          aria-required="true"
+        />
+        <button type="submit" class="btn-primary">Suscribirse</button>
+      </div>
+      <p class="newsletter-feedback" aria-live="polite"></p>
     </form>
   </div>
 </section>
