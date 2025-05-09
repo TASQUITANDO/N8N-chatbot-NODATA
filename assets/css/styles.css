@@ -9,7 +9,7 @@
   --light-bg: #f5f7fa;
   --white: #ffffff;
   --text-color: #333333;
-
+  --footer-text-color: #000000;
   --font-main: 'Montserrat', sans-serif;
   --font-size-base: 1rem;
   --line-height-base: 1.6;
@@ -313,9 +313,9 @@ header {
 /* ----------------------------------------------------
    Footer
 ---------------------------------------------------- */
-.footer-section {
-  background-color: var(--primary-dark);
-  color: var(--white);
+.footer-section a {
+  color: var(--footer-text-color);
+  /*color: var(--white); */
   padding: 4rem 0 2rem;
 }
 
