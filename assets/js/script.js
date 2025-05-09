@@ -1,3 +1,5 @@
+// assets/js/scripts.js
+
 // Genera un ID de usuario único para la sesión
 const userId = 'user_' + Math.floor(Math.random() * 1e6);
 
@@ -9,29 +11,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
   chatToggle?.addEventListener('click', () => {
     chatVisible = !chatVisible;
+    chatToggle.setAttribute('aria-expanded', chatVisible);
     chatbox.classList.toggle('active', chatVisible);
   });
 
   // — Menú hamburguesa móvil —
   const menuToggle = document.querySelector('.menu-toggle');
   const navMain    = document.querySelector('.nav-main');
+  const overlay    = document.querySelector('.nav-overlay');
 
   menuToggle?.addEventListener('click', () => {
     const open = navMain.classList.toggle('open');
     menuToggle.setAttribute('aria-expanded', open);
+    overlay.classList.toggle('active', open);
+  });
+
+  // Cierra menú o dropdown al clicar fuera o pulsar Escape
+  overlay?.addEventListener('click', () => {
+    navMain.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', false);
+    overlay.classList.remove('active');
+    closeExplore();
+  });
+  document.addEventListener('keyup', e => {
+    if (e.key === 'Escape') {
+      navMain.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', false);
+      overlay.classList.remove('active');
+      closeExplore();
+    }
+  });
+
+  // — Mega-dropdown “Explorar” —
+  const exploreToggle = document.querySelector('.explore-toggle');
+  const exploreMenu   = document.getElementById('explore-menu');
+
+  exploreToggle?.addEventListener('click', () => {
+    const open = exploreMenu.classList.toggle('open');
+    exploreToggle.setAttribute('aria-expanded', open);
+  });
+
+  function closeExplore() {
+    if (exploreMenu.classList.contains('open')) {
+      exploreMenu.classList.remove('open');
+      exploreToggle.setAttribute('aria-expanded', false);
+    }
+  }
+
+  // — Cambia fondo del header al hacer scroll —
+  const header = document.querySelector('.site-header');
+  window.addEventListener('scroll', () => {
+    if (!header) return;
+    header.classList.toggle('scrolled', window.scrollY > 50);
   });
 });
 
-// — Cambia fondo del header al hacer scroll —
-window.addEventListener('scroll', () => {
-  const header = document.querySelector('header');
-  if (!header) return;
-  header.classList.toggle('scrolled', window.scrollY > 50);
-});
-
-
 // — Funciones del chat —
-
 function appendToChat(text, sender = 'bot') {
   const chatlog = document.getElementById('chatlog');
   const msgDiv  = document.createElement('div');
