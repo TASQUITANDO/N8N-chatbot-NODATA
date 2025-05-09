@@ -741,4 +741,75 @@ header.scrolled .logo {
   text-align: center;
 }
 
+/* ----------------------------------------------------
+   Sección Testimonios
+---------------------------------------------------- */
+.testimonials-section {
+  background-color: var(--white);
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.testimonials-section .section-header {
+  margin-bottom: 3rem;
+}
+
+.testimonials-section .section-icon {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.testimonials-section .section-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin: 0.5rem 0;
+}
+
+.testimonials-section .section-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-color);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Grid de testimonios */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding-top: 2rem;
+}
+
+/* Cada testimonio */
+.testimonial {
+  background-color: var(--accent-light);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testimonial blockquote {
+  font-style: italic;
+  line-height: 1.6;
+  margin: 0 0 1rem;
+  color: var(--primary-dark);
+}
+
+.testimonial cite {
+  align-self: flex-end;
+  font-weight: 600;
+  color: var(--accent-dark);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
