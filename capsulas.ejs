@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <% include service/partials/head.html %>
+</head>
+<body>
+  <% include service/partials/header.html %>
+
+  <section id="capsulas" class="content-mosaic" data-aos="fade-up">
+    <div class="container">
+      <% cards.forEach(card => { %>
+        <% include service/partials/capsule-card.html %>
+      <% }) %>
+    </div>
+  </section>
+
+  <% include service/partials/footer.html %>
+  <% include service/partials/chat.html %>
+  <% include service/partials/scripts.html %>
+</body>
+</html>
