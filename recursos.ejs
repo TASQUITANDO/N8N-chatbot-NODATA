@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <% include service/partials/head.html %>
+</head>
+<body>
+  <% include service/partials/header.html %>
+
+  <main id="recursos" class="container" data-aos="fade-up">
+    <header class="section-header">
+      <h2 class="section-title">Recursos & Comunidad</h2>
+      <p class="section-subtitle">Descargables, glosarios y plantillas</p>
+    </header>
+
+    <ul class="resources-list" data-aos="fade-up">
+      <% resources.forEach(r => { %>
+        <li class="resource-item">
+          <a href="<%= r.url %>" target="_blank" rel="noopener">
+            <h3><%= r.title %></h3>
+            <p><%= r.description %></p>
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+  </main>
+
+  <% include service/partials/footer.html %>
+  <% include service/partials/chat.html %>
+  <% include service/partials/scripts.html %>
+</body>
+</html>
