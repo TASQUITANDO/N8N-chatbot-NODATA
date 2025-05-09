@@ -1,14 +1,18 @@
+<!-- src/partials/header.html -->
 <header role="banner">
   <div class="container header-inner">
     <!-- Logo -->
     <div class="logo-container">
       <a href="/" aria-label="Inicio – Nubia">
-        <img
-          src="assets/images/logo-nubia.png"
-          alt="Logo Nubia"
-          class="logo"
-          loading="lazy"
-        />
+        <picture>
+          <source type="image/webp" srcset="assets/images/logo-nubia.webp">
+          <img
+            src="assets/images/logo-nubia.png"
+            alt="Logo Nubia"
+            class="logo"
+            loading="lazy"
+          />
+        </picture>
       </a>
     </div>
 
@@ -29,4 +33,3 @@
     </div>
   </div>
 </header>
-
