@@ -1,16 +1,18 @@
-<header class="site-header">
+<header class="site-header" role="banner">
   <div class="container header-inner">
-    <!-- Logo -->
+    <!-- Logo sin fondo -->
     <div class="logo-container">
       <a href="/" aria-label="Inicio – Nubia">
-        <img src="assets/images/logo-nubia-light.png"
-             alt="Logo Nubia"
-             class="logo"
-             loading="lazy" />
+        <img
+          src="assets/images/logo-nubia-light.png"
+          alt="Nubia"
+          class="logo"
+          loading="lazy"
+        />
       </a>
     </div>
 
-    <!-- Botón hamburguesa -->
+    <!-- Menú hamburguesa móvil -->
     <button class="menu-toggle"
             aria-label="Abrir menú móvil"
             aria-expanded="false"
@@ -18,7 +20,7 @@
       ☰
     </button>
 
-    <!-- Menú principal -->
+    <!-- Navegación principal -->
     <nav class="main-nav" role="navigation">
       <ul>
         <li><a href="#about">Sobre el proyecto</a></li>
@@ -29,12 +31,27 @@
       </ul>
     </nav>
 
-    <!-- Botón Explorar (puedes moverlo dentro de main-nav si lo quieres dentro del desplegable) -->
+    <!-- Botón “Explorar” -->
     <button class="cta-button explore-toggle"
             aria-expanded="false"
             aria-controls="explore-menu"
             aria-haspopup="menu">
-      Explorar ▾
+      Explorar
+      <span class="visually-hidden">▼</span>
     </button>
+
+    <!-- Dropdown “Explorar” -->
+    <nav id="explore-menu" class="explore-menu" aria-label="Explorar menú">
+      <ul>
+        <li><a href="#about">Sobre el proyecto</a></li>
+        <li><a href="#capsulas">Cápsulas educativas</a></li>
+        <li><a href="#blog">Bitácora / Blog</a></li>
+        <li><a href="#recursos">Recursos & Comunidad</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <!-- Overlay para cerrar móviles/dropdowns -->
+    <div class="nav-overlay"></div>
   </div>
 </header>
