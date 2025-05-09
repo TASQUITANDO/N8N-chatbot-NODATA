@@ -1,8 +1,16 @@
-<button class="chat-toggle">💬</button>
-<div id="chatbox">
+<!-- Chat Toggle & Box -->
+<button class="chat-toggle" aria-label="Abrir chat de Nubia">
+  💬
+</button>
+<div id="chatbox" class="">
   <div id="chatlog"></div>
   <div id="userinput">
-    <input type="text" id="usermsg" placeholder="Escribe tu mensaje…" />
+    <input
+      type="text"
+      id="usermsg"
+      placeholder="Escribe tu mensaje…"
+      aria-label="Mensaje al chat"
+    />
     <button onclick="sendMessage()">Enviar</button>
   </div>
 </div>
