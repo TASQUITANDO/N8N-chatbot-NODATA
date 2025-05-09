@@ -1,18 +1,22 @@
-<section class="newsletter-section" data-aos="fade-up">
+<section
+  class="newsletter-section"
+  id="newsletter"
+  role="region"
+  aria-labelledby="newsletter-title"
+  data-aos="fade-up"
+>
   <div class="container">
     <header class="section-header">
-      <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48"
-           fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-           stroke-linejoin="round">
-        <path d="M4 4h16v16H4z"></path>
-        <polyline points="4,8 12,13 20,8"></polyline>
-      </svg>
-      <h2 class="section-title">Únete a nuestro boletín</h2>
+      <h2 id="newsletter-title" class="section-title">Suscríbete al boletín</h2>
     </header>
-    <form class="newsletter-form" action="#" method="post" novalidate aria-labelledby="newsletter-label">
-      <label for="newsletter-email" id="newsletter-label" class="visually-hidden">
-        Correo electrónico
-      </label>
+    <form
+      class="newsletter-form"
+      action="#"
+      method="post"
+      novalidate
+      aria-describedby="newsletter-feedback"
+    >
+      <label for="newsletter-email" class="visually-hidden">Correo electrónico</label>
       <div class="form-group">
         <input
           type="email"
@@ -20,11 +24,10 @@
           name="email"
           placeholder="Tu correo electrónico"
           required
-          aria-required="true"
         />
         <button type="submit" class="btn-primary">Suscribirse</button>
       </div>
-      <p class="newsletter-feedback" aria-live="polite"></p>
+      <p id="newsletter-feedback" class="newsletter-feedback" aria-live="polite"></p>
     </form>
   </div>
 </section>
