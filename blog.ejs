@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <% include service/partials/head.html %>
+</head>
+<body>
+  <% include service/partials/header.html %>
+
+  <main id="blog" class="container" data-aos="fade-up">
+    <header class="section-header">
+      <h2 class="section-title">Bitácora / Blog</h2>
+      <p class="section-subtitle">Artículos, entrevistas y herramientas</p>
+    </header>
+
+    <% posts.forEach(post => { %>
+      <article class="blog-post" data-aos="fade-right">
+        <h3><%= post.title %></h3>
+        <p><%= post.excerpt %></p>
+        <a href="<%= post.url %>" class="cta">Leer más</a>
+      </article>
+    <% }) %>
+  </main>
+
+  <% include service/partials/footer.html %>
+  <% include service/partials/chat.html %>
+  <% include service/partials/scripts.html %>
+</body>
+</html>
