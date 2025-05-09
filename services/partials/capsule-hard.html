@@ -1,10 +1,11 @@
-<article class="content-card" data-aos="zoom-in" data-aos-delay="<%= card.delay %>">
+<article class="content-card" role="article" data-aos="zoom-in" data-aos-delay="<%= card.delay %>">
   <picture>
-    <source type="image/webp" srcset="assets/images/<%= card.icon %>.webp">
+    <source type="image/webp" srcset="assets/images/<%= card.icon %>.webp" />
     <img
       src="assets/images/<%= card.icon %>.jpg"
-      alt="Tema <%= card.alt %>"
+      alt="Icono modo <%= card.alt %>"
       loading="lazy"
+      decoding="async"
     />
   </picture>
   <div class="card-body">
@@ -13,4 +14,3 @@
     <button class="cta">Ver</button>
   </div>
 </article>
-
