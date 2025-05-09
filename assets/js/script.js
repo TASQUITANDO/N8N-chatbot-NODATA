@@ -1,80 +1,64 @@
-// assets/js/scripts.js
-
 // Genera un ID de usuario único para la sesión
 const userId = 'user_' + Math.floor(Math.random() * 1e6);
 
-// Control de visibilidad del chat + menú hamburguesa
 document.addEventListener('DOMContentLoaded', () => {
-// Dentro de DOMContentLoaded:
-const chatToggle = document.querySelector('.chat-toggle');
-const chatbox = document.getElementById('chatbox');
-let chatVisible = false;
+  // — Chat widget toggle —
+  const chatToggle = document.querySelector('.chat-toggle');
+  const chatbox    = document.getElementById('chatbox');
+  let chatVisible  = false;
 
-chatToggle.addEventListener('click', () => {
-  chatVisible = !chatVisible;
-  if (chatVisible) {
-    chatbox.classList.add('active');
-  } else {
-    chatbox.classList.remove('active');
-  }
-});
+  chatToggle?.addEventListener('click', () => {
+    chatVisible = !chatVisible;
+    chatbox.classList.toggle('active', chatVisible);
+  });
 
-
-  // Mobile menu toggle
+  // — Menú hamburguesa móvil —
   const menuToggle = document.querySelector('.menu-toggle');
-  const navMain = document.querySelector('.nav-main');
-  if (menuToggle && navMain) {
-    menuToggle.addEventListener('click', () => {
-      const isOpen = navMain.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', isOpen);
-    });
-  }
+  const navMain    = document.querySelector('.nav-main');
+
+  menuToggle?.addEventListener('click', () => {
+    const open = navMain.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', open);
+  });
 });
 
-// Cambia fondo del header al hacer scroll
+// — Cambia fondo del header al hacer scroll —
 window.addEventListener('scroll', () => {
   const header = document.querySelector('header');
-  if (window.scrollY > 50) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
+  if (!header) return;
+  header.classList.toggle('scrolled', window.scrollY > 50);
 });
 
-// Función para añadir mensajes al chat
+
+// — Funciones del chat —
+
 function appendToChat(text, sender = 'bot') {
   const chatlog = document.getElementById('chatlog');
-  const msgDiv = document.createElement('div');
+  const msgDiv  = document.createElement('div');
   msgDiv.className = `chat-message ${sender === 'user' ? 'user-msg' : 'bot-msg'}`;
   msgDiv.innerHTML = text;
   chatlog.appendChild(msgDiv);
   chatlog.scrollTop = chatlog.scrollHeight;
 }
 
-// Quita el mensaje de espera "..." del bot
 function removeLastBotMessage() {
-  const log = document.getElementById('chatlog');
-  const last = log.lastElementChild;
-  if (
-    last &&
-    last.classList.contains('bot-msg') &&
-    last.textContent.trim() === '...'
-  ) {
+  const log  = document.getElementById('chatlog');
+  const last = log?.lastElementChild;
+  if (last?.classList.contains('bot-msg') && last.textContent.trim() === '...') {
     log.removeChild(last);
   }
 }
 
-// Envía el mensaje del usuario al backend (ngrok) y muestra la respuesta
 async function sendMessage() {
   const input = document.getElementById('usermsg');
-  const msg = input.value.trim();
+  const msg   = input.value.trim();
   if (!msg) return;
 
-  // Añade mensaje del usuario
+  // Usuario → chat
   appendToChat(msg, 'user');
   input.value = '';
 
-  // Placeholder de espera del bot
+  // Placeholder de espera
   appendToChat('...', 'bot');
 
   try {
@@ -83,10 +67,9 @@ async function sendMessage() {
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ user_id: userId, message: msg }),
+        body: JSON.stringify({ user_id: userId, message: msg })
       }
     );
-
     const data = await res.json();
     removeLastBotMessage();
     appendToChat(data.respuesta || '⚠️ No se recibió respuesta del asistente.', 'bot');
@@ -96,3 +79,4 @@ async function sendMessage() {
     console.error('Chat error:', error);
   }
 }
+
