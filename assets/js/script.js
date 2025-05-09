@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     chatbox.classList.toggle('active', chatVisible);
   });
 
-  // — Menú hamburguesa móvil —
+  // — Menú hamburguesa móvil + overlay —
   const menuToggle = document.querySelector('.menu-toggle');
   const navMain    = document.querySelector('.nav-main');
   const overlay    = document.querySelector('.nav-overlay');
@@ -26,29 +26,39 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.classList.toggle('active', open);
   });
 
-  // Cierra menú o dropdown al clicar fuera o pulsar Escape
   overlay?.addEventListener('click', () => {
+    // Cierra nav móvil y dropdown “Explorar”
     navMain.classList.remove('open');
     menuToggle.setAttribute('aria-expanded', false);
     overlay.classList.remove('active');
     closeExplore();
-  });
-  document.addEventListener('keyup', e => {
-    if (e.key === 'Escape') {
-      navMain.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', false);
-      overlay.classList.remove('active');
-      closeExplore();
-    }
   });
 
   // — Mega-dropdown “Explorar” —
   const exploreToggle = document.querySelector('.explore-toggle');
   const exploreMenu   = document.getElementById('explore-menu');
 
-  exploreToggle?.addEventListener('click', () => {
+  exploreToggle?.addEventListener('click', e => {
+    e.stopPropagation();
     const open = exploreMenu.classList.toggle('open');
     exploreToggle.setAttribute('aria-expanded', open);
+  });
+
+  // Cierra “Explorar” al clicar fuera o pulsar Escape
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.explore-container')) {
+      closeExplore();
+    }
+  });
+
+  document.addEventListener('keyup', e => {
+    if (e.key === 'Escape') {
+      // Esc cierra todo
+      navMain.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', false);
+      overlay.classList.remove('active');
+      closeExplore();
+    }
   });
 
   function closeExplore() {
