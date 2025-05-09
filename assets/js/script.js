@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const overlay    = document.querySelector('.nav-overlay');
 
   menuToggle?.addEventListener('click', () => {
-    const open = navMain?.classList.toggle('open');
-    menuToggle.setAttribute('aria-expanded', !!open);
+    const open = navMain.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', open);
     if (overlay) {
       overlay.classList.toggle('active', open);
     }
