@@ -12,7 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
   chatToggle?.addEventListener('click', () => {
     chatVisible = !chatVisible;
     chatToggle.setAttribute('aria-expanded', chatVisible);
-    chatbox.classList.toggle('active', chatVisible);
+    chatToggle.setAttribute('aria-controls', 'chatbox');
+    if (chatbox) {
+      chatbox.classList.toggle('active', chatVisible);
+    }
   });
 
   // — Menú hamburguesa móvil + overlay —
@@ -21,15 +24,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const overlay    = document.querySelector('.nav-overlay');
 
   menuToggle?.addEventListener('click', () => {
-    const open = navMain.classList.toggle('open');
-    menuToggle.setAttribute('aria-expanded', open);
-    overlay.classList.toggle('active', open);
+    const open = navMain?.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', !!open);
+    if (overlay) {
+      overlay.classList.toggle('active', open);
+    }
   });
 
   overlay?.addEventListener('click', () => {
     // Cierra nav móvil y dropdown “Explorar”
-    navMain.classList.remove('open');
-    menuToggle.setAttribute('aria-expanded', false);
+    navMain?.classList.remove('open');
+    menuToggle?.setAttribute('aria-expanded', false);
     overlay.classList.remove('active');
     closeExplore();
   });
@@ -40,13 +45,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   exploreToggle?.addEventListener('click', e => {
     e.stopPropagation();
-    const open = exploreMenu.classList.toggle('open');
-    exploreToggle.setAttribute('aria-expanded', open);
+    const open = exploreMenu?.classList.toggle('open');
+    exploreToggle.setAttribute('aria-expanded', !!open);
+
+    // Enfocar primer elemento si está abierto
+    if (open) {
+      const firstItem = exploreMenu?.querySelector('a');
+      if (firstItem) {
+        setTimeout(() => firstItem.focus(), 0);
+      }
+    }
   });
 
   // Cierra “Explorar” al clicar fuera o pulsar Escape
   document.addEventListener('click', e => {
-    if (!e.target.closest('.explore-container')) {
+    const isInside = e.target.closest('.explore-container');
+    if (!isInside) {
       closeExplore();
     }
   });
@@ -54,15 +68,15 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keyup', e => {
     if (e.key === 'Escape') {
       // Esc cierra todo
-      navMain.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', false);
-      overlay.classList.remove('active');
+      navMain?.classList.remove('open');
+      menuToggle?.setAttribute('aria-expanded', false);
+      overlay?.classList.remove('active');
       closeExplore();
     }
   });
 
   function closeExplore() {
-    if (exploreMenu.classList.contains('open')) {
+    if (exploreMenu?.classList.contains('open')) {
       exploreMenu.classList.remove('open');
       exploreToggle.setAttribute('aria-expanded', false);
     }
@@ -82,8 +96,8 @@ function appendToChat(text, sender = 'bot') {
   const msgDiv  = document.createElement('div');
   msgDiv.className = `chat-message ${sender === 'user' ? 'user-msg' : 'bot-msg'}`;
   msgDiv.innerHTML = text;
-  chatlog.appendChild(msgDiv);
-  chatlog.scrollTop = chatlog.scrollHeight;
+  chatlog?.appendChild(msgDiv);
+  chatlog.scrollTop = chatlog?.scrollHeight;
 }
 
 function removeLastBotMessage() {
@@ -96,7 +110,7 @@ function removeLastBotMessage() {
 
 async function sendMessage() {
   const input = document.getElementById('usermsg');
-  const msg   = input.value.trim();
+  const msg   = input?.value.trim();
   if (!msg) return;
 
   // Usuario → chat
@@ -108,7 +122,7 @@ async function sendMessage() {
 
   try {
     const res = await fetch(
-      'https://abb4-2a02-9130-2ef-a5eb-4185-3c35-e508-5210.ngrok-free.app/webhook/b34494ec-97a2-4570-a977-b98930dbfbe4',
+      'https://abb4-2a02-9130-2ef-a5eb-4185-3c35-e508-5210.ngrok-free.app/webhook/b34494ec-97a2-4570-a977-b98930dbfbe4 ',
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -124,4 +138,3 @@ async function sendMessage() {
     console.error('Chat error:', error);
   }
 }
-
