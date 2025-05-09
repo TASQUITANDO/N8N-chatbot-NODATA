@@ -62,7 +62,6 @@ img {
   padding: 1rem 0;
   background: rgba(255,255,255,0.1);
   backdrop-filter: blur(12px) saturate(150%);
-  -webkit-backdrop-filter: blur(12px) saturate(150%);
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   z-index: 2000;
   transition: background var(--transition-speed) ease;
@@ -76,97 +75,50 @@ img {
   align-items: center;
   justify-content: space-between;
 }
-.logo {
-  height: 100px;
-  transition: height var(--transition-speed) ease;
-}
-.site-header.scrolled .logo {
-  height: 80px;
-}
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  color: var(--white);
-  cursor: pointer;
-}
-.menu-toggle:focus {
-  outline: 2px dashed var(--accent);
-}
-.menu-toggle:hover {
-  transform: scale(1.1);
+
+.logo-container {
+  margin-right: auto;
 }
 
-/* NAV principal (desktop) */
-.nav-main {
-  display: flex;
-  gap: 1.5rem;
+.logo {
+  height: 40px;
+  transition: filter var(--transition-speed) ease;
 }
-.nav-main ul {
+.logo:hover {
+  filter: brightness(0.9);
+}
+
+.main-nav ul {
   list-style: none;
   display: flex;
   gap: 1.5rem;
 }
-.nav-main a {
+.main-nav li a {
   color: var(--white);
   text-decoration: none;
   font-weight: 500;
   transition: color var(--transition-speed);
 }
-.nav-main a:hover,
-.nav-main a:focus {
+.main-nav li a:hover,
+.main-nav li a:focus {
   color: var(--accent);
 }
 
-/* Overlay del menú móvil */
-.nav-overlay {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.5);
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity var(--transition-speed);
-  z-index: 1500;
+.cta-button {
+  background-color: var(--accent);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: background var(--transition-speed),
+              transform var(--transition-speed);
 }
-.nav-overlay.active {
-  visibility: visible;
-  opacity: 1;
+.cta-button:hover {
+  background-color: #e68a2e;
+  transform: translateY(-2px);
 }
-
-/* NAV móvil: panel deslizable */
-@media (max-width: 768px) {
-  html {
-    scroll-padding-top: 64px;
-  }
-  .menu-toggle {
-    display: block;
-  }
-  .nav-main {
-    position: fixed;
-    top: 0; right: -100%;
-    width: 80%;
-    height: 100%;
-    background-color: var(--primary-dark);
-    flex-direction: column;
-    padding: 2rem 1rem;
-    transition: right var(--transition-speed) ease;
-    z-index: 2000;
-    overflow-y: auto;
-  }
-  .nav-main.open {
-    right: 0;
-  }
-  .nav-main ul {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .nav-main li a {
-    display: block;
-    padding: 0.75rem 1rem;
-  }
-}
-
 /* ----------------------------------------------------
    Mega-dropdown “Explorar”
 ---------------------------------------------------- */
