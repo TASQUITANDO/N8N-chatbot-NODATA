@@ -608,5 +608,53 @@ header.scrolled .logo {
 .hero-overlay {
   background: rgba(0, 0, 0, 0.45);
 }
+/* ----------------------------------------------------
+   Propuesta de valor (About)
+---------------------------------------------------- */
+.value-proposition {
+  background-color: var(--white);
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.section-icon {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin: 0;
+}
+
+.section-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.section-content p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--text-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  .section-content p {
+    font-size: 1rem;
+  }
+}
 
 
