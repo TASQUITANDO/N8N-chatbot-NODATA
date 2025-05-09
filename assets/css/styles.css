@@ -547,12 +547,66 @@ header {
 /* ----------------------------------------------------
    Header transparente sobre Hero + fondo al hacer scroll
 ---------------------------------------------------- */
-header {
-  background-color: transparent;
-  transition: background-color var(--transition-speed) ease;
+header.scrolled {
+  background-color: rgba(0, 0, 0, 0.85);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
-header.scrolled {
-  background-color: rgba(0, 0, 0, 0.8);
+header.scrolled .logo {
+  height: 60px; /* reduce el logo al hacer scroll */
+  transition: height var(--transition-speed) ease;
 }
+/* ----------------------------------------------------
+   Colores de acento “Nubia”
+---------------------------------------------------- */
+:root {
+  --accent: #00E5FF;       /* Cian eléctrico */
+  --accent-dark: #00B8CC;  /* Hover / borde */
+  --accent-light: #99F7FF; /* Fondos suaves */
+}
+
+/* ----------------------------------------------------
+   Botones CTA y enlaces
+---------------------------------------------------- */
+.cta-button,
+.card-body .cta {
+  background-color: var(--accent);
+  color: #fff;
+  border: 2px solid var(--accent-dark);
+  transition:
+    background-color var(--transition-speed) ease,
+    border-color     var(--transition-speed) ease,
+    color            var(--transition-speed) ease;
+}
+
+.cta-button:hover,
+.card-body .cta:hover {
+  background-color: var(--accent-dark);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.main-nav a {
+  transition: color var(--transition-speed) ease;
+}
+.main-nav a:hover,
+.main-nav a:focus {
+  color: var(--accent);
+}
+
+/* ----------------------------------------------------
+   Hero: texto con sombra suave
+---------------------------------------------------- */
+.hero-content h1,
+.hero-content p {
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+/* ----------------------------------------------------
+   Overlay del Hero (más ligero)
+---------------------------------------------------- */
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.45);
+}
+
 
