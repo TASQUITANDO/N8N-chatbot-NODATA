@@ -60,14 +60,15 @@ img {
   position: fixed;
   top: 0; left: 0; right: 0;
   padding: 1rem 0;
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(12px) saturate(150%);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: transparent; 
+  backdrop-filter: none;
+  box-shadow: none;
   z-index: 2000;
   transition: background var(--transition-speed) ease;
 }
 .site-header.scrolled {
   background: rgba(0,0,0,0.8);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 .header-inner {
@@ -183,11 +184,12 @@ img {
   position: relative;
   height: 80vh;
   overflow: hidden;
-  margin-top: 0; /* Elimina espacio en blanco */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  margin: 0;                        /* ← elimina márgenes */
+  padding: 0;    
 }
 .hero-section picture,
 .hero-section .hero-img {
@@ -426,9 +428,29 @@ img {
    Responsive general
 ---------------------------------------------------- */
 @media (max-width: 768px) {
-  .main-nav {
+  /* Esconde por defecto la lista de nav */
+  .main-nav ul {
     display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
+
+  /* Cuando .main-nav tenga .open, la mostramos en vertical */
+  .main-nav.open ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: var(--primary-dark);
+    padding: 1rem;
+    position: absolute;
+    top: 100%;       /* justo debajo del header */
+    left: 0;
+    width: 100%;
+    z-index: 1500;
+  }
+
+  /* Ajustes en otras secciones */
   .content-mosaic,
   .testimonial-grid {
     grid-template-columns: 1fr;
