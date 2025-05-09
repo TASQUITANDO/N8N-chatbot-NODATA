@@ -4,27 +4,27 @@
   <% include service/partials/head.html %>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
   <% include service/partials/header.html %>
-  <% include service/partials/hero.html %>
-  <% include service/partials/about.html %>
 
-  <section id="capsulas" class="content-mosaic" data-aos="fade-up">
-    <div class="container">
-      <% cards.forEach(card => { %>
-        <% include service/partials/capsule-card.html %>
-      <% }) %>
-    </div>
-  </section>
+  <main id="main-content">
+    <% include service/partials/hero.html %>
+    <% include service/partials/about.html %>
 
-  <section class="testimonials" data-aos="fade-up">
-    <div class="container">
-      <% testimonials.forEach(t => { %>
-        <% include service/partials/testimonial.html %>
-      <% }) %>
-    </div>
-  </section>
+    <section id="capsulas" class="content-mosaic" role="region" aria-labelledby="capsulas-title" data-aos="fade-up">
+      <h2 id="capsulas-title" class="visually-hidden">Cápsulas educativas</h2>
+      <div class="container">
+        <% cards.forEach(card => { %>
+          <% include service/partials/capsule-card.html %>
+        <% }) %>
+      </div>
+    </section>
 
-  <% include service/partials/newsletter.html %>
+    <% include service/partials/testimonial.html %>
+    <% include service/partials/newsletter.html %>
+  </main>
+
   <% include service/partials/footer.html %>
   <% include service/partials/chat.html %>
   <% include service/partials/scripts.html %>
