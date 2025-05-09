@@ -1,51 +1,15 @@
-<section id="testimonials" class="testimonials-section" data-aos="fade-up">
-  <div class="container">
-    <!-- Encabezado de sección -->
-    <header class="section-header">
-      <svg
-        class="section-icon"
-        xmlns="http://www.w3.org/2000/svg"
-        width="48" height="48"
-        viewBox="0 0 24 24"
-        fill="none" stroke="currentColor"
-        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-      >
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z"></path>
-      </svg>
-      <h2 class="section-title">Lo que dicen de Nubia</h2>
-      <p class="section-subtitle">
-        Historias reales de quiénes ya han vivido la experiencia Nubia.
-      </p>
-    </header>
-
-    <!-- Grid de testimonios -->
-    <div class="testimonial-grid">
-      <!-- Testimonio 1 -->
-      <article class="testimonial" data-aos="fade-right">
-        <blockquote>
-          “Nubia ha cambiado mi forma de aprender. La combinación de imagen,
-          narrativa y práctica es perfecta.”
-        </blockquote>
-        <cite>— Juan Pérez</cite>
-      </article>
-
-      <!-- Testimonio 2 -->
-      <article class="testimonial" data-aos="fade-left" data-aos-delay="100">
-        <blockquote>
-          “La plataforma es intuitiva y los contenidos muy bien diseñados.
-          ¡Recomendable al 100%!”
-        </blockquote>
-        <cite>— María Gómez</cite>
-      </article>
-
-      <!-- Testimonio 3 (ejemplo) -->
-      <article class="testimonial" data-aos="fade-right" data-aos-delay="200">
-        <blockquote>
-          “Me encanta cómo puedo repasar conceptos clave con recursos visuales
-          y quizzes interactivos.”
-        </blockquote>
-        <cite>— Carlos Ruiz</cite>
-      </article>
-    </div>
+<article class="content-card" data-aos="zoom-in" data-aos-delay="<%= card.delay %>">
+  <picture>
+    <source type="image/webp" srcset="assets/images/<%= card.icon %>.webp">
+    <img
+      src="assets/images/<%= card.icon %>.jpg"
+      alt="Tema <%= card.alt %>"
+      loading="lazy"
+    />
+  </picture>
+  <div class="card-body">
+    <h3><%= card.title %></h3>
+    <p><%= card.text %></p>
+    <button class="cta">Ver</button>
   </div>
-</section>
+</article>
