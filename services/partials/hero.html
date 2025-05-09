@@ -1,24 +1,17 @@
 <section class="hero-section" id="hero">
-  <picture>
-    <!-- 1. Primero intenta WebP -->
+  <picture class="hero-img">
     <source type="image/webp" srcset="assets/images/hero.webp">
-    <!-- 2. Fallback a JPG siempre disponible -->
-    <source type="image/jpeg" srcset="assets/images/hero.jpg">
     <img
       src="assets/images/hero.jpg"
       alt="Hero Nubia – educación humana y visual"
-      class="hero-img"
       loading="lazy"
     />
   </picture>
-
-  <!-- 3. Overlay semitransparente para mejorar contraste -->
   <div class="hero-overlay"></div>
-
-  <!-- 4. Contenido -->
   <div class="hero-content" data-aos="fade-in">
     <h1>Bienvenido a Nubia</h1>
     <p>Donde la educación humana y visual se encuentran.</p>
   </div>
 </section>
+
 
