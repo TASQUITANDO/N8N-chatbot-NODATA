@@ -82,7 +82,7 @@ img {
   border-radius: 8px;
 }
 .logo {
-  height: 40px;
+  height: 60px;
   transition: filter var(--transition-speed) ease;
 }
 .logo:hover {
