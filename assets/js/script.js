@@ -5,15 +5,20 @@ const userId = 'user_' + Math.floor(Math.random() * 1e6);
 
 // Control de visibilidad del chat + menú hamburguesa
 document.addEventListener('DOMContentLoaded', () => {
-  // Chat toggle
-  const chatToggle = document.querySelector('.chat-toggle');
-  const chatbox = document.getElementById('chatbox');
-  let chatVisible = false;
+// Dentro de DOMContentLoaded:
+const chatToggle = document.querySelector('.chat-toggle');
+const chatbox = document.getElementById('chatbox');
+let chatVisible = false;
 
-  chatToggle.addEventListener('click', () => {
-    chatVisible = !chatVisible;
-    chatbox.style.display = chatVisible ? 'flex' : 'none';
-  });
+chatToggle.addEventListener('click', () => {
+  chatVisible = !chatVisible;
+  if (chatVisible) {
+    chatbox.classList.add('active');
+  } else {
+    chatbox.classList.remove('active');
+  }
+});
+
 
   // Mobile menu toggle
   const menuToggle = document.querySelector('.menu-toggle');
