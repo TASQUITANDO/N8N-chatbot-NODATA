@@ -1,36 +1,19 @@
-# 🌐 Nubia Web – Educación con alma técnica
+# Nubia – Sitio Web
 
-🎓 **Donde la educación humana y visual se encuentran**
+## Estructura
 
-Este repositorio contiene el código fuente de la **página web principal de Nubia**, una iniciativa pedagógica que transforma la forma de aprender tecnología, ciencia y sostenibilidad. Aquí no solo enseñamos, sino que **hacemos que se entienda, se aplique y se viva**, con estética, ética y emoción.
+- `assets/` → CSS, JS e imágenes
+- `service/partials/` → fragmentos reutilizables (header, footer…)
+- `*.ejs` → plantillas de página
+- `generate.js` → renderiza EJS a HTML en `dist/`
 
+## Uso
 
-## 🧩 ¿Qué encontrarás aquí?
+1. `npm install`
+2. `npm run generate`
+3. Sube `dist/` a GitHub Pages (o configura Pages para apuntar a `dist/`).
 
-nubia-web/
-├── index.html            # Página principal (Landing)
-├── about.html            # Filosofía y principios del proyecto
-├── contact.html          # Formulario, preguntas frecuentes, enlaces
-├── css/
-│   └── styles.css        # Estilos visuales globales
-├── js/
-│   └── scripts.js        # Lógica interactiva (chatbot, animaciones)
-├── assets/
-│   ├── images/           # Logotipo, íconos de los Modos Nubia, fondos
-│   ├── videos/           # Clips introductorios o hero
-│   └── fonts/            # Tipografías personalizadas si aplican
-└── README.md             # Este archivo 📖
-
-
-
-## 🛠️ Tecnologías utilizadas
-
-- **HTML5** – Estructura semántica accesible  
-- **CSS3** – Estilizado limpio con variables, grid y media queries  
-- **JavaScript Vanilla** – Funcionalidad básica sin frameworks  
-- **Montserrat** – Tipografía clara y profesional  
-- **Responsive Design** – Adaptado a todos los dispositivos  
-- **Chatbot integrado** – Con endpoint configurable (ngrok, Rasa, etc.)
+Listo: tu web se genera automáticamente con todas las secciones y el header profesional y modular. ¡A por ello!
 
 
 ## 🚀 ¿Cómo lanzar el proyecto?
