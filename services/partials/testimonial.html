@@ -1,15 +1,11 @@
-<article class="content-card" data-aos="zoom-in" data-aos-delay="<%= card.delay %>">
-  <picture>
-    <source type="image/webp" srcset="assets/images/<%= card.icon %>.webp">
-    <img
-      src="assets/images/<%= card.icon %>.jpg"
-      alt="Tema <%= card.alt %>"
-      loading="lazy"
-    />
-  </picture>
-  <div class="card-body">
-    <h3><%= card.title %></h3>
-    <p><%= card.text %></p>
-    <button class="cta">Ver</button>
+<section
+  class="testimonials-section"
+  role="region"
+  aria-label="Testimonios"
+  data-aos="fade-up"
+>
+  <div class="testimonial" role="article" data-aos="fade-right">
+    <blockquote><%= t.quote %></blockquote>
+    <cite>— <%= t.author %></cite>
   </div>
-</article>
+</section>
