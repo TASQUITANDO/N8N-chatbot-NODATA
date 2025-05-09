@@ -68,7 +68,7 @@ img {
 }
 .site-header.scrolled {
   background: rgba(0,0,0,0.8);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .header-inner {
@@ -78,9 +78,8 @@ img {
 }
 
 .logo-container {
-  background: rgba(255,255,255,0.2); /* Fondo semitransparente */
-  padding: 0.5rem;
-  border-radius: 8px;
+  background: none; /* Fondo semitransparente */
+  padding: 0;
 }
 .logo {
   height: 60px;
@@ -176,23 +175,22 @@ img {
 #explore-menu a:hover {
   background: var(--accent-light);
 }
-
 /* ----------------------------------------------------
    Hero Section
 ---------------------------------------------------- */
 .hero-section {
   position: relative;
-  height: 80vh;
+  height: 100vh;            /* Ocupa toda la ventana */
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 0;                        /* ← elimina márgenes */
-  padding: 0;    
+  margin: 0;                /* Sin márgenes */
+  padding: 0;
 }
-.hero-section picture,
-.hero-section .hero-img {
+
+.hero-section img.hero-img {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
@@ -200,13 +198,15 @@ img {
   filter: brightness(0.6) blur(1px);
   z-index: 0;
 }
+
 .hero-overlay {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0,0,0,0.5); /* Overlay oscuro */
+  background: rgba(0,0,0,0.5);
   z-index: 1;
 }
+
 .hero-content {
   position: relative;
   z-index: 2;
@@ -214,13 +214,47 @@ img {
   padding: 0 1rem;
   text-shadow: 0 2px 6px rgba(0,0,0,0.8);
 }
+
 .hero-content h1 {
-  font-size: clamp(2rem,5vw,3rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   margin-bottom: 0.5rem;
 }
+
 .hero-content p {
-  font-size: clamp(1rem,2.5vw,1.5rem);
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
 }
+
+/* ----------------------------------------------------
+   Header + Hero stacking
+---------------------------------------------------- */
+
+/* Header transparente encima del Hero */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  padding: 1rem 0;
+  background: transparent;
+  box-shadow: none;
+  z-index: 2000;
+  transition: background var(--transition-speed) ease;
+}
+.site-header.scrolled {
+  background: rgba(0,0,0,0.8);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.logo-container {
+  background: none;
+  padding: 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
 /* ----------------------------------------------------
    Propuesta de valor
 ---------------------------------------------------- */
