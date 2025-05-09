@@ -3,12 +3,23 @@
     <!-- Logo -->
     <div class="logo-container">
       <a href="/" aria-label="Inicio – Nubia">
-        <img src="assets/images/logo-nubia-light.png" alt="Logo Nubia" class="logo" loading="lazy" />
+        <img src="assets/images/logo-nubia-light.png"
+             alt="Logo Nubia"
+             class="logo"
+             loading="lazy" />
       </a>
     </div>
 
+    <!-- Botón hamburguesa -->
+    <button class="menu-toggle"
+            aria-label="Abrir menú móvil"
+            aria-expanded="false"
+            aria-haspopup="menu">
+      ☰
+    </button>
+
     <!-- Menú principal -->
-    <nav class="main-nav">
+    <nav class="main-nav" role="navigation">
       <ul>
         <li><a href="#about">Sobre el proyecto</a></li>
         <li><a href="#capsulas">Cápsulas educativas</a></li>
@@ -18,27 +29,12 @@
       </ul>
     </nav>
 
-    <!-- Botón Explorar -->
-    <button class="cta-button explore-toggle" aria-expanded="false">
+    <!-- Botón Explorar (puedes moverlo dentro de main-nav si lo quieres dentro del desplegable) -->
+    <button class="cta-button explore-toggle"
+            aria-expanded="false"
+            aria-controls="explore-menu"
+            aria-haspopup="menu">
       Explorar ▾
     </button>
   </div>
 </header>
-
-<!-- Hero Section -->
-<section id="hero" class="hero-section">
-  <picture class="hero-img">
-    <source type="image/webp" srcset="assets/images/hero.webp" />
-    <img
-      src="assets/images/hero.jpg"
-      alt="Ilustración educativa Nubia"
-      loading="lazy"
-      decoding="async"
-    />
-  </picture>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <h1>Bienvenido a Nubia</h1>
-    <p>Donde la educación humana y visual se encuentran.</p>
-  </div>
-</section>
