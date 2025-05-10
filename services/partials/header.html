@@ -5,14 +5,14 @@
       <a href="/" aria-label="Inicio – Nubia">
         <img
           src="assets/images/logo-nubia.svg"
-          alt="Logo Nubia"
+          alt="Nubia"
           class="logo"
           loading="lazy"
         />
       </a>
     </div>
 
-    <!-- Botón hamburguesa (solo en móvil) -->
+    <!-- Botón hamburguesa (móvil) -->
     <button
       class="menu-toggle"
       aria-label="Abrir menú móvil"
@@ -20,26 +20,37 @@
       aria-haspopup="menu"
     >☰</button>
 
-    <!-- Menú principal -->
+    <!-- Navegación principal -->
     <nav class="main-nav" role="navigation">
       <ul>
         <li><a href="#about">Sobre el proyecto</a></li>
         <li><a href="#capsulas">Cápsulas educativas</a></li>
         <li><a href="#blog">Bitácora / Blog</a></li>
-        <li><a href="#recursos">Recursos &amp; Comunidad</a></li>
+        <li><a href="#recursos">Recursos & Comunidad</a></li>
         <li><a href="#contact">Contacto</a></li>
       </ul>
     </nav>
 
-    <!-- Botón Explorar (mega dropdown) -->
-    <button
-      class="cta-button explore-toggle"
-      aria-expanded="false"
-      aria-controls="explore-menu"
-      aria-haspopup="menu"
-    >
-      Explorar <span class="visually-hidden">▼</span>
-    </button>
+    <!-- Mega-dropdown “Explorar” -->
+    <div class="explore-container">
+      <button
+        class="cta-button explore-toggle"
+        aria-expanded="false"
+        aria-controls="explore-menu"
+        aria-haspopup="menu"
+      >
+        Explorar <span class="visually-hidden">▼</span>
+      </button>
+      <nav id="explore-menu" class="explore-menu" aria-label="Explorar menú">
+        <ul>
+          <li><a href="#about">Sobre el proyecto</a></li>
+          <li><a href="#capsulas">Cápsulas educativas</a></li>
+          <li><a href="#blog">Bitácora / Blog</a></li>
+          <li><a href="#recursos">Recursos & Comunidad</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </header>
 
