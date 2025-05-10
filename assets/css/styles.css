@@ -99,6 +99,7 @@ body, html {
 }
 .logo {
   height: 48px;                      /* ajuste tamaño logo */
+  width: auto; 
   transition: filter var(--transition-speed);
 }
 .logo:hover {
