@@ -98,9 +98,8 @@ body, html {
   padding: 0;
 }
 .logo {
-  height: 48px;                      /* ajuste tamaño logo */
-  width: auto; 
-  transition: filter var(--transition-speed);
+  height: 60px;
+  display: block;
 }
 .logo:hover {
   filter: brightness(0.9);
