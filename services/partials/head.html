@@ -1,31 +1,49 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Nubia: Plataforma educativa visual, ética y humana sobre IA, sostenibilidad y tecnología" />
 
-<title><%= title %></title>
+<title><%= title %> – Nubia</title>
 <link rel="icon" href="assets/images/favicon.png" />
 
-<!-- Preloads y preconnects -->
+<!-- Preconnects -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<!-- Preload fuentes -->
 <link
   rel="preload"
   href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
   as="style"
 />
-<link
-  rel="preload"
-  href="assets/images/hero.webp"
-  as="image"
-/>
-<link
-  rel="preload"
-  href="assets/images/logo-nubia.svg"
-  as="image"
-/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+<!-- Carga diferida de la hoja de Google Fonts -->
 <link
   href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
   rel="stylesheet"
+  media="print"
+  onload="this.media='all'"
 />
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<noscript>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+</noscript>
+
+<!-- Preload imágenes críticas -->
+<link rel="preload" href="assets/images/hero.webp" as="image" />
+<link rel="preload" href="assets/images/logo-nubia.svg" as="image" />
+
+<!-- Normalize CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+/>
+
+<!-- AOS (Animate On Scroll) CSS -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+/>
+
+<!-- Main stylesheet -->
 <link rel="stylesheet" href="assets/css/styles.css" />
