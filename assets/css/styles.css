@@ -72,7 +72,7 @@ body {
 
 /* Logo */
 .logo-container img {
-  height: 120px;
+  height: 220px;
   display: block;
   transition: filter var(--transition-speed) ease;
 }
