@@ -9,8 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
   let isExploreOpen   = false;
 
   // scroll → header oscuro
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 50);
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+  header.classList.toggle('scrolled', window.scrollY > 50);
   });
 
   // dropdown Explorar
