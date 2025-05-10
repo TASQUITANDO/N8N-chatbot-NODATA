@@ -3,12 +3,17 @@
     <!-- Logo -->
     <div class="logo-container">
       <a href="/" aria-label="Inicio – Nubia">
-        <img
-          src="assets/images/logo-nubia.svg"
-          alt="Nubia"
-          class="logo"
-          loading="lazy"
-        />
+      <picture>
+      <!-- WebP transparente -->
+      <source type="image/webp" srcset="assets/images/logo-nubia.webp">
+      <!-- PNG transparente -->
+      <img
+        src="assets/images/logo-nubia.png"
+        alt="Logo Nubia"
+        class="logo"
+        loading="lazy"
+      />
+      </picture>
       </a>
     </div>
 
