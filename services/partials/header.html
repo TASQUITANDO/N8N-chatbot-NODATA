@@ -1,50 +1,45 @@
-<!-- Partial: service/partials/header.html -->
-<header class="site-header" role="banner">
-  <div class="header-inner container">
+<header role="banner" class="site-header">
+  <div class="container header-inner">
     <!-- Logo -->
-    <a href="/" class="logo-link" aria-label="Inicio – Nubia">
-      <img src="assets/images/logo-nubia.svg"
-           alt="Nubia"
-           class="logo"
-           loading="lazy" />
-    </a>
+    <div class="logo-container">
+      <a href="/" aria-label="Inicio – Nubia">
+        <img
+          src="assets/images/logo-nubia-light.png"
+          alt="Logo Nubia"
+          class="logo"
+          loading="lazy"
+        />
+      </a>
+    </div>
 
-    <!-- Navegación principal -->
-    <nav class="main-nav" role="navigation" aria-label="Menú principal">
+    <!-- Botón hamburguesa (solo en móvil) -->
+    <button
+      class="menu-toggle"
+      aria-label="Abrir menú móvil"
+      aria-expanded="false"
+      aria-haspopup="menu"
+    >☰</button>
+
+    <!-- Menú principal -->
+    <nav class="main-nav" role="navigation">
       <ul>
         <li><a href="#about">Sobre el proyecto</a></li>
         <li><a href="#capsulas">Cápsulas educativas</a></li>
         <li><a href="#blog">Bitácora / Blog</a></li>
-        <li><a href="#recursos">Recursos & Comunidad</a></li>
+        <li><a href="#recursos">Recursos &amp; Comunidad</a></li>
         <li><a href="#contact">Contacto</a></li>
       </ul>
     </nav>
 
-    <!-- Botones -->
-    <div class="actions">
-      <button class="cta-button explore-toggle"
-              aria-expanded="false"
-              aria-controls="explore-menu"
-              aria-haspopup="menu">
-        Explorar
-      </button>
-      <button class="menu-toggle"
-              aria-label="Abrir menú móvil"
-              aria-expanded="false">
-        ☰
-      </button>
-    </div>
+    <!-- Botón Explorar (mega dropdown) -->
+    <button
+      class="cta-button explore-toggle"
+      aria-expanded="false"
+      aria-controls="explore-menu"
+      aria-haspopup="menu"
+    >
+      Explorar <span class="visually-hidden">▼</span>
+    </button>
   </div>
-
-  <!-- Dropdown “Explorar” -->
-  <nav id="explore-menu" class="explore-menu" aria-label="Explorar menú">
-    <ul>
-      <li><a href="#about">Sobre el proyecto</a></li>
-      <li><a href="#capsulas">Cápsulas educativas</a></li>
-      <li><a href="#blog">Bitácora / Blog</a></li>
-      <li><a href="#recursos">Recursos & Comunidad</a></li>
-      <li><a href="#contact">Contacto</a></li>
-    </ul>
-  </nav>
 </header>
 
