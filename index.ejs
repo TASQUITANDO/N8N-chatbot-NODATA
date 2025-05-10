@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <% include service/partials/header.html %>
+  <% include service/partials/head.html %>
 </head>
 <body>
+  <!-- Skip link para accesibilidad -->
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
 
+  <!-- Cabecera principal -->
   <% include service/partials/header.html %>
 
+  <!-- Contenido principal -->
   <main id="main-content">
+    <!-- Hero -->
     <% include service/partials/hero.html %>
+
+    <!-- About / Propuesta de valor -->
     <% include service/partials/about.html %>
 
-    <section id="capsulas" class="content-mosaic" role="region" aria-labelledby="capsulas-title" data-aos="fade-up">
+    <!-- Cápsulas educativas -->
+    <section
+      id="capsulas"
+      class="content-mosaic"
+      role="region"
+      aria-labelledby="capsulas-title"
+      data-aos="fade-up"
+    >
       <h2 id="capsulas-title" class="visually-hidden">Cápsulas educativas</h2>
       <div class="container">
         <% cards.forEach(card => { %>
@@ -21,12 +34,20 @@
       </div>
     </section>
 
+    <!-- Testimonios -->
     <% include service/partials/testimonial.html %>
+
+    <!-- Newsletter / Suscripción -->
     <% include service/partials/newsletter.html %>
   </main>
 
+  <!-- Pie de página -->
   <% include service/partials/footer.html %>
+
+  <!-- Chat widget -->
   <% include service/partials/chat.html %>
+
+  <!-- Scripts JS -->
   <% include service/partials/scripts.html %>
 </body>
 </html>
