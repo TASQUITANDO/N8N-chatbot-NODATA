@@ -8,15 +8,13 @@
   --header-height: 64px;
   --accent: #ff9933;
   --light-bg: #f5f7fa;
-  --accent-light: #fff;
   --white: #ffffff;
-  --text-color: #333333;
-  --footer-text-color: #ffffff;
+  --text-color: #f0f0f0;           /* texto claro sobre fondo oscuro */
+  --body-text: #333333;           /* textos en secciones claras */
   --font-main: 'Montserrat', sans-serif;
   --font-size-base: 1rem;
   --line-height-base: 1.6;
   --transition-speed: 0.3s;
-  --contrast-high: #000000;
 }
 
 /* ----------------------------------------------------
@@ -29,21 +27,14 @@
   margin: 0;
   padding: 0;
 }
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-main);
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
-  padding-top: var(--header-height);
-  color: var(--text-color);
+  color: var(--body-text);
   background-color: var(--light-bg);
-}
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+  padding-top: var(--header-height);
 }
 
 /* ----------------------------------------------------
@@ -56,29 +47,22 @@ img {
 }
 
 /* ----------------------------------------------------
-   HEADER principal (sticky transparente + blur on scroll)
+   Barra de navegación (header fijo)
 ---------------------------------------------------- */
 .site-header {
   position: fixed;
   top: 0; left: 0; right: 0;
   height: var(--header-height);
-  background: var(--primary-dark);      /* fondo oscuro opaco */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* sombra suave */
+  background: var(--primary-dark);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   z-index: 2000;
-  /* eliminamos blur/transparencia inicial */
-  backdrop-filter: none;
   transition: background var(--transition-speed) ease,
               box-shadow var(--transition-speed) ease;
 }
-/* opcional: si quieres cambiar al hacer scroll, añade */
 .site-header.scrolled {
   background: rgba(0,0,0,0.9);
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
-
-/* ----------------------------------------------------
-   Contenido interno del header
----------------------------------------------------- */
 .header-inner {
   height: 100%;
   display: flex;
@@ -87,21 +71,16 @@ img {
 }
 
 /* Logo */
-.logo-container {
-  background: none;
-  padding: 0;
-}
-.logo {
-  height: 60px;
+.logo-container img {
+  height: 40px;
   display: block;
+  transition: filter var(--transition-speed) ease;
 }
-.logo:hover {
+.logo-container img:hover {
   filter: brightness(0.9);
 }
 
-/* ----------------------------------------------------
-   Menú principal y hamburguesa móvil
----------------------------------------------------- */
+/* Menú principal */
 .main-nav {
   display: flex;
 }
@@ -113,21 +92,25 @@ img {
   color: var(--white);
   font-weight: 500;
   text-decoration: none;
+  transition: color var(--transition-speed);
 }
-.menu-toggle {
-  display: none;
+.main-nav a:hover,
+.main-nav a:focus {
+  color: var(--accent);
 }
 
-/* Móvil: ocultar nav, mostrar hamburger */
+/* Hamburguesa móvil */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
 @media (max-width: 768px) {
   .main-nav { display: none; }
-  .menu-toggle {
-    display: block;
-    background: none;
-    border: none;
-    color: var(--white);
-    font-size: 1.8rem;
-  }
+  .menu-toggle { display: block; }
 }
 
 /* ----------------------------------------------------
@@ -142,10 +125,17 @@ img {
   padding: 0.6rem 1.2rem;
   border-radius: 30px;
   font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition-speed),
+              transform var(--transition-speed);
+}
+.explore-toggle:hover {
+  background-color: #e68a2e;
+  transform: translateY(-2px);
 }
 .explore-menu {
   position: absolute;
-  top: 100%;
+  top: calc(var(--header-height) + 8px);
   right: 0;
   background: var(--white);
   border-radius: 6px;
@@ -155,17 +145,16 @@ img {
   visibility: hidden;
   transform: translateY(-10px);
   transition: all 0.2s ease;
-  z-index: 1000;
+  z-index: 2100;
 }
-.explore-container .explore-menu.open,
-.explore-toggle[aria-expanded="true"] + .explore-menu {
+.explore-toggle[aria-expanded="true"] + .explore-menu,
+.explore-container .explore-menu.open {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
 .explore-menu ul {
   list-style: none;
-  margin: 0; padding: 0;
 }
 .explore-menu li + li {
   border-top: 1px solid rgba(0,0,0,0.05);
@@ -176,9 +165,13 @@ img {
   color: var(--primary-dark);
   text-decoration: none;
 }
+.explore-menu a:hover,
+.explore-menu a:focus {
+  background: var(--light-bg);
+}
 
 /* ----------------------------------------------------
-   Hero Section: bajo el header
+   Hero Section (debajo de la barra)
 ---------------------------------------------------- */
 .hero-section {
   position: relative;
@@ -194,7 +187,8 @@ img {
 .hero-section picture,
 .hero-section picture img {
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   object-fit: cover;
   filter: brightness(0.6) blur(1px);
   z-index: 0;
@@ -209,9 +203,52 @@ img {
   position: relative;
   z-index: 2;
   padding: 0 1rem;
-  text-align: center;
   color: var(--white);
   text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+}
+.hero-content h1 {
+  font-size: clamp(2rem,5vw,3rem);
+  margin-bottom: 0.5rem;
+}
+.hero-content p {
+  font-size: clamp(1rem,2.5vw,1.5rem);
+}
+
+/* ----------------------------------------------------
+   Resto de secciones (valor, mosaico, testimonios…)
+   — Mantén tus estilos actuales más abajo —
+---------------------------------------------------- */
+/* Ejemplo: Propuesta de valor */
+.value-proposition {
+  background: var(--white);
+  padding: 4rem 0;
+  text-align: center;
+}
+.value-proposition h2 {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+  color: var(--primary-dark);
+}
+.value-proposition p {
+  font-size: 1.125rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--text-color);
+}
+
+/* ----------------------------------------------------
+   Responsive generales
+---------------------------------------------------- */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 60vh;
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .value-proposition h2 {
+    font-size: 2rem;
+  }
 }
 
 
