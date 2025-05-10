@@ -9,8 +9,7 @@
 
   <!-- Cabecera principal -->
   <% include service/partials/header.html %>
-  <% include service/partials/banner.html %>
-  <!-- Contenido principal -->
+
   <main id="main-content">
     <!-- Hero -->
     <% include service/partials/hero.html %>
@@ -35,7 +34,13 @@
     </section>
 
     <!-- Testimonios -->
-    <% include service/partials/testimonial.html %>
+    <section class="testimonials" data-aos="fade-up">
+      <div class="container testimonial-grid">
+        <% testimonials.forEach(t => { %>
+          <% include service/partials/testimonial.html %>
+        <% }) %>
+      </div>
+    </section>
 
     <!-- Newsletter / Suscripción -->
     <% include service/partials/newsletter.html %>
