@@ -60,8 +60,8 @@ img {
   position: fixed;
   top: 0; left: 0; right: 0;
   height: 64px;                       /* altura fija */
-  background: transparent;            /* totalmente transparente */
-  box-shadow: none;
+  background: transparent !important;
+  box-shadow: none !important;
   z-index: 10000;                     /* siempre encima */
   transition: background var(--transition-speed) ease,
               box-shadow var(--transition-speed) ease,
@@ -70,7 +70,7 @@ img {
 
 /* Al hacer scroll */
 .site-header.scrolled {
-  background: rgba(0,0,0,0.7);
+  background: transparent;
   backdrop-filter: blur(12px) saturate(150%);
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
