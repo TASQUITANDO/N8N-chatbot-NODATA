@@ -59,126 +59,161 @@ img {
 .site-header {
   position: fixed;
   top: 0; left: 0; right: 0;
-  padding: 1rem 0;
-  background: transparent;             /* ← transparente al inicio */
-  box-shadow: none;                    /* ← sin sombra al inicio */
-  z-index: 2000;
+  height: 64px;                       /* altura fija */
+  background: transparent;            /* totalmente transparente */
+  box-shadow: none;
+  z-index: 10000;                     /* siempre encima */
   transition: background var(--transition-speed) ease,
               box-shadow var(--transition-speed) ease,
               backdrop-filter var(--transition-speed) ease;
 }
+
+/* Al hacer scroll */
 .site-header.scrolled {
-  background: rgba(0,0,0,0.7);         /* ← fondo oscuro al hacer scroll */
+  background: rgba(0,0,0,0.7);
   backdrop-filter: blur(12px) saturate(150%);
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* contenedor interno */
+/* Asegura que no quede margen bajo el header */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* ----------------------------------------------------
+   Contenido interno del header
+---------------------------------------------------- */
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 100%;
 }
 
-/* logo sin recuadro */
+/* Logo */
 .logo-container {
-  background: none;                    /* ← eliminamos este fondo */
+  background: none;
   padding: 0;
 }
 .logo {
-  height: 60px;
-  transition: filter var(--transition-speed) ease;
+  height: 48px;                      /* ajuste tamaño logo */
+  transition: filter var(--transition-speed);
 }
 .logo:hover {
   filter: brightness(0.9);
 }
 
-/* Menú principal */
+/* ----------------------------------------------------
+   Menú principal y hamburguesa móvil
+---------------------------------------------------- */
+.main-nav {
+  display: flex;
+}
 .main-nav ul {
-  list-style: none;
   display: flex;
   gap: 1.5rem;
 }
 .main-nav a {
   color: var(--white);
-  text-decoration: none;
   font-weight: 500;
-  transition: color var(--transition-speed);
+  text-decoration: none;
 }
-.main-nav a:hover,
-.main-nav a:focus {
-  color: var(--accent);
-}
-
-/* Botón Explorar */
-.explore-toggle {
-  background-color: var(--accent);
-  color: var(--white);
-  padding: 0.75rem 1.5rem;
-  border-radius: 30px;
-  font-weight: 600;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: background var(--transition-speed),
-              transform var(--transition-speed);
-}
-.explore-toggle:hover {
-  background-color: #e68a2e;
-  transform: translateY(-2px);
-}
-
-/* Hamburguesa móvil */
 .menu-toggle {
-  display: none; /* solo en móvil */
+  display: none;
 }
+
+/* Móvil: ocultar nav, mostrar hamburger */
 @media (max-width: 768px) {
-  .menu-toggle { display: block; color: var(--white); font-size: 1.8rem; }
-  .main-nav { display: none; /* se abre vía JS */ }
-  .main-nav.open { display: flex; flex-direction: column; }
+  .main-nav { display: none; }
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.8rem;
+  }
 }
 
 /* ----------------------------------------------------
-   Hero Section
+   Dropdown “Explorar”
+---------------------------------------------------- */
+.explore-container {
+  position: relative;
+}
+.explore-toggle {
+  background-color: var(--accent);
+  color: var(--white);
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 600;
+}
+.explore-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--white);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.2s ease;
+  z-index: 1000;
+}
+.explore-container .explore-menu.open,
+.explore-toggle[aria-expanded="true"] + .explore-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.explore-menu ul {
+  list-style: none;
+  margin: 0; padding: 0;
+}
+.explore-menu li + li {
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+.explore-menu a {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: var(--primary-dark);
+  text-decoration: none;
+}
+
+/* ----------------------------------------------------
+   Hero Section: bajo el header
 ---------------------------------------------------- */
 .hero-section {
   position: relative;
-  height: 100vh;
+  margin-top: -64px;                 /* sube el hero detrás del header */
+  height: calc(100vh + 64px);        /* llena el viewport + header */
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin: 0;  /* sin márgenes */
-  padding: 0;
 }
-.hero-img,
-.hero-section picture {
+.hero-section picture,
+.hero-section picture img {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0; left: 0; width: 100%; height: 100%;
   object-fit: cover;
   filter: brightness(0.6) blur(1px);
   z-index: 0;
 }
 .hero-overlay {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  inset: 0;
   background: rgba(0,0,0,0.5);
   z-index: 1;
 }
 .hero-content {
   position: relative;
   z-index: 2;
-  color: var(--white);
   padding: 0 1rem;
+  text-align: center;
+  color: var(--white);
   text-shadow: 0 2px 6px rgba(0,0,0,0.8);
 }
-.hero-content h1 {
-  font-size: clamp(2rem,5vw,3rem);
-  margin-bottom: 0.5rem;
-}
-.hero-content p {
-  font-size: clamp(1rem,2.5vw,1.5rem);
-}
+
 
 
