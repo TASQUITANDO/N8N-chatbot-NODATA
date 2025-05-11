@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nubia – Educación Humana y Visual</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/favicon.png" />
+
+  <!-- Normalize CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+  />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <!-- <a class="skip-link" href="#main-content">Saltar al contenido principal</a> -->
+
+  <!-- HEADER -->
+  <header role="banner" class="site-header">
+    <div class="container header-inner">
+      <!-- Logo -->
+      <div class="logo-container">
+        <a href="/" aria-label="Inicio – Nubia">
+          <picture>
+            <source type="image/webp" srcset="assets/images/logo-nubia.webp">
+            <img
+              src="assets/images/logo-nubia.webp"
+              alt="Logo Nubia"
+              class="logo"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+        </a>
+      </div>
+
+      <!-- Overlay (para cerrar menú móvil o dropdown) -->
+      <div class="nav-overlay"></div>
+
+      <!-- Botón hamburguesa (móvil) -->
+      <button
+        class="menu-toggle"
+        aria-label="Abrir menú móvil"
+        aria-expanded="false"
+        aria-haspopup="menu"
+      >☰</button>
+
+      <!-- Menú principal -->
+      <nav class="main-nav" role="navigation">
+        <ul>
+          <li><a href="#about">Sobre el proyecto</a></li>
+          <li><a href="#capsulas">Cápsulas educativas</a></li>
+          <li><a href="#blog">Bitácora / Blog</a></li>
+          <li><a href="#recursos">Recursos &amp; Comunidad</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Botón “Explorar” (mega-dropdown) -->
+      <div class="explore-container">
+        <button
+          class="cta-button explore-toggle"
+          aria-expanded="false"
+          aria-controls="explore-menu"
+          aria-haspopup="menu"
+        >
+          Explorar <span class="visually-hidden">▼</span>
+        </button>
+        <nav id="explore-menu" class="explore-menu" aria-label="Explorar menú">
+          <ul>
+            <li><a href="#about">Sobre el proyecto</a></li>
+            <li><a href="#capsulas">Cápsulas educativas</a></li>
+            <li><a href="#blog">Bitácora / Blog</a></li>
+            <li><a href="#recursos">Recursos &amp; Comunidad</a></li>
+            <li><a href="#contact">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section
+    id="hero"
+    class="hero-section"
+    role="region"
+    aria-label="Sección de bienvenida"
+  >
+    <picture class="hero-img">
+      <source type="image/webp" srcset="assets/images/hero.webp" />
+      <img
+        src="assets/images/hero.webp"
+        alt="Ilustración educativa Nubia"
+        loading="lazy"
+        decoding="async"
+      />
+    </picture>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content" data-aos="fade-in">
+      <h1>Bienvenido a Nubia</h1>
+      <p>Donde la educación humana y visual se encuentran.</p>
+    </div>
+  </section>
+
+  <!-- Propuesta de valor -->
+  <section class="value-proposition" id="about" data-aos="fade-up">
+    <div class="container">
+      <h2>Propuesta de valor</h2>
+      <p>
+        Nubia te ofrece una experiencia educativa única, centrada en el
+        aprendizaje humano, visual y ético.
+      </p>
+    </div>
+  </section>
+
+  <!-- Cápsulas -->
+  <section class="content-mosaic" id="capsulas" data-aos="fade-up">
+    <div class="container">
+      <!-- Aquí tus tarjetas .content-card -->
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section class="testimonials" data-aos="fade-up">
+    <div class="container testimonial-grid">
+      <!-- Aquí tus .testimonial -->
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="cta-section" data-aos="fade-up">
+    <div class="container">
+      <h2>Suscríbete a nuestro boletín</h2>
+      <form action="#" method="post" class="newsletter-form">
+        <input type="email" placeholder="Tu correo electrónico" required />
+        <button type="submit">Suscribirse</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer data-aos="fade-up">
+    <div class="container footer-grid">
+      <!-- Tus enlaces, redes y contacto -->
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Nubia – Tecnología con alma humana.
+    </div>
+  </footer>
+
+  <!-- CHAT WIDGET -->
+  <button
+    class="chat-toggle"
+    aria-label="Abrir chat"
+    aria-expanded="false"
+    aria-controls="chatbox"
+  >💬</button>
+  <div id="chatbox" role="dialog" aria-hidden="true">
+    <div id="chatlog"></div>
+    <div id="userinput">
+      <input type="text" id="usermsg" placeholder="Escribe tu mensaje…" />
+      <button onclick="sendMessage()">Enviar</button>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script> AOS.init({ duration: 600, once: true }); </script>
+  <script src="assets/js/scripts.js" defer></script>
+</body>
+</html>
