@@ -28,12 +28,14 @@ const pages = [
   { tpl:'contact.ejs', out:'contact.html', data:{ title:'Nubia – Contacto' } },
 ];
 
-const dist = path.join(__dirname,'dist');
-if(!fs.existsSync(dist)) fs.mkdirSync(dist);
+// EN LUGAR de 'dist', usa la carpeta raíz:
+const outDir = __dirname;  
+// Si quieres garantizar que no sobrescribes fuentes .ejs,
+// podrías filtrar pages para excluir *.ejs de la lista.
 
 pages.forEach(({ tpl, out, data }) => {
-  const template = fs.readFileSync(path.join(__dirname, tpl),'utf-8');
+  const template = fs.readFileSync(path.join(__dirname, tpl), 'utf-8');
   const html     = ejs.render(template, data, { filename: tpl });
-  fs.writeFileSync(path.join(dist,out), html,'utf-8');
-  console.log(`✅ dist/${out}`);
+  fs.writeFileSync(path.join(outDir, out), html, 'utf-8');
+  console.log(`✅ ${out}`);
 });
