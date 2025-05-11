@@ -1,58 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <% include service/partials/head.html %>
+  <% include ../services/partials/head.ejs %>
 </head>
 <body>
-  <!-- Skip link para accesibilidad -->
-  <!-- <a class="skip-link" href="#main-content">Saltar al contenido principal</a> -->
+  <% include ../services/partials/header.ejs %>
+  <% include ../services/partials/hero.ejs %>
+  <% include ../services/partials/about-section.ejs %>
 
-  <!-- Cabecera principal -->
-  <% include service/partials/header.html %>
+  <section id="capsulas" class="content-mosaic" data-aos="fade-up">
+    <div class="container">
+      <% cards.forEach(card => { %>
+        <% include ../services/partials/capsule-card.ejs %>
+      <% }) %>
+    </div>
+  </section>
 
-  <main id="main-content">
-    <!-- Hero -->
-    <% include service/partials/hero.html %>
-
-    <!-- About / Propuesta de valor -->
-    <% include service/partials/about.html %>
-
-    <!-- Cápsulas educativas -->
-    <section
-      id="capsulas"
-      class="content-mosaic"
-      role="region"
-      aria-labelledby="capsulas-title"
-      data-aos="fade-up"
-    >
-      <h2 id="capsulas-title" class="visually-hidden">Cápsulas educativas</h2>
-      <div class="container">
-        <% cards.forEach(card => { %>
-          <% include service/partials/capsule-card.html %>
-        <% }) %>
-      </div>
-    </section>
-
-    <!-- Testimonios -->
-    <section class="testimonials" data-aos="fade-up">
-      <div class="container testimonial-grid">
-        <% testimonials.forEach(t => { %>
-          <% include service/partials/testimonial.html %>
-        <% }) %>
-      </div>
-    </section>
-
-    <!-- Newsletter / Suscripción -->
-    <% include service/partials/newsletter.html %>
-  </main>
-
-  <!-- Pie de página -->
-  <% include service/partials/footer.html %>
-
-  <!-- Chat widget -->
-  <% include service/partials/chat.html %>
-
-  <!-- Scripts JS -->
-  <% include service/partials/scripts.html %>
+  <% include ../services/partials/testimonials.ejs %>
+  <% include ../services/partials/newsletter.ejs %>
+  <% include ../services/partials/footer.ejs %>
+  <% include ../services/partials/chat.ejs %>
+  <% include ../services/partials/scripts.ejs %>
 </body>
 </html>
