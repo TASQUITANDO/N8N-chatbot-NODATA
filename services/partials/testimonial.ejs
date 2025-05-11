@@ -1,11 +1,11 @@
-<section
-  class="testimonials-section"
-  role="region"
-  aria-label="Testimonios"
-  data-aos="fade-up"
->
-  <div class="testimonial" role="article" data-aos="fade-right">
-    <blockquote><%= t.quote %></blockquote>
-    <cite>— <%= t.author %></cite>
+ç<section class="testimonials" data-aos="fade-up">
+  <div class="container">
+    <h2>Testimonios</h2>
+    <% testimonials.forEach(t => { %>
+    <div class="testimonial" data-aos="fade-up">
+      <blockquote><%= t.quote %></blockquote>
+      <cite>— <%= t.author %></cite>
+    </div>
+    <% }) %>
   </div>
 </section>
