@@ -1,87 +1,62 @@
-// assets/js/scripts.js
+const userId = 'user_' + Math.floor(Math.random()*1e6);
 
-document.addEventListener('DOMContentLoaded', () => {
-  const header        = document.querySelector('.site-header');
-  const overlay       = document.querySelector('.nav-overlay');
-  const exploreToggle = document.querySelector('.explore-toggle');
-  const exploreMenu   = document.getElementById('explore-menu');
-  const menuToggle    = document.querySelector('.menu-toggle');
-  const navMain       = document.getElementById('mobile-nav');
+window.addEventListener('DOMContentLoaded', () => {
+  const header      = document.querySelector('.site-header');
+  const exploreBtn  = document.querySelector('.explore-toggle');
+  const exploreMenu = document.querySelector('.explore-menu');
+  const menuBtn     = document.querySelector('.menu-toggle');
+  const navMain     = document.querySelector('.main-nav');
+  const chatBtn     = document.querySelector('.chat-toggle');
+  const chatbox     = document.getElementById('chatbox');
 
-  let isExploreOpen = false;
-  let isMobileOpen  = false;
-
-  // 1) Scroll: cambia clase para fondo oscuro
+  // Scroll → fondo header
   window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 200);
+    header.classList.toggle('scrolled', window.scrollY > 50);
   });
 
-  // 2) Toggle dropdown “Explorar”
-  exploreToggle.addEventListener('click', e => {
+  // Dropdown "Explorar"
+  exploreBtn?.addEventListener('click', e => {
     e.stopPropagation();
-    isExploreOpen = !isExploreOpen;
+    const open = exploreMenu.classList.toggle('open');
+    exploreBtn.setAttribute('aria-expanded', open);
+  });
+  document.addEventListener('click', () => exploreMenu.classList.remove('open'));
 
-    exploreToggle.setAttribute('aria-expanded', isExploreOpen);
-    exploreMenu.classList.toggle('open', isExploreOpen);
-    exploreMenu.setAttribute('aria-hidden', !isExploreOpen);
-
-    // activa overlay si hay algún menú abierto
-    overlay.classList.toggle('active', isExploreOpen || isMobileOpen);
+  // Menú móvil
+  menuBtn?.addEventListener('click', () => {
+    const open = navMain.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open);
   });
 
-  // 3) Toggle menú móvil
-  menuToggle.addEventListener('click', e => {
-    e.stopPropagation();
-    isMobileOpen = !isMobileOpen;
-
-    menuToggle.setAttribute('aria-expanded', isMobileOpen);
-    navMain.classList.toggle('open', isMobileOpen);
-    navMain.setAttribute('aria-hidden', !isMobileOpen);
-
-    // si abres móvil, cierra “Explorar”
-    if (isMobileOpen && isExploreOpen) {
-      isExploreOpen = false;
-      exploreToggle.setAttribute('aria-expanded', false);
-      exploreMenu.classList.remove('open');
-      exploreMenu.setAttribute('aria-hidden', true);
-    }
-
-    overlay.classList.toggle('active', isExploreOpen || isMobileOpen);
-  });
-
-  // 4) Clic en overlay cierra todo
-  overlay.addEventListener('click', () => {
-    if (isExploreOpen) {
-      isExploreOpen = false;
-      exploreToggle.setAttribute('aria-expanded', false);
-      exploreMenu.classList.remove('open');
-      exploreMenu.setAttribute('aria-hidden', true);
-    }
-    if (isMobileOpen) {
-      isMobileOpen = false;
-      menuToggle.setAttribute('aria-expanded', false);
-      navMain.classList.remove('open');
-      navMain.setAttribute('aria-hidden', true);
-    }
-    overlay.classList.remove('active');
-  });
-
-  // 5) Escape cierra todo
-  document.addEventListener('keyup', e => {
-    if (e.key === 'Escape' && (isExploreOpen || isMobileOpen)) {
-      overlay.click();
-    }
-  });
-
-  // 6) Click fuera del dropdown cierra “Explorar”
-  document.addEventListener('click', e => {
-    if (
-      isExploreOpen &&
-      !e.target.closest('.explore-container') &&
-      !e.target.closest('.menu-toggle')
-    ) {
-      exploreToggle.click();
-    }
+  // Chat
+  chatBtn?.addEventListener('click', () => {
+    const active = chatbox.classList.toggle('active');
+    chatBtn.setAttribute('aria-expanded', active);
   });
 });
 
+function appendToChat(text, sender='bot') {
+  const log = document.getElementById('chatlog');
+  const div = document.createElement('div');
+  div.className = `chat-message ${sender}-msg`;
+  div.innerHTML = text;
+  log.appendChild(div);
+  log.scrollTop = log.scrollHeight;
+}
+
+async function sendMessage() {
+  const input = document.getElementById('usermsg');
+  const msg   = input.value.trim(); if(!msg) return;
+  appendToChat(msg,'user'); input.value=''; appendToChat('...','bot');
+  try {
+    const res = await fetch('TU_ENDPOINT/webhook', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ user_id: userId, message: msg })
+    });
+    const data = await res.json();
+    appendToChat(data.respuesta || '⚠️ Sin respuesta','bot');
+  } catch(err) {
+    appendToChat('❌ Error de conexión','bot');
+    console.error(err);
+  }
+}
