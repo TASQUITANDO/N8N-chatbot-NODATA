@@ -1,71 +1,23 @@
 <header role="banner" class="site-header">
-  <!-- Overlay para cerrar menú móvil y dropdown -->
-  <div class="nav-overlay" tabindex="-1"></div>
-
   <div class="container nav-inner">
-    <!-- Logo -->
     <div class="logo-container">
       <a href="/" aria-label="Inicio – Nubia">
         <picture>
-          <source type="image/webp" srcset="assets/images/logo-nubia.webp" />
-          <img
-            src="assets/images/logo-nubia.webp"
-            alt="Logo Nubia"
-            class="logo"
-            loading="lazy"
-          />
+          <source type="image/webp" srcset="/assets/images/logo-nubia.webp">
+          <img src="/assets/images/logo-nubia.webp" alt="Logo Nubia" class="logo" loading="lazy">
         </picture>
       </a>
     </div>
-
-    <!-- Botón hamburguesa (móvil) -->
-    <button
-      class="menu-toggle"
-      aria-label="Abrir menú móvil"
-      aria-expanded="false"
-      aria-controls="mobile-nav"
-      aria-haspopup="true"
-    >
-      ☰
-    </button>
-
-    <!-- Navegación principal -->
-    <nav id="mobile-nav" class="main-nav" role="navigation" aria-hidden="true">
+    <button class="menu-toggle" aria-label="Abrir menú móvil" aria-expanded="false">☰</button>
+    <nav class="main-nav" role="navigation">
       <ul>
         <li><a href="#about">Sobre el proyecto</a></li>
         <li><a href="#capsulas">Cápsulas educativas</a></li>
         <li><a href="#blog">Bitácora / Blog</a></li>
-        <li><a href="#recursos">Recursos &amp; Comunidad</a></li>
+        <li><a href="#recursos">Recursos & Comunidad</a></li>
         <li><a href="#contact">Contacto</a></li>
       </ul>
     </nav>
-
-    <!-- Mega-dropdown “Explorar” -->
-    <div class="explore-container">
-      <button
-        class="cta-button explore-toggle"
-        aria-label="Mostrar menú Explorar"
-        aria-expanded="false"
-        aria-controls="explore-menu"
-        aria-haspopup="true"
-      >
-        Explorar <span class="visually-hidden">▼</span>
-      </button>
-      <nav
-        id="explore-menu"
-        class="explore-menu"
-        role="menu"
-        aria-hidden="true"
-        aria-label="Menú Explorar"
-      >
-        <ul>
-          <li role="none"><a role="menuitem" href="#about">Sobre el proyecto</a></li>
-          <li role="none"><a role="menuitem" href="#capsulas">Cápsulas educativas</a></li>
-          <li role="none"><a role="menuitem" href="#blog">Bitácora / Blog</a></li>
-          <li role="none"><a role="menuitem" href="#recursos">Recursos & Comunidad</a></li>
-          <li role="none"><a role="menuitem" href="#contact">Contacto</a></li>
-        </ul>
-      </nav>
-    </div>
+    <button class="explore-toggle" aria-expanded="false">Explorar ▼</button>
   </div>
 </header>
