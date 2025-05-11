@@ -1,16 +1,117 @@
-<article class="content-card" role="article" data-aos="zoom-in" data-aos-delay="<%= card.delay %>">
-  <picture>
-    <source type="image/webp" srcset="assets/images/<%= card.icon %>.webp" />
-    <img
-      src="assets/images/<%= card.icon %>.jpg"
-      alt="Icono modo <%= card.alt %>"
-      loading="lazy"
-      decoding="async"
-    />
-  </picture>
-  <div class="card-body">
-    <h3><%= card.title %></h3>
-    <p><%= card.text %></p>
-    <button class="cta">Ver</button>
+<section
+  id="capsulas"
+  class="content-mosaic"
+  role="region"
+  aria-labelledby="capsulas-title"
+  data-aos="fade-up"
+>
+  <div class="container">
+    <header class="section-header">
+      <h2 id="capsulas-title" class="section-title">Cápsulas Educativas</h2>
+    </header>
+    <div class="mosaic-grid">
+      <!-- Modo Árbol -->
+      <div class="content-card" data-aos="zoom-in">
+        <picture>
+          <source type="image/webp" srcset="assets/images/icon-tree-mode.webp">
+          <img
+            src="assets/images/icon-tree-mode.jpg"
+            alt="Personaje Árbol"
+            loading="lazy"
+          />
+        </picture>
+        <div class="card-body">
+          <h3>Modo Árbol</h3>
+          <p>Crecimiento orgánico: explora raíces y conexiones.</p>
+          <button class="cta">Ver</button>
+        </div>
+      </div>
+
+      <!-- Modo Analítico -->
+      <div class="content-card" data-aos="zoom-in" data-aos-delay="100">
+        <picture>
+          <source type="image/webp" srcset="assets/images/icon-analytic-mode.webp">
+          <img
+            src="assets/images/icon-analytic-mode.jpg"
+            alt="Personaje Analítico"
+            loading="lazy"
+          />
+        </picture>
+        <div class="card-body">
+          <h3>Modo Analítico</h3>
+          <p>Desentraña datos y patrones para decisiones claras.</p>
+          <button class="cta">Ver</button>
+        </div>
+      </div>
+
+      <!-- Modo Seguridad -->
+      <div class="content-card" data-aos="zoom-in" data-aos-delay="200">
+        <picture>
+          <source type="image/webp" srcset="assets/images/icon-secure-mode.webp">
+          <img
+            src="assets/images/icon-secure-mode.jpg"
+            alt="Personaje Seguridad"
+            loading="lazy"
+          />
+        </picture>
+        <div class="card-body">
+          <h3>Modo Seguridad</h3>
+          <p>Protege tu entorno con buenas prácticas y protocolos.</p>
+          <button class="cta">Ver</button>
+        </div>
+      </div>
+
+      <!-- Modo Friendly -->
+      <div class="content-card" data-aos="zoom-in" data-aos-delay="300">
+        <picture>
+          <source type="image/webp" srcset="assets/images/icon-friendly-mode.webp">
+          <img
+            src="assets/images/icon-friendly-mode.jpg"
+            alt="Personaje Amistoso"
+            loading="lazy"
+          />
+        </picture>
+        <div class="card-body">
+          <h3>Modo Friendly</h3>
+          <p>Aprendizaje cercano y colaborativo, con tono amable.</p>
+          <button class="cta">Ver</button>
+        </div>
+      </div>
+
+      <!-- Modo Shock -->
+      <div class="content-card" data-aos="zoom-in" data-aos-delay="400">
+        <picture>
+          <source type="image/webp" srcset="assets/images/icon-shock-mode.webp">
+          <img
+            src="assets/images/icon-shock-mode.jpg"
+            alt="Personaje Impactante"
+            loading="lazy"
+          />
+        </picture>
+        <div class="card-body">
+          <h3>Modo Shock</h3>
+          <p>Desafía tus ideas con datos y ejemplos sorprendentes.</p>
+          <button class="cta">Ver</button>
+        </div>
+      </div>
+
+      <!-- Modo Pro -->
+      <div class="content-card" data-aos="zoom-in" data-aos-delay="500">
+        <picture>
+          <source type="image/webp" srcset="assets/images/icon-pro-mode.webp">
+          <img
+            src="assets/images/icon-pro-mode.jpg"
+            alt="Personaje Profesional"
+            loading="lazy"
+          />
+        </picture>
+        <div class="card-body">
+          <h3>Modo Pro</h3>
+          <p>Contenido avanzado para usuarios con experiencia técnica.</p>
+          <button class="cta">Ver</button>
+        </div>
+      </div>
+    </div>
   </div>
-</article>
+</section>
+
