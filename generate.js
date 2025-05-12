@@ -13,36 +13,29 @@ const testimonials = [
   { author:'Juan Pérez',  quote:'“Nubia ha cambiado mi forma de aprender.”' },
   { author:'María Gómez', quote:'“Una plataforma innovadora y accesible.”' },
 ]
+// Directorios
+const tplDir = path.join(__dirname, 'templates');
+const outDir = path.join(__dirname, 'dist');
 
-// ——— Carpetas ———
-const TEMPLATES_DIR = path.join(__dirname, 'templates')
-const PARTIALS_DIR  = path.join(__dirname, 'services', 'partials')
-const OUT_DIR       = path.join(__dirname, 'dist')
+// Asegura dist/
+if (!fs.existsSync(outDir)) fs.mkdirSync(outDir);
 
-if (!fs.existsSync(OUT_DIR)) fs.mkdirSync(OUT_DIR)
-
-// ——— Página a página ———
+// Define tus páginas
 const pages = [
-  { tpl: 'index.ejs',   out: 'index.html',   data:{ title:'Nubia – Home',     cards, testimonials } },
-  { tpl: 'about.ejs',   out: 'about.html',   data:{ title:'Nubia – Sobre' } },
-  { tpl: 'capsulas.ejs',out: 'capsulas.html',data:{ title:'Nubia – Cápsulas', cards } },
-  { tpl: 'blog.ejs',    out: 'blog.html',    data:{ title:'Nubia – Blog'    } },
-  { tpl: 'recursos.ejs',out: 'recursos.html',data:{ title:'Nubia – Recursos' } },
-  { tpl: 'contact.ejs', out: 'contact.html', data:{ title:'Nubia – Contacto' } },
-]
+  { tpl: 'index.ejs',   out: 'index.html',   data: { title:'Nubia – Home',     cards, testimonials } },
+  { tpl: 'about.ejs',   out: 'about.html',   data: { title:'Nubia – Sobre' } },
+  { tpl: 'capsulas.ejs',out: 'capsulas.html',data: { title:'Nubia – Cápsulas', cards } },
+  { tpl: 'blog.ejs',    out: 'blog.html',    data: { title:'Nubia – Blog' } },
+  { tpl: 'recursos.ejs',out: 'recursos.html',data: { title:'Nubia – Recursos' } },
+  { tpl: 'contact.ejs', out: 'contact.html', data: { title:'Nubia – Contacto' } },
+];
 
 pages.forEach(({ tpl, out, data }) => {
-  // 1) Carga la plantilla
-  const templatePath = path.join(TEMPLATES_DIR, tpl)
-  const template     = fs.readFileSync(templatePath, 'utf-8')
+  const tplPath = path.join(tplDir, tpl);
+  const tplSrc  = fs.readFileSync(tplPath, 'utf-8');
+  const html    = ejs.render(tplSrc, data, { filename: tplPath, async: false });
+  fs.writeFileSync(path.join(outDir, out), html, 'utf-8');
+  console.log(`✅ dist/${out}`);
+});
 
-  // 2) Renderiza con EJS (asegúrate de que tus <% include %> lleven rutas relativas correctas)
-  const html = ejs.render(template, data, {
-    filename: templatePath, // necesario para que EJS resuelva bien los includes
-  })
-
-  // 3) Escribe el resultado
-  fs.writeFileSync(path.join(OUT_DIR, out), html, 'utf-8')
-  console.log(`✅ dist/${out}`)
-})
 
