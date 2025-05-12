@@ -1,11 +1,11 @@
 ç<section class="testimonials" data-aos="fade-up">
   <div class="container">
     <h2>Testimonios</h2>
-    <% testimonials.forEach(t => { %>
-    <div class="testimonial" data-aos="fade-up">
-      <blockquote><%= t.quote %></blockquote>
-      <cite>— <%= t.author %></cite>
-    </div>
-    <% }) %>
+<% testimonials.forEach(t => { %>
+  <%- include(
+       '../services/partials/testimonial.ejs',
+       { testimonial: t }
+     ) %>
+<% }) %>
   </div>
 </section>
