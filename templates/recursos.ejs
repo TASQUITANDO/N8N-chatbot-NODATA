@@ -4,28 +4,33 @@
   <% include service/partials/head.html %>
 </head>
 <body>
+  <!-- Header -->
   <% include service/partials/header.html %>
 
-  <main id="recursos" class="container" data-aos="fade-up">
-    <header class="section-header">
-      <h2 class="section-title">Recursos & Comunidad</h2>
-      <p class="section-subtitle">Descargables, glosarios y plantillas</p>
-    </header>
+  <!-- Banner específico de página -->
+  <% include service/partials/banner.html %>
 
-    <ul class="resources-list" data-aos="fade-up">
-      <% resources.forEach(r => { %>
-        <li class="resource-item">
-          <a href="<%= r.url %>" target="_blank" rel="noopener">
-            <h3><%= r.title %></h3>
-            <p><%= r.description %></p>
-          </a>
-        </li>
-      <% }) %>
-    </ul>
+  <!-- Contenido principal -->
+  <main id="main-content" class="container">
+    <section id="recursos" class="content-section" role="region" aria-labelledby="recursos-title" data-aos="fade-up">
+      <h1 id="recursos-title" class="section-title">Recursos & Comunidad</h1>
+      <p>En esta sección podrás compartir enlaces, documentos y todo tipo de recursos útiles para la comunidad de Nubia.</p>
+      <!-- Ejemplo de lista de recursos:
+      <ul>
+        <% resources.forEach(r => { %>
+          <li><a href="<%= r.url %>"><%= r.name %></a></li>
+        <% }) %>
+      </ul>
+      -->
+    </section>
   </main>
 
+  <!-- Footer -->
   <% include service/partials/footer.html %>
+  <!-- Chat widget -->
   <% include service/partials/chat.html %>
+  <!-- Scripts JS -->
   <% include service/partials/scripts.html %>
 </body>
 </html>
+
