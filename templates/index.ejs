@@ -8,22 +8,33 @@
   <%- include('../services/partials/hero.ejs') %>
   <%- include('../services/partials/about-section.ejs') %>
 
+  <!-- Cápsulas educativas -->
   <section id="capsulas" class="content-mosaic" data-aos="fade-up">
     <div class="container">
       <% cards.forEach(card => { %>
-       <%- include(
-           '../services/partials/capsule-card.ejs',
-           { card: card }
-         ) %>
-     <% }) %>
+        <%- include(
+          '../services/partials/capsule-card.ejs',
+          { card: card }
+        ) %>
+      <% }) %>
     </div>
   </section>
 
-  <%- include('../services/partials/testimonials.ejs') %>
+  <!-- Testimonios -->
+  <section class="testimonials" data-aos="fade-up">
+    <div class="container">
+      <% testimonials.forEach(testimonial => { %>
+        <%- include(
+          '../services/partials/testimonial.ejs',
+          { testimonial: testimonial }
+        ) %>
+      <% }) %>
+    </div>
+  </section>
+
   <%- include('../services/partials/newsletter.ejs') %>
   <%- include('../services/partials/footer.ejs') %>
   <%- include('../services/partials/chat.ejs') %>
   <%- include('../services/partials/scripts.ejs') %>
 </body>
 </html>
-
