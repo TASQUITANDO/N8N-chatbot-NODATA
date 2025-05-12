@@ -8,13 +8,16 @@
   <%- include('../services/partials/hero.ejs') %>
   <%- include('../services/partials/about-section.ejs') %>
 
-  <section id="capsulas" class="content-mosaic" data-aos="fade-up">
-    <div class="container">
-      <% cards.forEach(card => { %>
-        <%- include('../services/partials/capsule-card.ejs') %>
-      <% }) %>
-    </div>
-  </section>
+ <section id="capsulas" class="content-mosaic" data-aos="fade-up">
+  <div class="container">
+    <% cards.forEach(card => { %>
+      <%- include(
+           '../services/partials/capsule-card.ejs',
+           { card: card }
+         ) %>
+    <% }) %>
+  </div>
+</section>
 
   <%- include('../services/partials/testimonials.ejs') %>
   <%- include('../services/partials/newsletter.ejs') %>
