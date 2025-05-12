@@ -11,8 +11,11 @@
   <section id="capsulas" class="content-mosaic" data-aos="fade-up">
     <div class="container">
       <% cards.forEach(card => { %>
-        <%- include('../services/partials/capsule-card.ejs') %>
-      <% }) %>
+       <%- include(
+           '../services/partials/capsule-card.ejs',
+           { card: card }
+         ) %>
+     <% }) %>
     </div>
   </section>
 
