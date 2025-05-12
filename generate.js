@@ -31,10 +31,10 @@ const pages = [
 ];
 
 pages.forEach(({ tpl, out, data }) => {
-  const tplPath = path.join(tplDir, tpl);
-  const tplSrc  = fs.readFileSync(tplPath, 'utf-8');
-  const html    = ejs.render(tplSrc, data, { filename: tplPath, async: false });
-  fs.writeFileSync(path.join(outDir, out), html, 'utf-8');
+  const templatePath = path.join(__dirname, 'templates', tpl);
+  const template     = fs.readFileSync(templatePath, 'utf-8');
+  const html         = ejs.render(template, data, { filename: templatePath });
+  fs.writeFileSync(path.join(dist, out), html, 'utf-8');
   console.log(`✅ dist/${out}`);
 });
 
