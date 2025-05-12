@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <% include ../services/partials/head.ejs %>
+  <%- include('../services/partials/head.ejs') %>
 </head>
 <body>
-  <% include ../services/partials/header.ejs %>
-  <% include ../services/partials/hero.ejs %>
-  <% include ../services/partials/about-section.ejs %>
+  <%- include('../services/partials/header.ejs') %>
+  <%- include('../services/partials/hero.ejs') %>
+  <%- include('../services/partials/about-section.ejs') %>
 
   <section id="capsulas" class="content-mosaic" data-aos="fade-up">
     <div class="container">
       <% cards.forEach(card => { %>
-        <% include ../services/partials/capsule-card.ejs %>
+        <%- include('../services/partials/capsule-card.ejs') %>
       <% }) %>
     </div>
   </section>
 
-  <% include ../services/partials/testimonials.ejs %>
-  <% include ../services/partials/newsletter.ejs %>
-  <% include ../services/partials/footer.ejs %>
-  <% include ../services/partials/chat.ejs %>
-  <% include ../services/partials/scripts.ejs %>
+  <%- include('../services/partials/testimonials.ejs') %>
+  <%- include('../services/partials/newsletter.ejs') %>
+  <%- include('../services/partials/footer.ejs') %>
+  <%- include('../services/partials/chat.ejs') %>
+  <%- include('../services/partials/scripts.ejs') %>
 </body>
 </html>
+
