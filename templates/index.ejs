@@ -20,17 +20,8 @@
     </div>
   </section>
 
-  <!-- Testimonios -->
-  <section class="testimonials" data-aos="fade-up">
-    <div class="container">
-      <% testimonials.forEach(testimonial => { %>
-        <%- include(
-          '../services/partials/testimonial.ejs',
-          { testimonial: testimonial }
-        ) %>
-      <% }) %>
-    </div>
-  </section>
+  <!-- Testimonios (ahora delegados al partial testimonials.ejs) -->
+  <%- include('../services/partials/testimonials.ejs') %>
 
   <%- include('../services/partials/newsletter.ejs') %>
   <%- include('../services/partials/footer.ejs') %>
