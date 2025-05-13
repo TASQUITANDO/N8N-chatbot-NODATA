@@ -13,12 +13,6 @@ const testimonials = [
   { author:'Juan Pérez',  quote:'“Nubia ha cambiado mi forma de aprender.”' },
   { author:'María Gómez', quote:'“Una plataforma innovadora y accesible.”' },
 ]
-// Directorios
-const tplDir = path.join(__dirname, 'templates');
-const outDir = path.join(__dirname, 'dist');
-
-// Asegura dist/
-if (!fs.existsSync(outDir)) fs.mkdirSync(outDir);
 
 // Define tus páginas
 const pages = [
@@ -30,12 +24,18 @@ const pages = [
   { tpl: 'contact.ejs', out: 'contact.html', data: { title:'Nubia – Contacto' } },
 ];
 
+// Directorio de salida: tú decides si usas “dist” o la raíz.
+// Aquí lo dejamos en “dist”
+const outDir = path.join(__dirname, 'dist');
+if (!fs.existsSync(outDir)) fs.mkdirSync(outDir);
+
 pages.forEach(({ tpl, out, data }) => {
-  const templatePath = path.join(__dirname, 'templates', tpl);
-  const template     = fs.readFileSync(templatePath, 'utf-8');
-  const html         = ejs.render(template, data, { filename: templatePath });
-  fs.writeFileSync(path.join(dist, out), html, 'utf-8');
-  console.log(`✅ dist/${out}`);
+  const template = fs.readFileSync(path.join(__dirname, 'templates', tpl), 'utf-8');
+  const html     = ejs.render(template, data, { filename: tpl });
+
+  // ¡Usamos outDir, no dist!
+  fs.writeFileSync(path.join(outDir, out), html, 'utf-8');
+  console.log(`✅ ${out}`);
 });
 
 
