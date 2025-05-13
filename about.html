@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nubia – Sobre el Proyecto</title>
+  <link rel="icon" href="assets/images/favicon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="logo-container">
+        <a href="index.html" aria-label="Inicio – Nubia">
+          <picture>
+            <source type="image/webp" srcset="assets/images/logo-nubia.webp">
+            <img src="assets/images/logo-nubia.webp" alt="Logo Nubia" class="logo"/>
+          </picture>
+        </a>
+      </div>
+      <button class="menu-toggle" aria-label="Abrir menú móvil">☰</button>
+      <nav class="main-nav" role="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">Sobre</a></li>
+          <li><a href="capsulas.html">Cápsulas</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="recursos.html">Recursos</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <button class="cta-button explore-toggle" aria-expanded="false">Explorar ▼</button>
+    </div>
+  </header>
+  <div class="nav-overlay"></div>
+
+  <!-- MAIN / Propuesta de Valor -->
+  <main id="main-content" tabindex="-1">
+    <section id="about" class="value-proposition" data-aos="fade-up">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Nuestra Propuesta de Valor</h2>
+        </header>
+        <div class="section-content">
+          <p>
+            En <strong>Nubia</strong> fusionamos <strong>educación humana</strong> y
+            <strong>visual</strong> para ofrecer una experiencia única, ética
+            y práctica. Te acompañamos con IA, gamificación y storytelling
+            para que aprendas de forma profunda y con propósito.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer data-aos="fade-up">
+    <div class="container footer-grid">
+      <div>
+        <h3>Enlaces</h3>
+        <a href="index.html">Home</a><br/>
+        <a href="about.html">Sobre</a><br/>
+        <a href="capsulas.html">Cápsulas</a>
+      </div>
+      <div>
+        <h3>Redes</h3>
+        <a href="#">Facebook</a><br/>
+        <a href="#">Twitter</a><br/>
+        <a href="#">Instagram</a>
+      </div>
+      <div class="contact-info">
+        <h3>Contacto</h3>
+        <p>info@nubia.edu</p>
+        <p>+1 234 567 890</p>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 Nubia – Tecnología con alma humana.</div>
+  </footer>
+
+  <!-- CHAT WIDGET -->
+  <button class="chat-toggle" aria-label="Abrir chat">💬</button>
+  <div id="chatbox">
+    <div id="chatlog"></div>
+    <div id="userinput">
+      <input type="text" id="usermsg" placeholder="Escribe tu mensaje…" />
+      <button onclick="sendMessage()">Enviar</button>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script> AOS.init({ duration: 600, once: true });</script>
+  <script src="assets/js/scripts.js" defer></script>
+</body>
+</html>
