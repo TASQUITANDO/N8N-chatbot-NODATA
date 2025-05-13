@@ -2,76 +2,145 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nubia – Cápsulas Educativas</title>
-  <link rel="icon" href="assets/images/favicon.png"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet"/>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="assets/css/styles.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nubia – Cápsulas educativas</title>
+  <link rel="icon" href="assets/images/favicon.png" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-  <!-- HEADER igual que en index.html -->
-  <header class="site-header" role="banner">
+
+  <!-- HEADER igual al de about.html -->
+  <header class="site-header">
     <div class="container header-inner">
-      <div class="logo-container">
-        <a href="index.html" aria-label="Inicio – Nubia">
-          <picture>
-            <source type="image/webp" srcset="assets/images/logo-nubia.webp">
-            <img src="assets/images/logo-nubia.webp" alt="Logo Nubia" class="logo"/>
-          </picture>
-        </a>
-      </div>
+      <a href="index.html" class="logo-container" aria-label="Inicio – Nubia">
+        <picture>
+          <source type="image/webp" srcset="assets/images/logo-nubia.webp" />
+          <img
+            src="assets/images/logo-nubia.png"
+            alt="Logo Nubia"
+            class="logo"
+            loading="lazy"
+          />
+        </picture>
+      </a>
       <button class="menu-toggle">☰</button>
       <nav class="main-nav">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">Sobre</a></li>
-          <li><a href="capsulas.html" class="active">Cápsulas</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="recursos.html">Recursos</a></li>
+          <li><a href="about.html">Sobre el proyecto</a></li>
+          <li><a href="capsulas.html">Cápsulas educativas</a></li>
+          <li><a href="blog.html">Bitácora / Blog</a></li>
+          <li><a href="recursos.html">Recursos & Comunidad</a></li>
           <li><a href="contact.html">Contacto</a></li>
         </ul>
       </nav>
       <button class="cta-button explore-toggle">Explorar ▼</button>
     </div>
   </header>
-  <div class="nav-overlay"></div>
 
-  <!-- MAIN / Cápsulas -->
-  <main id="main-content">
-    <section id="capsulas" class="content-mosaic" data-aos="fade-up">
-      <div class="container">
-        <!-- Cápsula 1 -->
-        <div class="content-card" data-aos="zoom-in" data-aos-delay="0">
-          <picture>
-            <source type="image/webp" srcset="assets/images/icon-tree-mode.webp">
-            <img src="assets/images/icon-tree-mode.webp" alt="Modo Árbol"/>
-          </picture>
-          <div class="card-body">
-            <h3>Modo Árbol</h3>
-            <p>Descubre cómo crecer con raíces profundas.</p>
-            <button class="cta">Ver</button>
-          </div>
+  <!-- Mosaico de 6 Cápsulas -->
+  <section id="capsulas" class="content-mosaic" data-aos="fade-up">
+    <div class="container">
+
+      <!-- Árbol -->
+      <div class="content-card" data-aos="zoom-in">
+        <picture>
+          <source type="image/webp" srcset="assets/images/icon-tree-mode.webp" />
+          <img src="assets/images/icon-tree-mode.jpg" alt="Árbol" loading="lazy" />
+        </picture>
+        <div class="card-body">
+          <h3>Modo Árbol</h3>
+          <p>Descubre cómo crecer con raíces profundas.</p>
         </div>
-        <!-- Cápsula 2 -->
-        <div class="content-card" data-aos="zoom-in" data-aos-delay="100">
-          <picture>
-            <source type="image/webp" srcset="assets/images/icon-analytic-mode.webp">
-            <img src="assets/images/icon-analytic-mode.webp" alt="Modo Análisis"/>
-          </picture>
-          <div class="card-body">
-            <h3>Modo Análisis</h3>
-            <p>Desentraña datos para decisiones informadas.</p>
-            <button class="cta">Ver</button>
-          </div>
-        </div>
-        <!-- …añade Friendly, Shock, Pro… -->
       </div>
-    </section>
-  </main>
 
-  <!-- FOOTER + CHAT + SCRIPTS idénticos al index.html -->
-  <!-- (cópialos tal cual del index.html) -->
+      <!-- Analítico -->
+      <div class="content-card" data-aos="zoom-in" data-aos-delay="100">
+        <picture>
+          <source type="image/webp" srcset="assets/images/icon-analytic-mode.webp" />
+          <img src="assets/images/icon-analytic-mode.jpg" alt="Analítico" loading="lazy" />
+        </picture>
+        <div class="card-body">
+          <h3>Modo Analítico</h3>
+          <p>Desentraña datos para decisiones informadas.</p>
+        </div>
+      </div>
+
+      <!-- Seguridad -->
+      <div class="content-card" data-aos="zoom-in" data-aos-delay="200">
+        <picture>
+          <source type="image/webp" srcset="assets/images/icon-secure-mode.webp" />
+          <img src="assets/images/icon-secure-mode.jpg" alt="Seguridad" loading="lazy" />
+        </picture>
+        <div class="card-body">
+          <h3>Modo Seguridad</h3>
+          <p>Protege lo que más importa.</p>
+        </div>
+      </div>
+
+      <!-- Friendly -->
+      <div class="content-card" data-aos="zoom-in" data-aos-delay="300">
+        <picture>
+          <source type="image/webp" srcset="assets/images/icon-friendly-mode.webp" />
+          <img src="assets/images/icon-friendly-mode.jpg" alt="Friendly" loading="lazy" />
+        </picture>
+        <div class="card-body">
+          <h3>Modo Friendly</h3>
+          <p>Aprende con una guía amigable y cercana.</p>
+        </div>
+      </div>
+
+      <!-- Shock -->
+      <div class="content-card" data-aos="zoom-in" data-aos-delay="400">
+        <picture>
+          <source type="image/webp" srcset="assets/images/icon-shock-mode.webp" />
+          <img src="assets/images/icon-shock-mode.jpg" alt="Shock" loading="lazy" />
+        </picture>
+        <div class="card-body">
+          <h3>Modo Shock</h3>
+          <p>Impacta tus conocimientos con ejemplos fuertes.</p>
+        </div>
+      </div>
+
+      <!-- Pro -->
+      <div class="content-card" data-aos="zoom-in" data-aos-delay="500">
+        <picture>
+          <source type="image/webp" srcset="assets/images/icon-pro-mode.webp" />
+          <img src="assets/images/icon-pro-mode.jpg" alt="Pro" loading="lazy" />
+        </picture>
+        <div class="card-body">
+          <h3>Modo Pro</h3>
+          <p>Perfecciona tus habilidades al máximo nivel.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER igual al de about.html -->
+  <footer data-aos="fade-up">
+    <div class="container footer-grid">
+      <!-- ... mismos enlaces ... -->
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Nubia – Tecnología con alma humana.
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script> AOS.init({ duration: 600, once: true }); </script>
+  <script src="assets/js/scripts.js" defer></script>
 </body>
 </html>
+
