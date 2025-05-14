@@ -6,45 +6,63 @@
   <title>Nubia – Educación Humana y Visual</title>
   <link rel="icon" href="assets/images/favicon.png" />
   <!-- Normalize + Google Fonts + AOS + tu CSS -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+        rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
 
-  <!-- HEADER -->
+ <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
+      <!-- Logo -->
       <a href="index.html" class="logo-container" aria-label="Inicio – Nubia">
         <picture>
           <source type="image/webp" srcset="assets/images/logo-nubia.webp" />
-          <img
-            src="assets/images/logo-nubia.png"
-            alt="Logo Nubia"
-            class="logo"
-            loading="lazy"
-          />
+          <img src="assets/images/logo-nubia.png"
+               alt="Logo Nubia"
+               class="logo"
+               loading="lazy" />
         </picture>
       </a>
-      <button class="menu-toggle" aria-label="Abrir menú móvil">☰</button>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="#about">Sobre el proyecto</a></li>
-          <li><a href="#capsulas">Cápsulas educativas</a></li>
+
+      <!-- Navegación Principal -->
+      <nav class="main-nav" aria-label="Menú principal">
+        <ul class="nav-list">
+          <li><a href="index.html#about">Sobre el proyecto</a></li>
+          <li><a href="index.html#capsulas">Cápsulas educativas</a></li>
           <li><a href="blog.html">Bitácora / Blog</a></li>
           <li><a href="recursos.html">Recursos & Comunidad</a></li>
           <li><a href="contact.html">Contacto</a></li>
         </ul>
       </nav>
-      <button class="cta-button explore-toggle">Explorar ▼</button>
+
+      <!-- Botón CTA -->
+      <a href="capsulas.html" class="cta-button">Explorar</a>
+
+      <!-- Toggle móvil -->
+      <button class="menu-toggle"
+              aria-label="Abrir menú móvil"
+              aria-expanded="false"
+              aria-controls="mobile-menu">
+        ☰
+      </button>
     </div>
+
+    <!-- Menú móvil (slide-in) -->
+    <div class="mobile-nav-overlay"></div>
+    <nav id="mobile-menu" class="mobile-nav" aria-label="Menú móvil">
+      <ul>
+        <li><a href="index.html#about">Sobre el proyecto</a></li>
+        <li><a href="index.html#capsulas">Cápsulas educativas</a></li>
+        <li><a href="blog.html">Bitácora / Blog</a></li>
+        <li><a href="recursos.html">Recursos & Comunidad</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </nav>
   </header>
 
   <!-- HERO -->
@@ -165,23 +183,28 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer data-aos="fade-up">
-    <div class="container footer-grid">
-      <div>
-        <h3>Enlaces rápidos</h3>
-        <a href="#about">Sobre el proyecto</a><br />
-        <a href="#capsulas">Cápsulas educativas</a><br />
-        <a href="blog.html">Blog</a>
+ <!-- FOOTER -->
+  <footer class="site-footer" data-aos="fade-up">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h4>Enlaces rápidos</h4>
+        <ul>
+          <li><a href="index.html#about">Sobre el proyecto</a></li>
+          <li><a href="index.html#capsulas">Cápsulas educativas</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
       </div>
-      <div>
-        <h3>Contacto</h3>
+      <div class="footer-col">
+        <h4>Contacto</h4>
         <p>info@nubia.edu</p>
+        <p>+1 234 567 890</p>
       </div>
-      <div>
-        <h3>Síguenos</h3>
-        <a href="#">Twitter</a><br />
-        <a href="#">LinkedIn</a>
+      <div class="footer-col">
+        <h4>Comunidad</h4>
+        <ul>
+          <li><a href="#">Telegram</a></li>
+          <li><a href="#">Discord</a></li>
+        </ul>
       </div>
     </div>
     <div class="footer-bottom">
@@ -189,7 +212,7 @@
     </div>
   </footer>
 
-  <!-- AOS + tu script principal -->
+  <!-- Scripts globals -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script> AOS.init({ duration: 600, once: true }); </script>
   <script src="assets/js/scripts.js" defer></script>
