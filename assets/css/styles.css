@@ -106,11 +106,12 @@ img {
   transform: scaleX(1);
 }
 
+/* Botón "Explorar" */
 .explore-toggle {
   background: var(--accent);
   color: var(--white);
   border: none;
-  padding: 0.75rem 1.5rem; /* Ajustado el padding */
+  padding: 0.75rem 1.5rem;
   border-radius: 30px;
   font-size: 1rem;
   cursor: pointer;
@@ -121,22 +122,60 @@ img {
   background: #e68a2e; /* Un tono más oscuro del color principal */
 }
 
-.menu-toggle { 
-  display: none; 
-  color: var(--white); 
-  font-size: 1.8rem; 
-  background: none; 
-  border: none; 
-  cursor: pointer;
+/* Menú desplegable */
+.explore-menu {
+  position: absolute;
+  top: calc(100% + 10px); /* Posición debajo del botón */
+  right: 0; /* Alineado a la derecha */
+  background: var(--primary-dark);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  z-index: 1000;
+  display: none; /* Oculto por defecto */
+  width: max-content;
+  min-width: 200px;
+  overflow: hidden;
+  transition: all var(--transition-speed);
 }
 
-@media(max-width:768px) {
-  .main-nav { 
-    display: none; 
-  }
-  .menu-toggle { 
-    display: block; 
-  }
+.explore-menu.open {
+  display: block; /* Se muestra cuando está abierto */
+}
+
+.explore-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.explore-menu li {
+  position: relative;
+}
+
+.explore-menu a {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color var(--transition-speed);
+}
+
+.explore-menu a:hover {
+  background: rgba(255, 153, 51, 0.2); /* Sombra suave al pasar el mouse */
+}
+
+/* Flecha indicadora (opcional) */
+.explore-menu::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: 16px; /* Alineada con el botón */
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid var(--primary-dark);
 }
 
 .hero-section {
