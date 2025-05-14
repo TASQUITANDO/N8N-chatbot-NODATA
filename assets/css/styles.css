@@ -45,6 +45,7 @@ img {
   z-index: 2000;
   display: flex;
   align-items: center;
+  justify-content: space-between; /* Alinea elementos al inicio y final */
   transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
 }
 
@@ -61,12 +62,12 @@ img {
 }
 
 .logo-container {
-  display: flex;
-  align-items: center;
+   margin-right: auto; /* Empuja el menú hacia la derecha */
 }
 
 .logo {
-  height: 64px; /* Aumentado para mayor visibilidad */
+  height: 120px; /* Tamaño mínimo del logo */
+  width: auto; /* Mantener proporción */
   transition: transform var(--transition-speed);
 }
 
@@ -78,6 +79,7 @@ img {
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  margin-left: auto; /* Alinear al centro-derecha */
 }
 
 .main-nav a {
