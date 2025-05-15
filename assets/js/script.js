@@ -12,58 +12,68 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Scroll → fondo header con efecto de transición suave
   window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 50);
+    if (header) {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    }
   });
 
   // Dropdown "Explorar"
-  exploreBtn?.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const open = exploreMenu.classList.toggle('open');
-    exploreBtn.setAttribute('aria-expanded', open);
-  });
+  if (exploreBtn && exploreMenu) {
+    exploreBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = exploreMenu.classList.toggle('open');
+      exploreBtn.setAttribute('aria-expanded', open);
+    });
 
-  document.addEventListener('click', (e) => {
-    if (!exploreMenu.contains(e.target)) {
-      exploreMenu.classList.remove('open');
-      exploreBtn.setAttribute('aria-expanded', false);
-    }
-  });
+    document.addEventListener('click', (e) => {
+      if (!exploreMenu.contains(e.target)) {
+        exploreMenu.classList.remove('open');
+        exploreBtn.setAttribute('aria-expanded', false);
+      }
+    });
+  }
 
   // Menú móvil con overlay y animación
-  menuBtn?.addEventListener('click', () => {
-    const open = navMain.classList.toggle('open');
-    menuBtn.setAttribute('aria-expanded', open);
-    mobileOverlay.style.display = open ? 'block' : 'none'; // Muestra/oculta el overlay
-    document.body.style.overflow = open ? 'hidden' : ''; // Bloquea/desbloquea scroll
-  });
+  if (menuBtn && navMain && mobileOverlay) {
+    menuBtn.addEventListener('click', () => {
+      const open = navMain.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open);
+      mobileOverlay.style.display = open ? 'block' : 'none'; // Muestra/oculta el overlay
+      document.body.style.overflow = open ? 'hidden' : ''; // Bloquea/desbloquea scroll
+    });
 
-  mobileOverlay?.addEventListener('click', () => {
-    navMain.classList.remove('open');
-    menuBtn.setAttribute('aria-expanded', false);
-    mobileOverlay.style.display = 'none';
-    document.body.style.overflow = '';
-  });
+    mobileOverlay.addEventListener('click', () => {
+      navMain.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', false);
+      mobileOverlay.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+  }
 
   // Chat con funcionalidad mejorada
-  chatBtn?.addEventListener('click', () => {
-    const active = chatbox.classList.toggle('active');
-    chatBtn.setAttribute('aria-expanded', active);
-    if (!active) {
-      document.getElementById('usermsg')?.focus(); // Enfoca el input al abrir el chat
-    }
-  });
+  if (chatBtn && chatbox) {
+    chatBtn.addEventListener('click', () => {
+      const active = chatbox.classList.toggle('active');
+      chatBtn.setAttribute('aria-expanded', active);
+      if (!active) {
+        document.getElementById('usermsg')?.focus(); // Enfoca el input al abrir el chat
+      }
+    });
 
-  // Cerrar chat al hacer clic fuera del contenedor
-  document.addEventListener('click', (e) => {
-    if (!chatbox.contains(e.target) && !chatBtn.contains(e.target)) {
-      chatbox.classList.remove('active');
-      chatBtn.setAttribute('aria-expanded', false);
-    }
-  });
+    // Cerrar chat al hacer clic fuera del contenedor
+    document.addEventListener('click', (e) => {
+      if (!chatbox.contains(e.target) && !chatBtn.contains(e.target)) {
+        chatbox.classList.remove('active');
+        chatBtn.setAttribute('aria-expanded', false);
+      }
+    });
+  }
 });
 
 function appendToChat(text, sender = 'bot') {
   const log = document.getElementById('chatlog');
+  if (!log) return;
+
   const div = document.createElement('div');
   div.className = `chat-message ${sender}-msg`;
   div.innerHTML = text;
@@ -73,6 +83,8 @@ function appendToChat(text, sender = 'bot') {
 
 async function sendMessage() {
   const input = document.getElementById('usermsg');
+  if (!input) return;
+
   const msg = input.value.trim();
   if (!msg) return;
 
