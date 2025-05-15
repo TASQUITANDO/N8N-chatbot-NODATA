@@ -10,39 +10,16 @@ window.addEventListener('DOMContentLoaded', () => {
   const chatbox = document.getElementById('chatbox');
   const mobileOverlay = document.querySelector('.mobile-nav-overlay');
 
-
-// Botón "Explorar"
-const exploreBtn = document.querySelector('.explore-toggle');
-const exploreMenu = document.querySelector('.explore-menu');
-
-// Evento para abrir/cerrar el desplegable
-exploreBtn?.addEventListener('click', (e) => {
-  e.stopPropagation();
-  const open = exploreMenu.classList.toggle('open');
-  exploreBtn.setAttribute('aria-expanded', open);
-});
-
-// Cerrar el desplegable al hacer clic fuera de él
-document.addEventListener('click', (e) => {
-  if (!exploreMenu.contains(e.target)) {
-    exploreMenu.classList.remove('open');
-    exploreBtn.setAttribute('aria-expanded', false);
-  }
-});
-  
   // Scroll → fondo header con efecto de transición suave
   window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 50);
   });
 
-  // Dropdown "Explorar" con accesibilidad mejorada
+  // Dropdown "Explorar"
   exploreBtn?.addEventListener('click', (e) => {
     e.stopPropagation();
     const open = exploreMenu.classList.toggle('open');
     exploreBtn.setAttribute('aria-expanded', open);
-    if (open) {
-      exploreMenu.focus(); // Mejora la navegación por teclado
-    }
   });
 
   document.addEventListener('click', (e) => {
