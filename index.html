@@ -6,32 +6,64 @@
   <title>Nubia – Educación Humana y Visual</title>
   <link rel="icon" href="assets/images/favicon.png" />
   <!-- Normalize + Google Fonts + AOS + tu CSS -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css " />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat :wght@300;400;600;700&display=swap"
-        rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css " />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat :wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/aos @2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
 
-<!-- HEADER -->
-<header class="site-header">
-  <div class="container header-inner">
-    <!-- Logo -->
-    <a href="index.html" class="logo-container" aria-label="Inicio – Nubia">
-      <picture>
-        <source type="image/webp" srcset="assets/images/logo-nubia.webp" />
-        <img src="assets/images/logo-nubia.png"
-             alt="Logo Nubia"
-             class="logo"
-             loading="lazy" />
-      </picture>
-    </a>
+ <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Logo -->
+      <a href="index.html" class="logo-container" aria-label="Inicio – Nubia">
+        <picture>
+          <source type="image/webp" srcset="assets/images/logo-nubia.webp" />
+          <img src="assets/images/logo-nubia.png"
+               alt="Logo Nubia"
+               class="logo"
+               loading="lazy" />
+        </picture>
+      </a>
 
-    <!-- Navegación Principal -->
-    <nav class="main-nav" aria-label="Menú principal">
-      <ul class="nav-list">
+      <!-- Navegación Principal -->
+      <nav class="main-nav" aria-label="Menú principal">
+        <ul class="nav-list">
+          <li><a href="index.html#about">Sobre el proyecto</a></li>
+          <li><a href="index.html#capsulas">Cápsulas educativas</a></li>
+          <li><a href="blog.html">Bitácora / Blog</a></li>
+          <li><a href="recursos.html">Recursos & Comunidad</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Botón CTA -->
+      <a href="#" class="cta-button explore-toggle" aria-haspopup="true" aria-expanded="false">Explorar</a>
+
+      <!-- Menú desplegable -->
+      <div class="explore-menu">
+        <ul>
+          <li><a href="capsulas.html">Cápsulas educativas</a></li>
+          <li><a href="blog.html">Bitácora / Blog</a></li>
+          <li><a href="recursos.html">Recursos & Comunidad</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Toggle móvil -->
+      <button class="menu-toggle"
+              aria-label="Abrir menú móvil"
+              aria-expanded="false"
+              aria-controls="mobile-menu">
+        ☰
+      </button>
+    </div>
+
+    <!-- Menú móvil (slide-in) -->
+    <div class="mobile-nav-overlay"></div>
+    <nav id="mobile-menu" class="mobile-nav" aria-label="Menú móvil">
+      <ul>
         <li><a href="index.html#about">Sobre el proyecto</a></li>
         <li><a href="index.html#capsulas">Cápsulas educativas</a></li>
         <li><a href="blog.html">Bitácora / Blog</a></li>
@@ -39,41 +71,7 @@
         <li><a href="contact.html">Contacto</a></li>
       </ul>
     </nav>
-
-    <!-- Botón CTA -->
-    <a href="#" class="cta-button explore-toggle" aria-haspopup="true" aria-expanded="false">Explorar</a>
-
-    <!-- Menú desplegable -->
-    <div class="explore-menu">
-      <ul>
-        <li><a href="capsulas.html">Cápsulas educativas</a></li>
-        <li><a href="blog.html">Bitácora / Blog</a></li>
-        <li><a href="recursos.html">Recursos & Comunidad</a></li>
-        <li><a href="contact.html">Contacto</a></li>
-      </ul>
-    </div>
-
-    <!-- Toggle móvil -->
-    <button class="menu-toggle"
-            aria-label="Abrir menú móvil"
-            aria-expanded="false"
-            aria-controls="mobile-menu">
-      ☰
-    </button>
-  </div>
-
-  <!-- Menú móvil (slide-in) -->
-  <div class="mobile-nav-overlay"></div>
-  <nav id="mobile-menu" class="mobile-nav" aria-label="Menú móvil">
-    <ul>
-      <li><a href="index.html#about">Sobre el proyecto</a></li>
-      <li><a href="index.html#capsulas">Cápsulas educativas</a></li>
-      <li><a href="blog.html">Bitácora / Blog</a></li>
-      <li><a href="recursos.html">Recursos & Comunidad</a></li>
-      <li><a href="contact.html">Contacto</a></li>
-    </ul>
-  </nav>
-</header>
+  </header>
 
   <!-- HERO -->
   <section id="hero" class="hero-section" role="region" aria-label="Bienvenida">
