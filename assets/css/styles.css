@@ -151,7 +151,7 @@ img { max-width: 100%; height: auto; display: block; }
   width: max-content;
   min-width: 200px;
   overflow: hidden;
-  transition: opacity var(--transition-speed), visibility var(--transition-speed);
+  transition: all var(--transition-speed);
 }
 
 .explore-menu.open {
