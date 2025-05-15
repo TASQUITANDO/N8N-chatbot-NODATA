@@ -5,33 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nubia – Recursos & Comunidad</title>
   <link rel="icon" href="assets/images/favicon.png" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
-    rel="stylesheet"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css " />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat :wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos @2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-  <!-- HEADER igual -->
-  <header class="site-header"> … </header>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-container" aria-label="Inicio – Nubia">
+        <picture>
+          <source type="image/webp" srcset="assets/images/logo-nubia.webp" />
+          <img
+            src="assets/images/logo-nubia.png"
+            alt="Logo Nubia"
+            class="logo"
+            loading="lazy"
+          />
+        </picture>
+      </a>
+      <button class="menu-toggle">☰</button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="about.html">Sobre el proyecto</a></li>
+          <li><a href="capsulas.html">Cápsulas educativas</a></li>
+          <li><a href="blog.html">Bitácora / Blog</a></li>
+          <li><a href="recursos.html">Recursos & Comunidad</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <button class="cta-button explore-toggle">Explorar ▼</button>
+    </div>
+  </header>
 
   <main class="container" data-aos="fade-up">
     <h1>Recursos & Comunidad</h1>
     <p>Aquí encontrarás enlaces útiles, foros y grupos de estudio.</p>
   </main>
 
-  <!-- FOOTER igual -->
-  <footer> … </footer>
+  <!-- FOOTER -->
+  <footer data-aos="fade-up">
+    <div class="container footer-grid">
+      <div>
+        <h3>Enlaces</h3>
+        <a href="about.html">Sobre el proyecto</a><br />
+        <a href="capsulas.html">Cápsulas educativas</a><br />
+        <a href="blog.html">Bitácora / Blog</a>
+      </div>
+      <div>
+        <h3>Redes Sociales</h3>
+        <a href="#"><i class="fab fa-facebook"></i> Facebook</a><br />
+        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+      </div>
+      <div>
+        <h3>Contacto</h3>
+        <p>info@nubia.edu</p>
+        <p>+1 234 567 890</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Nubia – Tecnología con alma humana.
+    </div>
+  </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/aos @2.3.1/dist/aos.js"></script>
   <script> AOS.init({ duration: 600, once: true }); </script>
   <script src="assets/js/scripts.js" defer></script>
 </body>
