@@ -11,7 +11,11 @@ window.addEventListener('DOMContentLoaded', () => {
   const mobileOverlay = document.querySelector('.mobile-nav-overlay');
 
 
-  // Evento para abrir/cerrar el desplegable
+// Botón "Explorar"
+const exploreBtn = document.querySelector('.explore-toggle');
+const exploreMenu = document.querySelector('.explore-menu');
+
+// Evento para abrir/cerrar el desplegable
 exploreBtn?.addEventListener('click', (e) => {
   e.stopPropagation();
   const open = exploreMenu.classList.toggle('open');
