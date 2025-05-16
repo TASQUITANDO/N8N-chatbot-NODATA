@@ -5,9 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nubia – Recursos & Comunidad</title>
   <link rel="icon" href="assets/images/favicon.png" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css " />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat :wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/aos @2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Normalize + Google Fonts + AOS + CSS propio -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+        rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
@@ -26,43 +30,132 @@
           />
         </picture>
       </a>
-      <button class="menu-toggle">☰</button>
-      <nav class="main-nav">
+
+      <nav class="main-nav" aria-label="Menú principal">
         <ul>
-          <li><a href="about.html">Sobre el proyecto</a></li>
+          <li><a href="index.html#about">Sobre el proyecto</a></li>
+          <li><a href="index.html#capsulas">Cápsulas educativas</a></li>
+          <li><a href="blog.html">Bitácora / Blog</a></li>
+          <li><a href="recursos.html" class="active">Recursos & Comunidad</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <a href="#"
+         class="cta-button explore-toggle"
+         aria-haspopup="true"
+         aria-expanded="false">
+        Explorar
+      </a>
+      <div class="explore-menu" id="exploreMenu">
+        <ul>
           <li><a href="capsulas.html">Cápsulas educativas</a></li>
           <li><a href="blog.html">Bitácora / Blog</a></li>
           <li><a href="recursos.html">Recursos & Comunidad</a></li>
           <li><a href="contact.html">Contacto</a></li>
         </ul>
-      </nav>
-      <button class="cta-button explore-toggle">Explorar ▼</button>
+      </div>
+
+      <button
+        class="menu-toggle"
+        aria-label="Abrir menú móvil"
+        aria-expanded="false"
+        aria-controls="mobile-menu">
+        ☰
+      </button>
     </div>
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <nav id="mobile-menu" class="mobile-nav" aria-label="Menú móvil">
+      <ul>
+        <li><a href="index.html#about">Sobre el proyecto</a></li>
+        <li><a href="index.html#capsulas">Cápsulas educativas</a></li>
+        <li><a href="blog.html">Bitácora / Blog</a></li>
+        <li><a href="recursos.html" class="active">Recursos & Comunidad</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="container" data-aos="fade-up">
-    <h1>Recursos & Comunidad</h1>
-    <p>Aquí encontrarás enlaces útiles, foros y grupos de estudio.</p>
-  </main>
+  <!-- HERO SECUNDARIO -->
+  <section class="hero-section" data-aos="fade-in" role="region" aria-label="Recursos y Comunidad">
+    <picture class="hero-img">
+      <source type="image/webp" srcset="assets/images/hero-recursos.webp" />
+      <img src="assets/images/hero-recursos.jpg" alt="Recursos Nubia" loading="lazy" />
+    </picture>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <h1>Recursos & Comunidad</h1>
+      <p>Enlaces útiles, descargables y grupos para aprender juntos.</p>
+    </div>
+  </section>
+
+  <!-- RECURSOS DESCARGABLES -->
+  <section id="resources" class="resources-section" data-aos="fade-up">
+    <div class="container">
+      <h2>Recursos Descargables</h2>
+      <div class="resources-grid">
+        <!-- Recurso 1 -->
+        <div class="resource-card">
+          <a href="assets/docs/guia-ciberseguridad.pdf" download>
+            <div class="resource-icon">📄</div>
+            <h3>Guía de Ciberseguridad</h3>
+            <p>Buenas prácticas y herramientas clave.</p>
+          </a>
+        </div>
+        <!-- Recurso 2 -->
+        <div class="resource-card">
+          <a href="assets/docs/plantilla-proyecto.pdf" download>
+            <div class="resource-icon">📄</div>
+            <h3>Plantilla de Proyecto</h3>
+            <p>Estructura base para tus trabajos.</p>
+          </a>
+        </div>
+        <!-- Recurso 3 -->
+        <div class="resource-card">
+          <a href="assets/docs/ebook-sostenibilidad.pdf" download>
+            <div class="resource-icon">📄</div>
+            <h3>eBook de Sostenibilidad</h3>
+            <p>Conceptos y casos prácticos.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA COMUNIDAD -->
+  <section class="cta-section" data-aos="fade-up">
+    <div class="container">
+      <h2>Únete a la Comunidad</h2>
+      <p>Participa en nuestros grupos y foros:</p>
+      <div class="community-buttons">
+        <a href="#" class="btn">Telegram</a>
+        <a href="#" class="btn">Discord</a>
+      </div>
+    </div>
+  </section>
 
   <!-- FOOTER -->
-  <footer data-aos="fade-up">
-    <div class="container footer-grid">
-      <div>
-        <h3>Enlaces</h3>
-        <a href="about.html">Sobre el proyecto</a><br />
-        <a href="capsulas.html">Cápsulas educativas</a><br />
-        <a href="blog.html">Bitácora / Blog</a>
+  <footer class="site-footer" data-aos="fade-up">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h4>Enlaces rápidos</h4>
+        <ul>
+          <li><a href="index.html#about">Sobre el proyecto</a></li>
+          <li><a href="index.html#capsulas">Cápsulas educativas</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
       </div>
-      <div>
-        <h3>Redes Sociales</h3>
-        <a href="#"><i class="fab fa-facebook"></i> Facebook</a><br />
-        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <p><a href="mailto:info@nubia.edu">info@nubia.edu</a></p>
+        <p><a href="tel:+1234567890">+1 234 567 890</a></p>
       </div>
-      <div>
-        <h3>Contacto</h3>
-        <p>info@nubia.edu</p>
-        <p>+1 234 567 890</p>
+      <div class="footer-col">
+        <h4>Comunidad</h4>
+        <ul>
+          <li><a href="#">Telegram</a></li>
+          <li><a href="#">Discord</a></li>
+        </ul>
       </div>
     </div>
     <div class="footer-bottom">
@@ -70,8 +163,11 @@
     </div>
   </footer>
 
-  <script src="https://unpkg.com/aos @2.3.1/dist/aos.js"></script>
-  <script> AOS.init({ duration: 600, once: true }); </script>
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 600, once: true });
+  </script>
   <script src="assets/js/scripts.js" defer></script>
 </body>
 </html>
