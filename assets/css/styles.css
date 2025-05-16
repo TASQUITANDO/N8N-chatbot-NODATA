@@ -276,6 +276,15 @@ img { max-width: 100%; height: auto; display: block; }
   color: inherit;
   text-decoration: none;
 }
+/* Asegurar que títulos y párrafos de las tarjetas no hereden color de link */
+.content-card a {
+  color: inherit;              /* ya lo tenías, por seguridad */
+  text-decoration: none;       /* eliminar subrayado */
+}
+.content-card .card-content h3,
+.content-card .card-content p {
+  color: var(--text-color);    /* negro normal */
+}
 .testimonials,
 .value-proposition,
 .cta-section {
