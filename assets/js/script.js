@@ -3,38 +3,41 @@ const userId = 'user_' + Math.floor(Math.random() * 1e6);
 
 window.addEventListener('DOMContentLoaded', () => {
   const header        = document.querySelector('.site-header');
-  const exploreBtn    = document.querySelector('.explore-toggle');
-  const exploreMenu   = document.querySelector('.explore-menu');
   const menuBtn       = document.querySelector('.menu-toggle');
   const mobileNav     = document.getElementById('mobile-menu');
   const mobileOverlay = document.getElementById('mobileNavOverlay');
   const chatBtn       = document.querySelector('.chat-toggle');
   const chatbox       = document.getElementById('chatbox');
 
-  // Efecto al hacer scroll
-  window.addEventListener('scroll', () => {
-    if (header) {
+  // Efecto al hacer scroll en header
+  if (header) {
+    window.addEventListener('scroll', () => {
       header.classList.toggle('scrolled', window.scrollY > 50);
-    }
-  });
+    });
+  }
 
-  // Toggle “Explorar”
-  if (exploreBtn && exploreMenu) {
-    exploreBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const open = exploreMenu.classList.toggle('open');
-      exploreBtn.setAttribute('aria-expanded', open);
-    });
-    document.addEventListener('click', (e) => {
-      if (
-        !exploreMenu.contains(e.target) &&
-        !exploreBtn.contains(e.target)
-      ) {
-        exploreMenu.classList.remove('open');
-        exploreBtn.setAttribute('aria-expanded', false);
-      }
-    });
+  // Dropdown “Explorar” solo en desktop
+  if (window.innerWidth > 768) {
+    const exploreBtn  = document.querySelector('.explore-toggle');
+    const exploreMenu = document.querySelector('.explore-menu');
+
+    if (exploreBtn && exploreMenu) {
+      exploreBtn.addEventListener('click', e => {
+        e.preventDefault();
+        e.stopPropagation();
+        const open = exploreMenu.classList.toggle('open');
+        exploreBtn.setAttribute('aria-expanded', open);
+      });
+      document.addEventListener('click', e => {
+        if (
+          !exploreMenu.contains(e.target) &&
+          !exploreBtn.contains(e.target)
+        ) {
+          exploreMenu.classList.remove('open');
+          exploreBtn.setAttribute('aria-expanded', false);
+        }
+      });
+    }
   }
 
   // Slide-in menú móvil
@@ -60,7 +63,7 @@ window.addEventListener('DOMContentLoaded', () => {
       chatBtn.setAttribute('aria-expanded', active);
       if (!active) document.getElementById('usermsg')?.focus();
     });
-    document.addEventListener('click', (e) => {
+    document.addEventListener('click', e => {
       if (!chatbox.contains(e.target) && !chatBtn.contains(e.target)) {
         chatbox.classList.remove('active');
         chatBtn.setAttribute('aria-expanded', false);
@@ -69,7 +72,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Chat helper…
+// Helpers de chat
 function appendToChat(text, sender = 'bot') {
   const log = document.getElementById('chatlog');
   if (!log) return;
