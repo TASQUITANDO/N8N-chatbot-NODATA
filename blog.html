@@ -5,9 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nubia – Bitácora / Blog</title>
   <link rel="icon" href="assets/images/favicon.png" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css " />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat :wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/aos @2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Normalize + Google Fonts + AOS + CSS propio -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
@@ -18,67 +22,166 @@
       <a href="index.html" class="logo-container" aria-label="Inicio – Nubia">
         <picture>
           <source type="image/webp" srcset="assets/images/logo-nubia.webp" />
-          <img
-            src="assets/images/logo-nubia.png"
-            alt="Logo Nubia"
-            class="logo"
-            loading="lazy"
-          />
+          <img src="assets/images/logo-nubia.png" alt="Logo Nubia" class="logo" loading="lazy" />
         </picture>
       </a>
-      <button class="menu-toggle">☰</button>
-      <nav class="main-nav">
+
+      <nav class="main-nav" aria-label="Menú principal">
         <ul>
-          <li><a href="about.html">Sobre el proyecto</a></li>
+          <li><a href="index.html#about">Sobre el proyecto</a></li>
+          <li><a href="index.html#capsulas">Cápsulas educativas</a></li>
+          <li><a href="blog.html" class="active">Bitácora / Blog</a></li>
+          <li><a href="recursos.html">Recursos & Comunidad</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <a href="#" class="cta-button explore-toggle" aria-haspopup="true" aria-expanded="false">
+        Explorar
+      </a>
+      <div class="explore-menu" id="exploreMenu">
+        <ul>
           <li><a href="capsulas.html">Cápsulas educativas</a></li>
           <li><a href="blog.html">Bitácora / Blog</a></li>
           <li><a href="recursos.html">Recursos & Comunidad</a></li>
           <li><a href="contact.html">Contacto</a></li>
         </ul>
-      </nav>
-      <button class="cta-button explore-toggle">Explorar ▼</button>
+      </div>
+
+      <button class="menu-toggle"
+              aria-label="Abrir menú móvil"
+              aria-expanded="false"
+              aria-controls="mobile-menu">☰</button>
     </div>
+
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <nav id="mobile-menu" class="mobile-nav" aria-label="Menú móvil">
+      <ul>
+        <li><a href="index.html#about">Sobre el proyecto</a></li>
+        <li><a href="index.html#capsulas">Cápsulas educativas</a></li>
+        <li><a href="blog.html" class="active">Bitácora / Blog</a></li>
+        <li><a href="recursos.html">Recursos & Comunidad</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="container" data-aos="fade-up">
-    <h1>Bitácora / Blog</h1>
-    <p>Explora nuestros artículos, tutoriales y novedades.</p>
+  <!-- HERO BLOG -->
+  <section class="hero-section" data-aos="fade-in" role="region" aria-label="Blog">
+    <picture class="hero-img">
+      <source type="image/webp" srcset="assets/images/hero-blog.webp" />
+      <img src="assets/images/hero-blog.jpg" alt="Bitácora de Nubia" loading="lazy" />
+    </picture>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <h1>Bitácora / Blog</h1>
+      <p>Explora cursos, guías prácticas y todas nuestras novedades.</p>
+    </div>
+  </section>
 
-    <!-- Lista de artículos -->
-    <section class="blog-posts">
-      <article class="blog-post" data-aos="fade-up">
-        <h2><a href="#">Título del artículo 1</a></h2>
-        <p>Descripción breve del artículo 1.</p>
-      </article>
-      <article class="blog-post" data-aos="fade-up">
-        <h2><a href="#">Título del artículo 2</a></h2>
-        <p>Descripción breve del artículo 2.</p>
-      </article>
-      <article class="blog-post" data-aos="fade-up">
-        <h2><a href="#">Título del artículo 3</a></h2>
-        <p>Descripción breve del artículo 3.</p>
-      </article>
-    </section>
-  </main>
+  <!-- ENTRADAS DEL BLOG -->
+  <section class="posts-section" data-aos="fade-up">
+    <div class="container blog-container">
+      <div class="posts-grid">
+        <!-- Entrada 1 -->
+        <article class="blog-post">
+          <a href="posts/curso-html-css.html">
+            <picture>
+              <source srcset="assets/images/html-css-course.webp" type="image/webp" />
+              <img src="assets/images/html-css-course.jpg" alt="Curso HTML & CSS" loading="lazy" />
+            </picture>
+            <div class="post-meta">
+              <time datetime="2025-05-10">10 Mayo, 2025</time>
+              <h3>Curso Básico de HTML & CSS</h3>
+            </div>
+            <p>Domina las bases del desarrollo web con este curso intensivo.</p>
+          </a>
+        </article>
+
+        <!-- Entrada 2 -->
+        <article class="blog-post">
+          <a href="posts/guia-git-github.html">
+            <picture>
+              <source srcset="assets/images/git-guide.webp" type="image/webp" />
+              <img src="assets/images/git-guide.jpg" alt="Guía de Git & GitHub" loading="lazy" />
+            </picture>
+            <div class="post-meta">
+              <time datetime="2025-04-20">20 Abril, 2025</time>
+              <h3>Guía Práctica de Git & GitHub</h3>
+            </div>
+            <p>Aprende flujos de trabajo profesionales con control de versiones.</p>
+          </a>
+        </article>
+
+        <!-- Entrada 3 -->
+        <article class="blog-post">
+          <a href="posts/tutorial-aos.html">
+            <picture>
+              <source srcset="assets/images/aos-tutorial.webp" type="image/webp" />
+              <img src="assets/images/aos-tutorial.jpg" alt="Tutorial AOS" loading="lazy" />
+            </picture>
+            <div class="post-meta">
+              <time datetime="2025-03-15">15 Marzo, 2025</time>
+              <h3>Tutorial de Animaciones AOS</h3>
+            </div>
+            <p>Integra AOS para efectos on-scroll y mejora la experiencia visual.</p>
+          </a>
+        </article>
+      </div>
+
+      <!-- Sidebar con categorías y búsqueda -->
+      <aside class="blog-sidebar" data-aos="fade-up">
+        <div class="widget">
+          <h4>Buscar</h4>
+          <input type="search" placeholder="Buscar artículo…" />
+        </div>
+        <div class="widget">
+          <h4>Categorías</h4>
+          <ul>
+            <li><a href="#">Cursos</a></li>
+            <li><a href="#">Guías</a></li>
+            <li><a href="#">Tutoriales</a></li>
+          </ul>
+        </div>
+        <div class="widget">
+          <h4>Entradas Populares</h4>
+          <ul>
+            <li><a href="#">Curso Básico de React</a></li>
+            <li><a href="#">Guía de Ciberseguridad</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Paginación -->
+    <nav class="pagination" data-aos="fade-up">
+      <a href="#" class="prev">« Anterior</a>
+      <a href="#" class="next">Siguiente »</a>
+    </nav>
+  </section>
 
   <!-- FOOTER -->
-  <footer data-aos="fade-up">
-    <div class="container footer-grid">
-      <div>
-        <h3>Enlaces</h3>
-        <a href="about.html">Sobre el proyecto</a><br />
-        <a href="capsulas.html">Cápsulas educativas</a><br />
-        <a href="blog.html">Bitácora / Blog</a>
+  <footer class="site-footer" data-aos="fade-up">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h4>Enlaces rápidos</h4>
+        <ul>
+          <li><a href="index.html#about">Sobre el proyecto</a></li>
+          <li><a href="index.html#capsulas">Cápsulas educativas</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
       </div>
-      <div>
-        <h3>Redes Sociales</h3>
-        <a href="#"><i class="fab fa-facebook"></i> Facebook</a><br />
-        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <p><a href="mailto:info@nubia.edu">info@nubia.edu</a></p>
+        <p><a href="tel:+1234567890">+1 234 567 890</a></p>
       </div>
-      <div>
-        <h3>Contacto</h3>
-        <p>info@nubia.edu</p>
-        <p>+1 234 567 890</p>
+      <div class="footer-col">
+        <h4>Comunidad</h4>
+        <ul>
+          <li><a href="#">Telegram</a></li>
+          <li><a href="#">Discord</a></li>
+        </ul>
       </div>
     </div>
     <div class="footer-bottom">
@@ -86,8 +189,11 @@
     </div>
   </footer>
 
-  <script src="https://unpkg.com/aos @2.3.1/dist/aos.js"></script>
-  <script> AOS.init({ duration: 600, once: true }); </script>
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 600, once: true });
+  </script>
   <script src="assets/js/scripts.js" defer></script>
 </body>
 </html>
