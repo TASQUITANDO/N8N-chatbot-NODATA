@@ -1,3 +1,4 @@
+/* styles.css */
 /* Variables globales */
 :root {
   --primary-dark: #0a192f;
@@ -98,12 +99,11 @@ img {
   transition: background-color var(--transition-speed);
   text-decoration: none;
 }
-
 .explore-toggle:hover {
   background: #e68a2e;
 }
 
-/* Toggle móvil */
+/* Toggle móvil (hamburguesa) */
 .menu-toggle {
   display: none;
   color: var(--white);
@@ -144,23 +144,19 @@ img {
   min-width: 200px;
   overflow: hidden;
 }
-
 .explore-menu.open {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
-
 .explore-menu ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 .explore-menu li {
   position: relative;
 }
-
 .explore-menu a {
   display: block;
   padding: 1rem 1.5rem;
@@ -169,22 +165,55 @@ img {
   font-weight: 500;
   transition: background-color var(--transition-speed);
 }
-
 .explore-menu a:hover {
   background: rgba(255, 153, 51, 0.2);
 }
-
 /* Indicador de flecha */
 .explore-menu::before {
   content: '';
   position: absolute;
   top: -8px;
   right: 16px;
-  width: 0;
-  height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   border-bottom: 8px solid var(--primary-dark);
+}
+
+/* MENÚ MÓVIL (slide-in) */
+.mobile-nav {
+  display: none;                    /* oculto por defecto en desktop */
+  position: fixed;
+  top: var(--header-height);
+  right: 0;
+  width: 250px;
+  height: calc(100% - var(--header-height));
+  background: var(--primary-dark);
+  transform: translateX(100%);      /* fuera de pantalla */
+  transition: transform var(--transition-speed);
+  z-index: 1500;
+}
+.mobile-nav.open {
+  display: block;
+  transform: translateX(0);         /* entra con slide-in */
+}
+.mobile-nav ul {
+  list-style: none;
+  padding: 1rem;
+  margin: 0;
+}
+.mobile-nav a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--white);
+  text-decoration: none;
+}
+.mobile-nav a:hover {
+  background: rgba(255,153,51,0.2);
+}
+@media (max-width:768px) {
+  .mobile-nav {
+    display: block;  /* solo en pantallas pequeñas */
+  }
 }
 
 /* HERO */
@@ -197,7 +226,6 @@ img {
   text-align: center;
   overflow: hidden;
 }
-
 .hero-section picture img {
   position: absolute;
   top: 0; left: 0;
@@ -205,25 +233,21 @@ img {
   object-fit: cover;
   filter: brightness(0.6) blur(1px);
 }
-
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.5);
 }
-
 .hero-content {
   position: relative;
   color: var(--white);
   padding: 0 1rem;
   text-shadow: 0 2px 6px rgba(0,0,0,0.8);
 }
-
 .hero-content h1 {
   font-size: clamp(2rem,5vw,3rem);
   margin-bottom: 0.5rem;
 }
-
 .hero-content p {
   font-size: clamp(1rem,2.5vw,1.5rem);
 }
