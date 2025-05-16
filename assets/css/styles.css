@@ -51,7 +51,8 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+  transition: background-color var(--transition-speed),
+              box-shadow var(--transition-speed);
 }
 
 .header-inner {
@@ -71,7 +72,7 @@ img {
   transition: transform var(--transition-speed);
 }
 
-/* Forzar texto de navegación en blanco y sin subrayado */
+/* Forzar texto blanco y sin subrayado en todos los nav */
 .main-nav a,
 .mobile-nav a {
   color: var(--white);
@@ -103,7 +104,7 @@ img {
   background: #e68a2e;
 }
 
-/* Toggle móvil (hamburguesa) */
+/* Hamburguesa móvil */
 .menu-toggle {
   display: none;
   color: var(--white);
@@ -112,26 +113,27 @@ img {
   border: none;
 }
 
-@media(max-width:768px) {
+@media (max-width: 768px) {
+  /* Oculto la navegación principal en móvil */
   .main-nav {
-    display: none;
+    display: none !important;
   }
   .menu-toggle {
     display: block;
   }
 }
 
-/* MENÚ DESPLEGABLE “Explorar” */
+/* MENU “Explorar” */
 .explore-menu {
   position: absolute;
   top: calc(100% + 10px);
   right: 0;
   background: var(--primary-dark);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   border-radius: 8px;
   z-index: 1000;
 
-  /* Animación suave con opacidad y traslación */
+  /* Animación suave */
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
@@ -166,9 +168,9 @@ img {
   transition: background-color var(--transition-speed);
 }
 .explore-menu a:hover {
-  background: rgba(255, 153, 51, 0.2);
+  background: rgba(255,153,51,0.2);
 }
-/* Indicador de flecha */
+/* Flecha indicadora */
 .explore-menu::before {
   content: '';
   position: absolute;
@@ -179,22 +181,22 @@ img {
   border-bottom: 8px solid var(--primary-dark);
 }
 
-/* MENÚ MÓVIL (slide-in) */
+/* PANEL MÓVIL (slide-in) */
 .mobile-nav {
-  display: none;                    /* oculto por defecto en desktop */
+  display: none; /* oculto en desktop */
   position: fixed;
   top: var(--header-height);
   right: 0;
   width: 250px;
   height: calc(100% - var(--header-height));
   background: var(--primary-dark);
-  transform: translateX(100%);      /* fuera de pantalla */
+  transform: translateX(100%);
   transition: transform var(--transition-speed);
   z-index: 1500;
 }
 .mobile-nav.open {
   display: block;
-  transform: translateX(0);         /* entra con slide-in */
+  transform: translateX(0);
 }
 .mobile-nav ul {
   list-style: none;
@@ -210,9 +212,10 @@ img {
 .mobile-nav a:hover {
   background: rgba(255,153,51,0.2);
 }
-@media (max-width:768px) {
+@media (max-width: 768px) {
+  /* solo en móviles */
   .mobile-nav {
-    display: block;  /* solo en pantallas pequeñas */
+    display: block;
   }
 }
 
