@@ -17,21 +17,27 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Dropdown "Explorar"
-  if (exploreBtn && exploreMenu) {
-    exploreBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const open = exploreMenu.classList.toggle('open');
-      exploreBtn.setAttribute('aria-expanded', open);
-    });
+// Dropdown "Explorar"
+if (exploreBtn && exploreMenu) {
+  exploreBtn.addEventListener('click', (e) => {
+    e.preventDefault();      // ← Evita el salto a "#"
+    e.stopPropagation();     
+    const open = exploreMenu.classList.toggle('open');
+    exploreBtn.setAttribute('aria-expanded', open);
+  });
 
-    document.addEventListener('click', (e) => {
-      if (!exploreMenu.contains(e.target)) {
-        exploreMenu.classList.remove('open');
-        exploreBtn.setAttribute('aria-expanded', false);
-      }
-    });
-  }
+  document.addEventListener('click', (e) => {
+    // Solo cierra si clicas fuera del menú y fuera del botón
+    if (
+      !exploreMenu.contains(e.target) &&
+      !exploreBtn.contains(e.target)
+    ) {
+      exploreMenu.classList.remove('open');
+      exploreBtn.setAttribute('aria-expanded', false);
+    }
+  });
+}
+
 
   // Menú móvil con overlay y animación
   if (menuBtn && navMain && mobileOverlay) {
