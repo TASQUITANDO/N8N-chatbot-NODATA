@@ -5,19 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nubia – Sobre el proyecto</title>
   <link rel="icon" href="assets/images/favicon.png" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css " />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat :wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/aos @2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Normalize + Google Fonts + AOS + CSS propio -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- HEADER (idéntico al de index.html) -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo-container" aria-label="Inicio – Nubia">
         <picture>
-          <source type="image/webp" srcset="assets/images/logo-nubia.webp" />
+          <source
+            type="image/webp"
+            srcset="assets/images/logo-nubia.webp"
+          />
           <img
             src="assets/images/logo-nubia.png"
             alt="Logo Nubia"
@@ -26,51 +40,180 @@
           />
         </picture>
       </a>
-      <button class="menu-toggle">☰</button>
-      <nav class="main-nav">
+
+      <nav class="main-nav" aria-label="Menú principal">
         <ul>
-          <li><a href="about.html">Sobre el proyecto</a></li>
-          <li><a href="capsulas.html">Cápsulas educativas</a></li>
+          <li><a href="index.html#about">Sobre el proyecto</a></li>
+          <li><a href="index.html#capsulas">Cápsulas educativas</a></li>
           <li><a href="blog.html">Bitácora / Blog</a></li>
           <li><a href="recursos.html">Recursos & Comunidad</a></li>
           <li><a href="contact.html">Contacto</a></li>
         </ul>
       </nav>
-      <button class="cta-button explore-toggle">Explorar ▼</button>
+
+      <a
+        href="#"
+        class="cta-button explore-toggle"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Explorar
+      </a>
+      <div class="explore-menu" id="exploreMenu">
+        <ul>
+          <li><a href="capsulas.html">Cápsulas educativas</a></li>
+          <li><a href="blog.html">Bitácora / Blog</a></li>
+          <li><a href="recursos.html">Recursos & Comunidad</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </div>
+
+      <button
+        class="menu-toggle"
+        aria-label="Abrir menú móvil"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        ☰
+      </button>
     </div>
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <nav id="mobile-menu" class="mobile-nav" aria-label="Menú móvil">
+      <ul>
+        <li><a href="index.html#about">Sobre el proyecto</a></li>
+        <li><a href="index.html#capsulas">Cápsulas educativas</a></li>
+        <li><a href="blog.html">Bitácora / Blog</a></li>
+        <li><a href="recursos.html">Recursos & Comunidad</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- PROPOSICIÓN DE VALOR -->
-  <section id="about" class="value-proposition" data-aos="fade-up">
+  <!-- HERO SECUNDARIO -->
+  <section
+    id="about-hero"
+    class="hero-section"
+    data-aos="fade-in"
+    role="region"
+    aria-label="Sobre Nubia"
+  >
+    <picture class="hero-img">
+      <source
+        type="image/webp"
+        srcset="assets/images/hero-about.webp"
+      />
+      <img
+        src="assets/images/hero-about.jpg"
+        alt="Visión de Nubia"
+        loading="lazy"
+      />
+    </picture>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <h1>Sobre Nubia</h1>
+      <p>Descubre nuestra visión, modos de aprendizaje y valores.</p>
+    </div>
+  </section>
+
+  <!-- PROPUESTA DE VALOR -->
+  <section
+    id="about"
+    class="value-proposition"
+    data-aos="fade-up"
+  >
     <div class="container">
       <h2>Nuestra Propuesta de Valor</h2>
       <p>
         En <strong>Nubia</strong> fusionamos <strong>educación humana</strong> y
         <strong>visual</strong> para ofrecer una experiencia única, ética y práctica.
-        Te acompañamos con IA, gamificación y storytelling para que aprendas
-        de forma profunda y con propósito.
+      </p>
+      <p>
+        Aplicamos IA, gamificación y storytelling para que el conocimiento
+        se convierta en una vivencia profunda y transformadora.
       </p>
     </div>
   </section>
 
+  <!-- VISIÓN Y MODOS -->
+  <section
+    id="vision"
+    class="vision-section"
+    data-aos="fade-up"
+  >
+    <div class="container">
+      <div class="vision-intro">
+        <h2>Nuestra Visión</h2>
+        <p>
+          Creemos que aprender debe ser tan humano como visual. Por eso
+          desarrollamos diferentes modos:
+        </p>
+        <ul>
+          <li><strong>Modo Árbol:</strong> Raíces profundas para un crecimiento sólido.</li>
+          <li><strong>Modo Analítico:</strong> Datos y gráficos para decisiones certeras.</li>
+          <li><strong>Modo Seguridad:</strong> Buenas prácticas y protección avanzada.</li>
+          <li><strong>Modo Friendly:</strong> Guía amable, ideal para principiantes.</li>
+          <li><strong>Modo Shock:</strong> Ejemplos potentes para un impacto inmediato.</li>
+          <li><strong>Modo Pro:</strong> Perfeccionamiento experto al máximo nivel.</li>
+        </ul>
+      </div>
+      <div class="vision-logos">
+        <img
+          src="assets/images/nubia-logo.png"
+          alt="Logo Nubia"
+          loading="lazy"
+        />
+        <img
+          src="assets/images/nubia-giro.png"
+          alt="Nubia Giro"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE (opcional) -->
+  <section class="timeline-section" data-aos="fade-up">
+    <div class="container">
+      <h2>Nuestros Hitos</h2>
+      <ul class="timeline">
+        <li>
+          <span class="timeline-date">2021</span>
+          Fundación de Nubia y primera cápsula.
+        </li>
+        <li>
+          <span class="timeline-date">2022</span>
+          Lanzamiento de la plataforma visual interactiva.
+        </li>
+        <li>
+          <span class="timeline-date">2023</span>
+          Integración del módulo de seguridad y blog.
+        </li>
+      </ul>
+    </div>
+  </section>
+
   <!-- FOOTER -->
-  <footer data-aos="fade-up">
-    <div class="container footer-grid">
-      <div>
-        <h3>Enlaces</h3>
-        <a href="about.html">Sobre el proyecto</a><br />
-        <a href="capsulas.html">Cápsulas educativas</a><br />
-        <a href="blog.html">Bitácora / Blog</a>
+  <footer class="site-footer" data-aos="fade-up">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h4>Enlaces rápidos</h4>
+        <ul>
+          <li><a href="index.html#about">Sobre el proyecto</a></li>
+          <li><a href="index.html#capsulas">Cápsulas educativas</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
       </div>
-      <div>
-        <h3>Redes Sociales</h3>
-        <a href="#"><i class="fab fa-facebook"></i> Facebook</a><br />
-        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <p><a href="mailto:info@nubia.edu">info@nubia.edu</a></p>
+        <p><a href="tel:+1234567890">+1 234 567 890</a></p>
       </div>
-      <div>
-        <h3>Contacto</h3>
-        <p>info@nubia.edu</p>
-        <p>+1 234 567 890</p>
+      <div class="footer-col">
+        <h4>Comunidad</h4>
+        <ul>
+          <li><a href="#">Telegram</a></li>
+          <li><a href="#">Discord</a></li>
+        </ul>
       </div>
     </div>
     <div class="footer-bottom">
@@ -78,8 +221,11 @@
     </div>
   </footer>
 
-  <script src="https://unpkg.com/aos @2.3.1/dist/aos.js"></script>
-  <script> AOS.init({ duration: 600, once: true }); </script>
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 600, once: true });
+  </script>
   <script src="assets/js/scripts.js" defer></script>
 </body>
 </html>
