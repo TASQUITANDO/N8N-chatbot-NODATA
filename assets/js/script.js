@@ -11,22 +11,21 @@ window.addEventListener('DOMContentLoaded', () => {
   const chatBtn       = document.querySelector('.chat-toggle');
   const chatbox       = document.getElementById('chatbox');
 
-  // Scroll → fondo header con efecto de transición suave
+  // Efecto al hacer scroll
   window.addEventListener('scroll', () => {
     if (header) {
       header.classList.toggle('scrolled', window.scrollY > 50);
     }
   });
 
-  // Dropdown "Explorar"
+  // Toggle “Explorar”
   if (exploreBtn && exploreMenu) {
     exploreBtn.addEventListener('click', (e) => {
-      e.preventDefault();  
+      e.preventDefault();
       e.stopPropagation();
       const open = exploreMenu.classList.toggle('open');
       exploreBtn.setAttribute('aria-expanded', open);
     });
-
     document.addEventListener('click', (e) => {
       if (
         !exploreMenu.contains(e.target) &&
@@ -38,7 +37,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Menú móvil con overlay y animación slide-in
+  // Slide-in menú móvil
   if (menuBtn && mobileNav && mobileOverlay) {
     menuBtn.addEventListener('click', () => {
       const open = mobileNav.classList.toggle('open');
@@ -46,7 +45,6 @@ window.addEventListener('DOMContentLoaded', () => {
       mobileOverlay.style.display = open ? 'block' : 'none';
       document.body.style.overflow  = open ? 'hidden' : '';
     });
-
     mobileOverlay.addEventListener('click', () => {
       mobileNav.classList.remove('open');
       menuBtn.setAttribute('aria-expanded', false);
@@ -55,16 +53,13 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Chat con funcionalidad mejorada
+  // Chat toggle
   if (chatBtn && chatbox) {
     chatBtn.addEventListener('click', () => {
       const active = chatbox.classList.toggle('active');
       chatBtn.setAttribute('aria-expanded', active);
-      if (!active) {
-        document.getElementById('usermsg')?.focus();
-      }
+      if (!active) document.getElementById('usermsg')?.focus();
     });
-
     document.addEventListener('click', (e) => {
       if (!chatbox.contains(e.target) && !chatBtn.contains(e.target)) {
         chatbox.classList.remove('active');
@@ -74,6 +69,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// Chat helper…
 function appendToChat(text, sender = 'bot') {
   const log = document.getElementById('chatlog');
   if (!log) return;
@@ -96,14 +92,14 @@ async function sendMessage() {
     const res = await fetch('TU_ENDPOINT/webhook', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ user_id: userId, message: msg }),
+      body: JSON.stringify({ user_id: userId, message: msg })
     });
     if (!res.ok) throw new Error('Network response was not ok');
     const data = await res.json();
     setTimeout(() => {
       appendToChat(data.respuesta || '⚠️ Sin respuesta', 'bot');
     }, 500);
-  } catch (err) {
+  } catch(err) {
     appendToChat('❌ Error de conexión', 'bot');
     console.error(err);
   }
