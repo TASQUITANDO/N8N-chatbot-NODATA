@@ -5,9 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nubia – Educación Humana y Visual</title>
   <link rel="icon" href="assets/images/favicon.png" />
-  <!-- Normalize + Google Fonts + AOS + tu CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css " />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat :wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Normalize + Google Fonts + AOS + CSS propio -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
@@ -16,29 +23,36 @@
   <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
-      <!-- Logo -->
       <a href="index.html" class="logo-container" aria-label="Inicio – Nubia">
         <picture>
           <source type="image/webp" srcset="assets/images/logo-nubia.webp" />
-          <img src="assets/images/logo-nubia.png" alt="Logo Nubia" class="logo" loading="lazy" />
+          <img
+            src="assets/images/logo-nubia.png"
+            alt="Logo Nubia"
+            class="logo"
+            loading="lazy"
+          />
         </picture>
       </a>
 
-      <!-- Navegación Principal -->
       <nav class="main-nav" aria-label="Menú principal">
-        <ul class="nav-list">
-          <li><a href="index.html#about">Sobre el proyecto</a></li>
-          <li><a href="index.html#capsulas">Cápsulas educativas</a></li>
+        <ul>
+          <li><a href="#about">Sobre el proyecto</a></li>
+          <li><a href="#capsulas">Cápsulas educativas</a></li>
           <li><a href="blog.html">Bitácora / Blog</a></li>
           <li><a href="recursos.html">Recursos & Comunidad</a></li>
           <li><a href="contact.html">Contacto</a></li>
         </ul>
       </nav>
 
-      <!-- Botón CTA -->
-      <a href="#" class="cta-button explore-toggle" aria-haspopup="true" aria-expanded="false">Explorar</a>
-
-      <!-- Menú desplegable -->
+      <a
+        href="#"
+        class="cta-button explore-toggle"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Explorar
+      </a>
       <div class="explore-menu" id="exploreMenu">
         <ul>
           <li><a href="capsulas.html">Cápsulas educativas</a></li>
@@ -48,18 +62,20 @@
         </ul>
       </div>
 
-      <!-- Toggle móvil -->
-      <button class="menu-toggle" aria-label="Abrir menú móvil" aria-expanded="false" aria-controls="mobile-menu">
+      <button
+        class="menu-toggle"
+        aria-label="Abrir menú móvil"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
         ☰
       </button>
     </div>
-
-    <!-- Menú móvil (slide-in) -->
     <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
     <nav id="mobile-menu" class="mobile-nav" aria-label="Menú móvil">
       <ul>
-        <li><a href="index.html#about">Sobre el proyecto</a></li>
-        <li><a href="index.html#capsulas">Cápsulas educativas</a></li>
+        <li><a href="#about">Sobre el proyecto</a></li>
+        <li><a href="#capsulas">Cápsulas educativas</a></li>
         <li><a href="blog.html">Bitácora / Blog</a></li>
         <li><a href="recursos.html">Recursos & Comunidad</a></li>
         <li><a href="contact.html">Contacto</a></li>
@@ -85,100 +101,95 @@
     <div class="container">
       <h2>Propuesta de Valor</h2>
       <p>
-        Nubia te ofrece una experiencia educativa única, centrada en el aprendizaje humano, visual y ético.
+        Nubia te ofrece una experiencia educativa única, centrada en el
+        aprendizaje humano, visual y ético.
       </p>
     </div>
   </section>
 
- <!-- CÁPSULAS EDUCATIVAS -->
-<section id="capsulas" class="content-mosaic" data-aos="fade-up">
-  <div class="container">
-    <!-- Árbol -->
-    <article class="content-card" data-aos="zoom-in">
-      <a href="capsulas.html#modo-arbol" class="card-link">
-        <picture class="card-media">
-          <source type="image/webp" srcset="assets/images/icon-tree-mode.webp" />
-          <img src="assets/images/icon-tree-mode.jpg" alt="Modo Árbol" loading="lazy" />
-        </picture>
-        <div class="card-content">
-          <h3>Modo Árbol</h3>
-          <p>Descubre cómo crecer con raíces profundas.</p>
-        </div>
-      </a>
-    </article>
-
-    <!-- Analítico -->
-    <article class="content-card" data-aos="zoom-in" data-aos-delay="100">
-      <a href="capsulas.html#modo-analitico" class="card-link">
-        <picture class="card-media">
-          <source type="image/webp" srcset="assets/images/icon-analytic-mode.webp" />
-          <img src="assets/images/icon-analytic-mode.jpg" alt="Modo Analítico" loading="lazy" />
-        </picture>
-        <div class="card-content">
-          <h3>Modo Analítico</h3>
-          <p>Desentraña datos para decisiones informadas.</p>
-        </div>
-      </a>
-    </article>
-
-    <!-- Seguridad -->
-    <article class="content-card" data-aos="zoom-in" data-aos-delay="200">
-      <a href="capsulas.html#modo-seguridad" class="card-link">
-        <picture class="card-media">
-          <source type="image/webp" srcset="assets/images/icon-secure-mode.webp" />
-          <img src="assets/images/icon-secure-mode.jpg" alt="Modo Seguridad" loading="lazy" />
-        </picture>
-        <div class="card-content">
-          <h3>Modo Seguridad</h3>
-          <p>Protege lo que más importa.</p>
-        </div>
-      </a>
-    </article>
-
-    <!-- Friendly -->
-    <article class="content-card" data-aos="zoom-in" data-aos-delay="300">
-      <a href="capsulas.html#modo-friendly" class="card-link">
-        <picture class="card-media">
-          <source type="image/webp" srcset="assets/images/icon-friendly-mode.webp" />
-          <img src="assets/images/icon-friendly-mode.jpg" alt="Modo Friendly" loading="lazy" />
-        </picture>
-        <div class="card-content">
-          <h3>Modo Friendly</h3>
-          <p>Aprende con una guía amigable y cercana.</p>
-        </div>
-      </a>
-    </article>
-
-    <!-- Shock -->
-    <article class="content-card" data-aos="zoom-in" data-aos-delay="400">
-      <a href="capsulas.html#modo-shock" class="card-link">
-        <picture class="card-media">
-          <source type="image/webp" srcset="assets/images/icon-shock-mode.webp" />
-          <img src="assets/images/icon-shock-mode.jpg" alt="Modo Shock" loading="lazy" />
-        </picture>
-        <div class="card-content">
-          <h3>Modo Shock</h3>
-          <p>Impacta tus conocimientos con ejemplos fuertes.</p>
-        </div>
-      </a>
-    </article>
-
-    <!-- Pro -->
-    <article class="content-card" data-aos="zoom-in" data-aos-delay="500">
-      <a href="capsulas.html#modo-pro" class="card-link">
-        <picture class="card-media">
-          <source type="image/webp" srcset="assets/images/icon-pro-mode.webp" />
-          <img src="assets/images/icon-pro-mode.jpg" alt="Modo Pro" loading="lazy" />
-        </picture>
-        <div class="card-content">
-          <h3>Modo Pro</h3>
-          <p>Perfecciona tus habilidades al máximo nivel.</p>
-        </div>
-      </a>
-    </article>
-  </div>
-</section>
-
+  <!-- CÁPSULAS EDUCATIVAS -->
+  <section id="capsulas" class="content-mosaic" data-aos="fade-up">
+    <div class="container">
+      <!-- Árbol -->
+      <article class="content-card" data-aos="zoom-in">
+        <a href="capsulas.html#modo-arbol">
+          <picture class="card-media">
+            <source type="image/webp" srcset="assets/images/icon-tree-mode.webp" />
+            <img src="assets/images/icon-tree-mode.jpg" alt="Modo Árbol" loading="lazy" />
+          </picture>
+          <div class="card-content">
+            <h3>Modo Árbol</h3>
+            <p>Descubre cómo crecer con raíces profundas.</p>
+          </div>
+        </a>
+      </article>
+      <!-- Analítico -->
+      <article class="content-card" data-aos="zoom-in" data-aos-delay="100">
+        <a href="capsulas.html#modo-analitico">
+          <picture class="card-media">
+            <source type="image/webp" srcset="assets/images/icon-analytic-mode.webp" />
+            <img src="assets/images/icon-analytic-mode.jpg" alt="Modo Analítico" loading="lazy" />
+          </picture>
+          <div class="card-content">
+            <h3>Modo Analítico</h3>
+            <p>Desentraña datos para decisiones informadas.</p>
+          </div>
+        </a>
+      </article>
+      <!-- Seguridad -->
+      <article class="content-card" data-aos="zoom-in" data-aos-delay="200">
+        <a href="capsulas.html#modo-seguridad">
+          <picture class="card-media">
+            <source type="image/webp" srcset="assets/images/icon-secure-mode.webp" />
+            <img src="assets/images/icon-secure-mode.jpg" alt="Modo Seguridad" loading="lazy" />
+          </picture>
+          <div class="card-content">
+            <h3>Modo Seguridad</h3>
+            <p>Protege lo que más importa.</p>
+          </div>
+        </a>
+      </article>
+      <!-- Friendly -->
+      <article class="content-card" data-aos="zoom-in" data-aos-delay="300">
+        <a href="capsulas.html#modo-friendly">
+          <picture class="card-media">
+            <source type="image/webp" srcset="assets/images/icon-friendly-mode.webp" />
+            <img src="assets/images/icon-friendly-mode.jpg" alt="Modo Friendly" loading="lazy" />
+          </picture>
+          <div class="card-content">
+            <h3>Modo Friendly</h3>
+            <p>Aprende con una guía amigable y cercana.</p>
+          </div>
+        </a>
+      </article>
+      <!-- Shock -->
+      <article class="content-card" data-aos="zoom-in" data-aos-delay="400">
+        <a href="capsulas.html#modo-shock">
+          <picture class="card-media">
+            <source type="image/webp" srcset="assets/images/icon-shock-mode.webp" />
+            <img src="assets/images/icon-shock-mode.jpg" alt="Modo Shock" loading="lazy" />
+          </picture>
+          <div class="card-content">
+            <h3>Modo Shock</h3>
+            <p>Impacta tus conocimientos con ejemplos fuertes.</p>
+          </div>
+        </a>
+      </article>
+      <!-- Pro -->
+      <article class="content-card" data-aos="zoom-in" data-aos-delay="500">
+        <a href="capsulas.html#modo-pro">
+          <picture class="card-media">
+            <source type="image/webp" srcset="assets/images/icon-pro-mode.webp" />
+            <img src="assets/images/icon-pro-mode.jpg" alt="Modo Pro" loading="lazy" />
+          </picture>
+          <div class="card-content">
+            <h3>Modo Pro</h3>
+            <p>Perfecciona tus habilidades al máximo nivel.</p>
+          </div>
+        </a>
+      </article>
+    </div>
+  </section>
 
   <!-- SUSCRIPCIÓN -->
   <section class="cta-section" data-aos="fade-up">
@@ -197,15 +208,15 @@
       <div class="footer-col">
         <h4>Enlaces rápidos</h4>
         <ul>
-          <li><a href="index.html#about">Sobre el proyecto</a></li>
-          <li><a href="index.html#capsulas">Cápsulas educativas</a></li>
+          <li><a href="#about">Sobre el proyecto</a></li>
+          <li><a href="#capsulas">Cápsulas educativas</a></li>
           <li><a href="blog.html">Blog</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Contacto</h4>
-        <p>info@nubia.edu</p>
-        <p>+1 234 567 890</p>
+        <p><a href="mailto:info@nubia.edu">info@nubia.edu</a></p>
+        <p><a href="tel:+1234567890">+1 234 567 890</a></p>
       </div>
       <div class="footer-col">
         <h4>Comunidad</h4>
@@ -220,9 +231,11 @@
     </div>
   </footer>
 
-  <!-- Scripts globals -->
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script> AOS.init({ duration: 600, once: true }); </script>
-  <script src="assets/js/script.js" defer></script>
+  <script>
+    AOS.init({ duration: 600, once: true });
+  </script>
+  <script src="assets/js/scripts.js" defer></script>
 </body>
 </html>
