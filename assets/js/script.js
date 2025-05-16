@@ -9,14 +9,14 @@ window.addEventListener('DOMContentLoaded', () => {
   const chatBtn       = document.querySelector('.chat-toggle');
   const chatbox       = document.getElementById('chatbox');
 
-  // Efecto al hacer scroll en header
+  // Efecto scroll en header
   if (header) {
     window.addEventListener('scroll', () => {
       header.classList.toggle('scrolled', window.scrollY > 50);
     });
   }
 
-  // Dropdown “Explorar” solo en desktop
+  // Toggle “Explorar” solo en desktop
   if (window.innerWidth > 768) {
     const exploreBtn  = document.querySelector('.explore-toggle');
     const exploreMenu = document.querySelector('.explore-menu');
@@ -107,3 +107,4 @@ async function sendMessage() {
     console.error(err);
   }
 }
+
