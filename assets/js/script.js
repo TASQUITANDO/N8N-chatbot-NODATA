@@ -10,24 +10,22 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* DESKTOP: toggle “Explorar” */
-  if (window.innerWidth > 768) {
-    const exploreBtn  = document.querySelector('.explore-toggle');
-    const exploreMenu = document.querySelector('.explore-menu');
-    if (exploreBtn && exploreMenu) {
-      exploreBtn.addEventListener('click', e => {
-        e.preventDefault();
-        e.stopPropagation();
-        const open = exploreMenu.classList.toggle('open');
-        exploreBtn.setAttribute('aria-expanded', open);
-      });
-      document.addEventListener('click', e => {
-        if (!exploreMenu.contains(e.target) && !exploreBtn.contains(e.target)) {
-          exploreMenu.classList.remove('open');
-          exploreBtn.setAttribute('aria-expanded', false);
-        }
-      });
-    }
+  /* TOGGLE “Explorar” (desktop & móvil) */
+  const exploreBtn  = document.querySelector('.explore-toggle');
+  const exploreMenu = document.querySelector('.explore-menu');
+  if (exploreBtn && exploreMenu) {
+    exploreBtn.addEventListener('click', e => {
+      e.preventDefault();
+      e.stopPropagation();
+      const open = exploreMenu.classList.toggle('open');
+      exploreBtn.setAttribute('aria-expanded', open);
+    });
+    document.addEventListener('click', e => {
+      if (!exploreMenu.contains(e.target) && !exploreBtn.contains(e.target)) {
+        exploreMenu.classList.remove('open');
+        exploreBtn.setAttribute('aria-expanded', false);
+      }
+    });
   }
 
   /* MÓVIL: slide-in menú */
@@ -71,8 +69,9 @@ window.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => {
       const filter = btn.dataset.filter;
       document.querySelectorAll('.resource-card').forEach(card => {
-        card.style.display =
-          filter === 'all' || card.dataset.type === filter ? '' : 'none';
+        card.style.display = (filter === 'all' || card.dataset.type === filter)
+          ? ''
+          : 'none';
       });
     });
   });
@@ -132,4 +131,3 @@ async function sendMessage() {
     console.error(err);
   }
 }
-
