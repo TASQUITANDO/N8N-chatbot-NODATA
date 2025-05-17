@@ -19,21 +19,27 @@
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-
   <!-- HEADER -->
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <div class="container header-inner">
       <a href="index.html" class="logo-container" aria-label="Inicio – Nubia">
         <picture>
           <source type="image/webp" srcset="assets/images/logo-nubia.webp" />
           <img
-            src="assets/images/logo-nubia.png"
+            src="assets/images/logo-nubia.webp"
             alt="Logo Nubia"
             class="logo"
             loading="lazy"
           />
         </picture>
       </a>
+
+      <button
+        class="menu-toggle"
+        aria-label="Abrir menú móvil"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >☰</button>
 
       <nav class="main-nav" aria-label="Menú principal">
         <ul>
@@ -45,32 +51,27 @@
         </ul>
       </nav>
 
-      <a
-        href="#"
-        class="cta-button explore-toggle"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        Explorar
-      </a>
-      <div class="explore-menu" id="exploreMenu">
-        <ul>
-          <li><a href="capsulas.html">Cápsulas educativas</a></li>
-          <li><a href="blog.html">Bitácora / Blog</a></li>
-          <li><a href="recursos.html">Recursos & Comunidad</a></li>
-          <li><a href="contact.html">Contacto</a></li>
-        </ul>
+      <div class="explore-container">
+        <button
+          class="cta-button explore-toggle"
+          aria-haspopup="menu"
+          aria-controls="explore-menu"
+          aria-expanded="false"
+        >
+          Explorar ▼
+        </button>
+        <nav id="explore-menu" class="explore-menu" aria-label="Explorar">
+          <ul>
+            <li><a href="capsulas.html">Cápsulas educativas</a></li>
+            <li><a href="blog.html">Bitácora / Blog</a></li>
+            <li><a href="recursos.html">Recursos & Comunidad</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+          </ul>
+        </nav>
       </div>
-
-      <button
-        class="menu-toggle"
-        aria-label="Abrir menú móvil"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-      >
-        ☰
-      </button>
     </div>
+
+    <!-- MENÚ MÓVIL -->
     <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
     <nav id="mobile-menu" class="mobile-nav" aria-label="Menú móvil">
       <ul>
@@ -84,13 +85,23 @@
   </header>
 
   <!-- HERO -->
-  <section id="hero" class="hero-section" role="region" aria-label="Bienvenida">
+  <section
+    id="hero"
+    class="hero-section"
+    role="region"
+    aria-label="Bienvenida"
+    data-aos="fade-in"
+  >
     <picture class="hero-img">
       <source type="image/webp" srcset="assets/images/hero.webp" />
-      <img src="assets/images/hero.jpg" alt="Ilustración educativa Nubia" loading="lazy" />
+      <img
+        src="assets/images/hero.jpg"
+        alt="Ilustración educativa Nubia"
+        loading="lazy"
+      />
     </picture>
     <div class="hero-overlay" aria-hidden="true"></div>
-    <div class="hero-content" data-aos="fade-in">
+    <div class="hero-content">
       <h1>Bienvenido a Nubia</h1>
       <p>Donde la educación humana y visual se encuentran.</p>
     </div>
@@ -107,15 +118,21 @@
     </div>
   </section>
 
-  <!-- CÁPSULAS EDUCATIVAS -->
+  <!-- CÁPSULAS EDUCATIVAS (PREVIEW) -->
   <section id="capsulas" class="content-mosaic" data-aos="fade-up">
     <div class="container">
-      <!-- Árbol -->
       <article class="content-card" data-aos="zoom-in">
         <a href="capsulas.html#modo-arbol">
           <picture class="card-media">
-            <source type="image/webp" srcset="assets/images/icon-tree-mode.webp" />
-            <img src="assets/images/icon-tree-mode.jpg" alt="Modo Árbol" loading="lazy" />
+            <source
+              type="image/webp"
+              srcset="assets/images/image-tree-mode.webp"
+            />
+            <img
+              src="assets/images/image-tree-mode.jpg"
+              alt="Modo Árbol"
+              loading="lazy"
+            />
           </picture>
           <div class="card-content">
             <h3>Modo Árbol</h3>
@@ -123,12 +140,19 @@
           </div>
         </a>
       </article>
-      <!-- Analítico -->
+
       <article class="content-card" data-aos="zoom-in" data-aos-delay="100">
         <a href="capsulas.html#modo-analitico">
           <picture class="card-media">
-            <source type="image/webp" srcset="assets/images/icon-analytic-mode.webp" />
-            <img src="assets/images/icon-analytic-mode.jpg" alt="Modo Analítico" loading="lazy" />
+            <source
+              type="image/webp"
+              srcset="assets/images/image-analytic-mode.webp"
+            />
+            <img
+              src="assets/images/image-analytic-mode.jpg"
+              alt="Modo Analítico"
+              loading="lazy"
+            />
           </picture>
           <div class="card-content">
             <h3>Modo Analítico</h3>
@@ -136,12 +160,19 @@
           </div>
         </a>
       </article>
-      <!-- Seguridad -->
+
       <article class="content-card" data-aos="zoom-in" data-aos-delay="200">
         <a href="capsulas.html#modo-seguridad">
           <picture class="card-media">
-            <source type="image/webp" srcset="assets/images/icon-secure-mode.webp" />
-            <img src="assets/images/icon-secure-mode.jpg" alt="Modo Seguridad" loading="lazy" />
+            <source
+              type="image/webp"
+              srcset="assets/images/image-secure-mode.webp"
+            />
+            <img
+              src="assets/images/image-secure-mode.jpg"
+              alt="Modo Seguridad"
+              loading="lazy"
+            />
           </picture>
           <div class="card-content">
             <h3>Modo Seguridad</h3>
@@ -149,12 +180,19 @@
           </div>
         </a>
       </article>
-      <!-- Friendly -->
+
       <article class="content-card" data-aos="zoom-in" data-aos-delay="300">
         <a href="capsulas.html#modo-friendly">
           <picture class="card-media">
-            <source type="image/webp" srcset="assets/images/icon-friendly-mode.webp" />
-            <img src="assets/images/icon-friendly-mode.jpg" alt="Modo Friendly" loading="lazy" />
+            <source
+              type="image/webp"
+              srcset="assets/images/image-friendly-mode.webp"
+            />
+            <img
+              src="assets/images/image-friendly-mode.jpg"
+              alt="Modo Friendly"
+              loading="lazy"
+            />
           </picture>
           <div class="card-content">
             <h3>Modo Friendly</h3>
@@ -162,12 +200,19 @@
           </div>
         </a>
       </article>
-      <!-- Shock -->
+
       <article class="content-card" data-aos="zoom-in" data-aos-delay="400">
         <a href="capsulas.html#modo-shock">
           <picture class="card-media">
-            <source type="image/webp" srcset="assets/images/icon-shock-mode.webp" />
-            <img src="assets/images/icon-shock-mode.jpg" alt="Modo Shock" loading="lazy" />
+            <source
+              type="image/webp"
+              srcset="assets/images/image-shock-mode.webp"
+            />
+            <img
+              src="assets/images/image-shock-mode.jpg"
+              alt="Modo Shock"
+              loading="lazy"
+            />
           </picture>
           <div class="card-content">
             <h3>Modo Shock</h3>
@@ -175,12 +220,19 @@
           </div>
         </a>
       </article>
-      <!-- Pro -->
+
       <article class="content-card" data-aos="zoom-in" data-aos-delay="500">
         <a href="capsulas.html#modo-pro">
           <picture class="card-media">
-            <source type="image/webp" srcset="assets/images/icon-pro-mode.webp" />
-            <img src="assets/images/icon-pro-mode.jpg" alt="Modo Pro" loading="lazy" />
+            <source
+              type="image/webp"
+              srcset="assets/images/image-pro-mode.webp"
+            />
+            <img
+              src="assets/images/image-pro-mode.jpg"
+              alt="Modo Pro"
+              loading="lazy"
+            />
           </picture>
           <div class="card-content">
             <h3>Modo Pro</h3>
@@ -203,7 +255,7 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="site-footer" data-aos="fade-up">
+  <footer class="site-footer" role="contentinfo" data-aos="fade-up">
     <div class="container footer-inner">
       <div class="footer-col">
         <h4>Enlaces rápidos</h4>
@@ -233,9 +285,7 @@
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 600, once: true });
-  </script>
+  <script> AOS.init({ duration: 600, once: true }); </script>
   <script src="assets/js/script.js" defer></script>
 </body>
 </html>
