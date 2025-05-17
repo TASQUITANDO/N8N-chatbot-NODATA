@@ -6,7 +6,7 @@
   --light-bg: #f5f7fa;
   --white: #ffffff;
   --text-color: #333333;
-  --header-height: 80px;
+  --header-height: 120px;
   --transition-speed: 0.3s;
 }
 
@@ -36,6 +36,7 @@ img { max-width: 100%; height: auto; display: block; }
   top: 0; left: 0; right: 0;
   height: var(--header-height);
   background: var(--primary-dark);
+  padding: 0 1rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   z-index: 2000;
   display: flex;
