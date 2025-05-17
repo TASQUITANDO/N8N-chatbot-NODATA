@@ -1,24 +1,26 @@
-// scripts.js
+// assets/js/scripts.js
+
 const userId = 'user_' + Math.floor(Math.random() * 1e6);
 
 window.addEventListener('DOMContentLoaded', () => {
-  /* HEADER: efecto scroll */
+  /* HEADER: efecto scroll tras pasar altura del header */
   const header = document.querySelector('.site-header');
+  const HEADER_HEIGHT = 120; // coincide con --header-height
   if (header) {
     window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 50);
+      header.classList.toggle('scrolled', window.scrollY > HEADER_HEIGHT);
     });
   }
 
-  /* TOGGLE “Explorar” (desktop & móvil) */
+  /* TOGGLE “Explorar” */
   const exploreBtn  = document.querySelector('.explore-toggle');
   const exploreMenu = document.querySelector('.explore-menu');
   if (exploreBtn && exploreMenu) {
     exploreBtn.addEventListener('click', e => {
       e.preventDefault();
       e.stopPropagation();
-      const open = exploreMenu.classList.toggle('open');
-      exploreBtn.setAttribute('aria-expanded', open);
+      const isOpen = exploreMenu.classList.toggle('open');
+      exploreBtn.setAttribute('aria-expanded', isOpen);
     });
     document.addEventListener('click', e => {
       if (!exploreMenu.contains(e.target) && !exploreBtn.contains(e.target)) {
@@ -34,10 +36,10 @@ window.addEventListener('DOMContentLoaded', () => {
   const mobileOverlay = document.getElementById('mobileNavOverlay');
   if (menuBtn && mobileNav && mobileOverlay) {
     menuBtn.addEventListener('click', () => {
-      const open = mobileNav.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', open);
-      mobileOverlay.style.display = open ? 'block' : 'none';
-      document.body.style.overflow = open ? 'hidden' : '';
+      const isOpen = mobileNav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', isOpen);
+      mobileOverlay.style.display = isOpen ? 'block' : 'none';
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
     mobileOverlay.addEventListener('click', () => {
       mobileNav.classList.remove('open');
@@ -65,16 +67,19 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   /* RECURSOS: filtrado de descargables */
-  document.querySelectorAll('.resource-filters button').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const filter = btn.dataset.filter;
-      document.querySelectorAll('.resource-card').forEach(card => {
-        card.style.display = (filter === 'all' || card.dataset.type === filter)
-          ? ''
-          : 'none';
+  const filterBtns = document.querySelectorAll('.resource-filters button');
+  if (filterBtns.length) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.resource-card').forEach(card => {
+          card.style.display = (filter === 'all' || card.dataset.type === filter)
+            ? ''
+            : 'none';
+        });
       });
     });
-  });
+  }
 
   /* CONTACTO: validación y feedback */
   const form = document.querySelector('.contact-form');
@@ -88,15 +93,17 @@ window.addEventListener('DOMContentLoaded', () => {
 
       if (!name || !email || !msg) {
         fb.textContent = 'Por favor completa todos los campos.';
+        fb.style.color = 'var(--accent)';
         return;
       }
       fb.textContent = '¡Mensaje enviado con éxito!';
-      // Aquí puedes integrar la lógica real de envío (fetch/AJAX)
+      fb.style.color = 'var(--primary-dark)';
+      // Aquí iría tu lógica real de envío (fetch/AJAX)
     });
   }
 });
 
-// Helper para chat
+/* Helper para chat */
 function appendToChat(text, sender = 'bot') {
   const log = document.getElementById('chatlog');
   if (!log) return;
@@ -115,6 +122,7 @@ async function sendMessage() {
   appendToChat(msg, 'user');
   input.value = '';
   appendToChat('...', 'bot');
+
   try {
     const res = await fetch('TU_ENDPOINT/webhook', {
       method: 'POST',
