@@ -187,40 +187,49 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* HERO */
+/* 1) Quitamos la altura fija del hero */
 .hero-section {
   position: relative;
-  height: calc(100vh - var(--header-height));
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   text-align: center;
   overflow: hidden;
+  /* antes tenías height: calc(100vh - var(--header-height)); */
+  padding: 0; /* eliminamos cualquier padding vertical excesivo */
 }
-.hero-section picture img {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-  filter: brightness(0.6) blur(1px);
+
+/* 2) Hacemos que picture e img escalen con contain */
+.hero-section .hero-img,
+.hero-section picture {
+  display: block;
+  width: 100%;
 }
+
+.hero-section .hero-img img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;     /* muestra toda la imagen */
+  object-position: center;  /* la centra dentro del contenedor */
+}
+
+/* 3) Ajustamos overlay y contenido al nuevo flujo */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.4); /* opacidad ajustable */
 }
 .hero-content {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
   color: var(--white);
-  padding: 0 1rem;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.8);
 }
-.hero-content h1 {
-  font-size: clamp(2rem,5vw,3rem);
-  margin-bottom: 0.5rem;
-}
+.hero-content h1,
 .hero-content p {
-  font-size: clamp(1rem,2.5vw,1.5rem);
+  margin: 0.5rem 0;
 }
+
 
 /* Cápsulas educativas (mosaico en índice y capsulas.html) */
 .content-mosaic {
