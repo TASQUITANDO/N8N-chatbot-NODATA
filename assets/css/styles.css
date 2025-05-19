@@ -539,3 +539,126 @@ img { max-width: 100%; height: auto; display: block; }
   gap: 0.5rem;
 }
 /* ───────────────────────────────────────────────────────────────── */
+
+
+/* ================ Blog: GRID DE POSTS ================ */
+.posts-section .posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.posts-grid .blog-post {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.posts-grid .blog-post:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+/* Imagen de la tarjeta */
+.posts-grid .blog-post picture,
+.posts-grid .blog-post img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Meta y título */
+.posts-grid .blog-post .post-meta {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.posts-grid .blog-post .post-meta time {
+  display: block;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.posts-grid .blog-post .post-meta h3 {
+  margin: 0.5rem 0;
+  font-size: 1.25rem;
+  color: var(--primary-dark);
+}
+
+/* Extracto */
+.posts-grid .blog-post p {
+  padding: 0 1rem 1rem;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* ================ Sidebar ================ */
+.blog-sidebar {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-top: 2rem;
+}
+
+.blog-sidebar .widget + .widget {
+  margin-top: 2rem;
+}
+
+.blog-sidebar .widget h4 {
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+}
+
+.blog-sidebar .widget input[type="search"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.blog-sidebar .widget ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.blog-sidebar .widget ul li + li {
+  margin-top: 0.5rem;
+}
+
+.blog-sidebar .widget ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+.blog-sidebar .widget ul li a:hover {
+  color: var(--accent);
+}
+
+/* ================ Paginación ================ */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 0;
+}
+
+.pagination a {
+  background: var(--white);
+  color: var(--primary-dark);
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: background var(--transition-speed), color var(--transition-speed);
+}
+
+.pagination a:hover {
+  background: var(--accent);
+  color: #fff;
+}
