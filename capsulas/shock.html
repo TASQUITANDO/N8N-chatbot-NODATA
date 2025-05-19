@@ -1,22 +1,127 @@
-<section class="capsula" id="shock">
-  <header>
-    <img src="../assets/images/image-shock-mode.webp" alt="Icono Shock">
-    <h2>Modo Shock</h2>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Modo Shock – Nubia</title>
+  <link rel="icon" href="../assets/images/favicon.png">
+  <!-- Normalize, Google Fonts, AOS y tu CSS -->
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER (idéntico en todas las páginas) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo-container" aria-label="Inicio – Nubia">
+        <picture>
+          <source type="image/webp" srcset="../assets/images/logo-nubia.webp">
+          <img src="../assets/images/logo-nubia.png" alt="Logo Nubia" class="logo" loading="lazy">
+        </picture>
+      </a>
+      <nav class="main-nav" aria-label="Menú principal">
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../about.html">Sobre el proyecto</a></li>
+          <li><a href="../capsulas.html">Cápsulas educativas</a></li>
+          <li><a href="../blog.html">Bitácora / Blog</a></li>
+          <li><a href="../recursos.html">Recursos & Comunidad</a></li>
+          <li><a href="../contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" aria-label="Abrir menú móvil" aria-expanded="false">☰</button>
+      <a href="#" class="cta-button explore-toggle" aria-haspopup="true" aria-expanded="false">Explorar ▼</a>
+      <div class="explore-menu">
+        <ul>
+          <li><a href="../capsulas.html">Cápsulas educativas</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../recursos.html">Recursos</a></li>
+          <li><a href="../contact.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mobile-nav-overlay"></div>
+    <nav id="mobile-menu" class="mobile-nav" aria-label="Menú móvil">
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../about.html">Sobre el proyecto</a></li>
+        <li><a href="../capsulas.html">Cápsulas educativas</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../recursos.html">Recursos</a></li>
+        <li><a href="../contact.html">Contacto</a></li>
+      </ul>
+    </nav>
   </header>
-  <p class="hook">
-    “Lo que más recordamos… es lo que nos sacude.”
-  </p>
-  <p class="problema">
-    Muchos contenidos pasan por tu mente como si fueran viento.  
-    No dejan huella ni activan emoción.
-  </p>
-  <p class="solucion">
-    El modo Shock usa contrastes, giros inesperados y narrativas potentes  
-    para activar la memoria emocional.  
-    Cada lección es un “¡wow!” diseñado para quedarse.
-  </p>
-  <p class="cta">
-    Puede que no olvides esta cápsula…  
-    como no se olvida aquello que nos hizo sentir algo verdadero.
-  </p>
-</section>
+  <!-- FIN HEADER -->
+
+  <!-- HERO de la cápsula Shock -->
+  <section class="capsule-hero" data-aos="fade-in">
+    <picture>
+      <source type="image/webp" srcset="../assets/images/image-shock-mode.webp">
+      <img src="../assets/images/image-shock-mode.jpg" alt="Modo Shock">
+    </picture>
+    <div class="capsule-hero-overlay"></div>
+    <div class="capsule-hero-text">
+      <h1>Modo Shock</h1>
+      <div class="subtitle">
+        “Lo que más recordamos… es lo que nos sacude.”
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENIDO DE LA CÁPSULA -->
+  <main class="capsule-content container" data-aos="fade-up">
+
+    <h2>Visualiza el problema</h2>
+    <p>
+      Muchos contenidos pasan por tu mente como si fueran viento. No dejan huella ni activan emoción.
+    </p>
+
+    <h2>Transformación con Nubia</h2>
+    <p>
+      El modo Shock usa contrastes, giros inesperados y narrativas potentes para activar la memoria emocional. Cada lección es un “¡wow!” diseñado para quedarse.
+    </p>
+
+    <div class="capsule-cta">
+      <a href="../capsulas.html" class="btn-secondary">Volver a Cápsulas</a>
+      <a href="#" class="btn-primary">Quiero sentir el impacto Nubia</a>
+    </div>
+  </main>
+
+  <!-- FOOTER (idéntico en todas las páginas) -->
+  <footer class="site-footer" data-aos="fade-up">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h4>Enlaces rápidos</h4>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../about.html">Sobre el proyecto</a></li>
+          <li><a href="../capsulas.html">Cápsulas educativas</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <p><a href="mailto:info@nubia.edu">info@nubia.edu</a></p>
+        <p><a href="tel:+1234567890">+1 234 567 890</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Comunidad</h4>
+        <ul>
+          <li><a href="#">Telegram</a></li>
+          <li><a href="#">Discord</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Nubia – Tecnología con alma humana.
+    </div>
+  </footer>
+  <!-- FIN FOOTER -->
+
+  <!-- Scripts globales -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script> AOS.init({ duration: 600, once: true }); </script>
+  <script src="../assets/js/scripts.js" defer></script>
+</body>
+</html>
