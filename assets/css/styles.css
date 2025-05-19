@@ -55,10 +55,9 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .logo-container { margin-right: auto; }
-
 .logo { height: 120px; width: auto; transition: transform var(--transition-speed); }
 
-/* Forzar texto blanco y sin subrayado en todos los nav */
+/* Enlaces blancos */
 .main-nav a,
 .mobile-nav a {
   color: var(--white);
@@ -100,7 +99,6 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 @media (max-width: 768px) {
-  /* ocultar nav desktop y mostrar hamburguesa */
   .main-nav { display: none !important; }
   .menu-toggle { display: block; }
 }
@@ -114,7 +112,6 @@ img { max-width: 100%; height: auto; display: block; }
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   border-radius: 8px;
   z-index: 1000;
-
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
@@ -122,7 +119,6 @@ img { max-width: 100%; height: auto; display: block; }
     opacity var(--transition-speed),
     transform var(--transition-speed),
     visibility var(--transition-speed);
-
   width: max-content;
   min-width: 200px;
   overflow: hidden;
@@ -145,7 +141,6 @@ img { max-width: 100%; height: auto; display: block; }
 .explore-menu a:hover {
   background: rgba(255,153,51,0.2);
 }
-/* Flecha indicadora */
 .explore-menu::before {
   content: '';
   position: absolute;
@@ -156,9 +151,9 @@ img { max-width: 100%; height: auto; display: block; }
   border-bottom: 8px solid var(--primary-dark);
 }
 
-/* PANEL MÓVIL (slide-in) */
+/* PANEL MÓVIL */
 .mobile-nav {
-  display: none; /* oculto en desktop */
+  display: none;
   position: fixed;
   top: var(--header-height);
   right: 0;
@@ -227,11 +222,10 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: clamp(1rem,2.5vw,1.5rem);
 }
 
-/* Cápsulas educativas */
+/* Cápsulas educativas (mosaico en índice y capsulas.html) */
 .content-mosaic {
   padding: 4rem 0;
 }
-/* Desktop: dos columnas fijas */
 @media (min-width: 1024px) {
   .content-mosaic .container {
     display: grid;
@@ -239,7 +233,6 @@ img { max-width: 100%; height: auto; display: block; }
     gap: 2rem;
   }
 }
-/* Tablet/Móvil: una columna */
 @media (max-width: 1023px) {
   .content-mosaic .container {
     display: grid;
@@ -248,7 +241,7 @@ img { max-width: 100%; height: auto; display: block; }
   }
 }
 
-/* Estructura de las tarjetas como componentes accesibles */
+/* Tarjetas generales */
 .content-card {
   background: var(--white);
   border-radius: 8px;
@@ -258,21 +251,15 @@ img { max-width: 100%; height: auto; display: block; }
   flex-direction: column;
   transition: transform var(--transition-speed), box-shadow var(--transition-speed);
 }
-
-/* Elevación y escala al hover/focus */
 .content-card:hover,
 .content-card:focus-within {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
-
-/* Indicador de foco claro */
 .content-card:focus-within {
   outline: 2px solid var(--accent);
   outline-offset: 4px;
 }
-
-/* Hacer toda la tarjeta clicable */
 .content-card a {
   flex: 1;
   display: flex;
@@ -280,8 +267,6 @@ img { max-width: 100%; height: auto; display: block; }
   color: inherit;
   text-decoration: none;
 }
-
-/* Asegurar texto en negro */
 .content-card .card-content h3,
 .content-card .card-content p {
   color: var(--text-color);
@@ -301,7 +286,6 @@ img { max-width: 100%; height: auto; display: block; }
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   margin-bottom: 2rem;
 }
-
 .newsletter-form {
   display: flex;
   gap: 0.5rem;
@@ -375,4 +359,91 @@ img { max-width: 100%; height: auto; display: block; }
   background: var(--accent);
   color: #fff;
   border: none;
+}
+
+/* ==== NUEVOS ESTILOS PARA DETALLE DE CÁPSULA ==== */
+.capsule-detail {
+  padding-top: var(--header-height);
+}
+.capsule-hero {
+  position: relative;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.capsule-hero picture,
+.capsule-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+.capsule-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+.capsule-hero-text {
+  position: absolute;
+  color: var(--white);
+  padding: 0 1rem;
+}
+.capsule-hero-text h1 {
+  font-size: clamp(2rem,5vw,3rem);
+  margin-bottom: 0.5rem;
+}
+.capsule-hero-text .subtitle {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+/* Contenido de la cápsula */
+.capsule-content {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  padding: 0 1rem;
+}
+.capsule-content h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: var(--primary-dark);
+}
+.capsule-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+/* CTA final */
+.capsule-cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.capsule-cta .btn-primary,
+.capsule-cta .btn-secondary {
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color var(--transition-speed);
+}
+.capsule-cta .btn-primary {
+  background: var(--accent);
+  color: var(--white);
+}
+.capsule-cta .btn-primary:hover {
+  background: #e68a2e;
+}
+.capsule-cta .btn-secondary {
+  background: #fff;
+  color: var(--primary-dark);
+  border: 2px solid var(--primary-dark);
+}
+.capsule-cta .btn-secondary:hover {
+  background: var(--primary-dark);
+  color: var(--white);
 }
