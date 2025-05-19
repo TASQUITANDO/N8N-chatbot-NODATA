@@ -15,23 +15,16 @@
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
     rel="stylesheet"
   />
-  <link
-    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
-    rel="stylesheet"
-  />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-
   <!-- HEADER (idéntico al de index.html) -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo-container" aria-label="Inicio – Nubia">
         <picture>
-          <source
-            type="image/webp"
-            srcset="assets/images/logo-nubia.webp"
-          />
+          <source type="image/webp" srcset="assets/images/logo-nubia.webp" />
           <img
             src="assets/images/logo-nubia.png"
             alt="Logo Nubia"
@@ -43,65 +36,59 @@
 
       <nav class="main-nav" aria-label="Menú principal">
         <ul>
-          <li><a href="index.html#about">Sobre el proyecto</a></li>
-          <li><a href="index.html#capsulas">Cápsulas educativas</a></li>
-          <li><a href="blog.html">Bitácora / Blog</a></li>
-          <li><a href="recursos.html">Recursos & Comunidad</a></li>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="about.html" class="active">Sobre Nubia</a></li>
+          <li><a href="capsulas.html">Cápsulas</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="recursos.html">Recursos</a></li>
           <li><a href="contact.html">Contacto</a></li>
         </ul>
       </nav>
+
+      <button
+        class="menu-toggle"
+        aria-label="Abrir menú móvil"
+        aria-expanded="false"
+      >☰</button>
 
       <a
         href="#"
         class="cta-button explore-toggle"
         aria-haspopup="true"
         aria-expanded="false"
-      >
-        Explorar
-      </a>
-      <div class="explore-menu" id="exploreMenu">
+      >Explorar ▼</a>
+      <div class="explore-menu">
         <ul>
-          <li><a href="capsulas.html">Cápsulas educativas</a></li>
-          <li><a href="blog.html">Bitácora / Blog</a></li>
-          <li><a href="recursos.html">Recursos & Comunidad</a></li>
+          <li><a href="capsulas.html">Cápsulas</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="recursos.html">Recursos</a></li>
           <li><a href="contact.html">Contacto</a></li>
         </ul>
       </div>
-
-      <button
-        class="menu-toggle"
-        aria-label="Abrir menú móvil"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-      >
-        ☰
-      </button>
     </div>
-    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+
+    <div class="mobile-nav-overlay"></div>
     <nav id="mobile-menu" class="mobile-nav" aria-label="Menú móvil">
       <ul>
-        <li><a href="index.html#about">Sobre el proyecto</a></li>
-        <li><a href="index.html#capsulas">Cápsulas educativas</a></li>
-        <li><a href="blog.html">Bitácora / Blog</a></li>
-        <li><a href="recursos.html">Recursos & Comunidad</a></li>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="about.html">Sobre Nubia</a></li>
+        <li><a href="capsulas.html">Cápsulas</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="recursos.html">Recursos</a></li>
         <li><a href="contact.html">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- HERO SECUNDARIO -->
+  <!-- 1. HERO SECUNDARIO -->
   <section
     id="about-hero"
     class="hero-section"
     data-aos="fade-in"
-    role="region"
     aria-label="Sobre Nubia"
   >
     <picture class="hero-img">
-      <source
-        type="image/webp"
-        srcset="assets/images/hero-about.webp"
-      />
+      <source type="image/webp" srcset="assets/images/hero-about.webp" />
       <img
         src="assets/images/hero-about.jpg"
         alt="Visión de Nubia"
@@ -110,84 +97,104 @@
     </picture>
     <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-content">
-      <h1>Sobre Nubia</h1>
-      <p>Descubre nuestra visión, modos de aprendizaje y valores.</p>
+      <h1>Una nueva forma de enseñar lo técnico</h1>
+      <p>Humanidad + Visualidad + Ética + Tecnología</p>
     </div>
   </section>
 
-  <!-- PROPUESTA DE VALOR -->
-  <section
-    id="about"
-    class="value-proposition"
-    data-aos="fade-up"
-  >
+  <!-- 2. NUESTRA PROPUESTA DE VALOR -->
+  <section class="propuesta-valor" data-aos="fade-up" aria-labelledby="pv-title">
     <div class="container">
-      <h2>Nuestra Propuesta de Valor</h2>
+      <h2 id="pv-title">¿Qué es Nubia?</h2>
       <p>
-        En <strong>Nubia</strong> fusionamos <strong>educación humana</strong> y
-        <strong>visual</strong> para ofrecer una experiencia única, ética y práctica.
+        Nubia es una plataforma educativa que convierte lo complejo en útil.
+        Enseñamos tecnología de forma
+        <strong>visual, práctica y con conciencia ética</strong>. Porque
+        entender es el primer paso para aplicar.
       </p>
-      <p>
-        Aplicamos IA, gamificación y storytelling para que el conocimiento
-        se convierta en una vivencia profunda y transformadora.
-      </p>
+      <div class="icons-grid">
+        <div><span role="img" aria-label="Lupa">🔍</span> Visual</div>
+        <div><span role="img" aria-label="Cerebro">🧠</span> Humano</div>
+        <div><span role="img" aria-label="Rayo">⚡</span> Práctico</div>
+        <div><span role="img" aria-label="Corazón">❤️</span> Ético</div>
+      </div>
     </div>
   </section>
 
-  <!-- VISIÓN Y MODOS -->
-  <section
-    id="vision"
-    class="vision-section"
-    data-aos="fade-up"
-  >
-    <div class="container">
-      <div class="vision-intro">
-        <h2>Nuestra Visión</h2>
-        <p>
-          Creemos que aprender debe ser tan humano como visual. Por eso
-          desarrollamos diferentes modos:
-        </p>
+  <!-- 3. MISIÓN, VISIÓN Y PRINCIPIOS -->
+  <section class="mv-seccion" data-aos="fade-up">
+    <div class="container mv-grid">
+      <div class="mv-card" data-aos="fade-up" data-aos-delay="100">
+        <h3>Nuestra Misión</h3>
+        <p>Democratizar el conocimiento técnico. Enseñar con claridad para transformar realidades.</p>
+      </div>
+      <div class="mv-card" data-aos="fade-up" data-aos-delay="200">
+        <h3>Visión</h3>
+        <p>Un mundo donde la tecnología se entienda como algo cotidiano, útil y humano.</p>
+      </div>
+      <div class="mv-card" data-aos="fade-up" data-aos-delay="300">
+        <h3>Principios</h3>
         <ul>
-          <li><strong>Modo Árbol:</strong> Raíces profundas para un crecimiento sólido.</li>
-          <li><strong>Modo Analítico:</strong> Datos y gráficos para decisiones certeras.</li>
-          <li><strong>Modo Seguridad:</strong> Buenas prácticas y protección avanzada.</li>
-          <li><strong>Modo Friendly:</strong> Guía amable, ideal para principiantes.</li>
-          <li><strong>Modo Shock:</strong> Ejemplos potentes para un impacto inmediato.</li>
-          <li><strong>Modo Pro:</strong> Perfeccionamiento experto al máximo nivel.</li>
+          <li>✅ Lo que se entiende, se usa.</li>
+          <li>🎨 Ver diferente. Enseñar distinto.</li>
+          <li>⚙️ Aplicar vale más que memorizar.</li>
+          <li>🔒 Conciencia en cada byte.</li>
         </ul>
       </div>
-      <div class="vision-logos">
-        <img
-          src="assets/images/nubia-logo.png"
-          alt="Logo Nubia"
-          loading="lazy"
-        />
-        <img
-          src="assets/images/nubia-giro.png"
-          alt="Nubia Giro"
-          loading="lazy"
-        />
+    </div>
+  </section>
+
+  <!-- 4. CÁPSULA DESTACADA “CÓMO ENSEÑAMOS” -->
+  <section class="capsula-educativa" data-aos="fade-up">
+    <div class="container">
+      <h2>Así enseñamos en Nubia</h2>
+      <div class="capsula-grid">
+        <div class="modo-shock"><strong>😲 Shock:</strong> ¿Sabías que el 90% de la energía se pierde antes de llegar a tu casa?</div>
+        <div class="modo-friendly"><strong>😊 Friendly:</strong> Vamos paso a paso. Entender la energía es más fácil de lo que parece.</div>
+        <div class="modo-analytic"><strong>📊 Analytic:</strong> Mira este diagrama de un sistema fotovoltaico real.</div>
+        <div class="modo-pro"><strong>😠 Pro:</strong> Conectá este panel, configurá el inversor, y medí el voltaje.</div>
+        <div class="modo-tree"><strong>🌱 Tree:</strong> ¿Qué impacto tendría si cada hogar produjera su propia energía?</div>
+        <div class="modo-secure"><strong>🛡️ Secure:</strong> Protegé tu sistema: evita accesos remotos sin cifrado.</div>
       </div>
     </div>
   </section>
 
-  <!-- TIMELINE (opcional) -->
+  <!-- 5. ORIGEN NUBIA (TESTIMONIAL) -->
+  <section class="origen-nubia" data-aos="fade-up">
+    <div class="container">
+      <blockquote>
+        “Durante años, vi cómo gente brillante se alejaba de lo técnico porque se lo explicaban como si fuese otro idioma. 
+        Nubia nació para cambiar eso.”
+      </blockquote>
+      <p class="autor">– Alberto Tascón, creador de Nubia</p>
+    </div>
+  </section>
+
+  <!-- 6. COMUNIDAD Y FUTURO -->
+  <section class="comunidad-futuro" data-aos="fade-up">
+    <div class="container">
+      <h2>Un movimiento, no solo una web</h2>
+      <p>
+        Nubia es una comunidad en expansión. Aprendices, docentes, makers y curiosos que creen en
+        <strong>una tecnología comprensible, ética y compartida</strong>.
+      </p>
+      <ul class="comunidad-list">
+        <li>🔗 Canal de Telegram</li>
+        <li>📅 Encuentros y talleres</li>
+        <li>📚 Recursos descargables y guías</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 7. TIMELINE (OPCIONAL) -->
   <section class="timeline-section" data-aos="fade-up">
     <div class="container">
       <h2>Nuestros Hitos</h2>
       <ul class="timeline">
-        <li>
-          <span class="timeline-date">2021</span>
-          Fundación de Nubia y primera cápsula.
-        </li>
-        <li>
-          <span class="timeline-date">2022</span>
-          Lanzamiento de la plataforma visual interactiva.
-        </li>
-        <li>
-          <span class="timeline-date">2023</span>
-          Integración del módulo de seguridad y blog.
-        </li>
+        <li><span class="timeline-date">2022</span>Primeros prototipos de Nubia.</li>
+        <li><span class="timeline-date">2023</span>Se define el enfoque coral.</li>
+        <li><span class="timeline-date">2024</span>Se lanza la plataforma web.</li>
+        <li><span class="timeline-date">2025</span>Conexión con HBIA y comunidad global.</li>
       </ul>
     </div>
   </section>
@@ -198,8 +205,8 @@
       <div class="footer-col">
         <h4>Enlaces rápidos</h4>
         <ul>
-          <li><a href="index.html#about">Sobre el proyecto</a></li>
-          <li><a href="index.html#capsulas">Cápsulas educativas</a></li>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="capsulas.html">Cápsulas</a></li>
           <li><a href="blog.html">Blog</a></li>
         </ul>
       </div>
@@ -223,9 +230,7 @@
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 600, once: true });
-  </script>
-  <script src="assets/js/scripts.js" defer></script>
+  <script> AOS.init({ duration: 600, once: true }); </script>
+  <script src="assets/js/script.js" defer></script>
 </body>
 </html>
