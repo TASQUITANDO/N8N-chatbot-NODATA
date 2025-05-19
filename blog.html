@@ -7,10 +7,14 @@
   <link rel="icon" href="assets/images/favicon.png" />
 
   <!-- Normalize + Google Fonts + AOS + CSS propio -->
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
-    rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
@@ -83,12 +87,34 @@
   <section class="posts-section" data-aos="fade-up">
     <div class="container blog-container">
       <div class="posts-grid">
-        <!-- Entrada 1 -->
-        <article class="blog-post">
+        <!-- Nueva Entrada Destacada -->
+        <article class="blog-post" data-aos="fade-up">
+          <a href="posts/mi-primer-circuito.html">
+            <picture>
+              <source srcset="assets/images/blog/mi-primer-circuito-thumb.webp" type="image/webp" />
+              <img src="assets/images/blog/mi-primer-circuito-thumb.jpg"
+                   alt="Cómo le perdí el miedo a la electrónica"
+                   loading="lazy" />
+            </picture>
+            <div class="post-meta">
+              <time datetime="2025-05-15">15 Mayo, 2025</time>
+              <h3>Cómo le perdí el miedo a la electrónica con un proyecto casero</h3>
+            </div>
+            <p>Descubre cómo monté mi primer circuito Arduino paso a paso y vencí mis miedos.</p>
+            <div class="badges">
+              <span class="badge badge-friendly">Friendly</span>
+              <span class="badge badge-tree">Tree</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- Entrada 1 existente -->
+        <article class="blog-post" data-aos="fade-up" data-aos-delay="100">
           <a href="posts/curso-html-css.html">
             <picture>
               <source srcset="assets/images/html-css-course.webp" type="image/webp" />
-              <img src="assets/images/html-css-course.jpg" alt="Curso HTML & CSS" loading="lazy" />
+              <img src="assets/images/html-css-course.jpg"
+                   alt="Curso HTML & CSS" loading="lazy" />
             </picture>
             <div class="post-meta">
               <time datetime="2025-05-10">10 Mayo, 2025</time>
@@ -98,12 +124,13 @@
           </a>
         </article>
 
-        <!-- Entrada 2 -->
-        <article class="blog-post">
+        <!-- Entrada 2 existente -->
+        <article class="blog-post" data-aos="fade-up" data-aos-delay="200">
           <a href="posts/guia-git-github.html">
             <picture>
               <source srcset="assets/images/git-guide.webp" type="image/webp" />
-              <img src="assets/images/git-guide.jpg" alt="Guía de Git & GitHub" loading="lazy" />
+              <img src="assets/images/git-guide.jpg"
+                   alt="Guía de Git & GitHub" loading="lazy" />
             </picture>
             <div class="post-meta">
               <time datetime="2025-04-20">20 Abril, 2025</time>
@@ -113,12 +140,13 @@
           </a>
         </article>
 
-        <!-- Entrada 3 -->
-        <article class="blog-post">
+        <!-- Entrada 3 existente -->
+        <article class="blog-post" data-aos="fade-up" data-aos-delay="300">
           <a href="posts/tutorial-aos.html">
             <picture>
               <source srcset="assets/images/aos-tutorial.webp" type="image/webp" />
-              <img src="assets/images/aos-tutorial.jpg" alt="Tutorial AOS" loading="lazy" />
+              <img src="assets/images/aos-tutorial.jpg"
+                   alt="Tutorial AOS" loading="lazy" />
             </picture>
             <div class="post-meta">
               <time datetime="2025-03-15">15 Marzo, 2025</time>
