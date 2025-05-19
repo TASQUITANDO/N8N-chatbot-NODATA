@@ -447,3 +447,95 @@ img { max-width: 100%; height: auto; display: block; }
   background: var(--primary-dark);
   color: var(--white);
 }
+/* ─── SOLO PARA about.html ───────────────────────────────────────── */
+.page-about {
+  /* si quieres, puedes ajustar fondo u otros estilos globales aquí */
+}
+
+/* Burbuja genérica para apartados */
+.page-about .bubble {
+  background: var(--white);
+  border-radius: 32px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+.page-about .bubble:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+}
+
+/* Ejemplo: estilo de propuesta de valor con iconos */
+.page-about .propuesta-valor .icons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px,1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.page-about .propuesta-valor .icons-grid div {
+  text-align: center;
+}
+.page-about .propuesta-valor .icons-grid div span {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Mini-grid para Misión/Visión/Principios */
+.page-about .mv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+.page-about .mv-grid h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* Cápsula educativa coral */
+.page-about .capsula-educativa .capsula-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.page-about .capsula-educativa .capsula-grid > div {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.page-about .capsula-educativa .capsula-grid > div strong {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Testimonial de origen */
+.page-about .origen-nubia blockquote {
+  background: var(--white);
+  padding: 2rem;
+  border-left: 6px solid var(--accent);
+  font-style: italic;
+  margin: 2rem 0;
+}
+.page-about .origen-nubia .autor {
+  text-align: right;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+/* Comunidad y futuro */
+.page-about .comunidad-futuro ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.page-about .comunidad-futuro li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+/* ───────────────────────────────────────────────────────────────── */
