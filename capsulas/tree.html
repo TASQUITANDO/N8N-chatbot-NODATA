@@ -1,22 +1,78 @@
-<section class="capsula" id="tree">
-  <header>
-    <img src="../assets/images/image-tree-mode.webp" alt="Icono Árbol">
-    <h2>Modo Tree</h2>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nubia – Modo Árbol</title>
+  <link rel="icon" href="../assets/images/favicon.png" />
+
+  <!-- Normalize + Google Fonts + AOS + CSS propio -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <!-- ... tu header idéntico al index.html ... -->
   </header>
-  <p class="hook">
-    “Si tu aprendizaje fuera un árbol, ¿estás creciendo raíces… o solo hojas que se caen?”
-  </p>
-  <p class="problema">
-    Muchas personas aprenden conectando datos sueltos, pero sin una estructura que dé coherencia.  
-    Como ramas sin tronco, terminan frágiles y dispersos.
-  </p>
-  <p class="solucion">
-    El modo Árbol te enseña a construir conocimiento con raíces sólidas.  
-    Todo parte de una idea madre y cada concepto nuevo se conecta como una rama viva.  
-    Dejas de memorizar y comienzas a comprender desde la raíz.
-  </p>
-  <p class="cta">
-    Quizá ha llegado el momento de cambiar tu forma de estudiar…  
-    y empezar a plantar conocimiento que realmente crece contigo.
-  </p>
-</section>
+
+  <!-- DETALLE DE LA CÁPSULA -->
+  <main class="capsule-detail">
+    <!-- Hero: imagen con overlay y título -->
+    <section class="capsule-hero" data-aos="fade-in" id="modo-arbol">
+      <picture>
+        <source type="image/webp" srcset="../assets/images/image-tree-mode.webp">
+        <img src="../assets/images/image-tree-mode.jpg"
+             alt="Modo Árbol"
+             loading="lazy" />
+      </picture>
+      <div class="capsule-hero-overlay"></div>
+      <div class="capsule-hero-text">
+        <h1>Modo Árbol</h1>
+        <p class="subtitle">
+          “Si tu aprendizaje fuera un árbol, ¿estás creciendo raíces… o solo hojas que se caen?”
+        </p>
+      </div>
+    </section>
+
+    <!-- Contenido -->
+    <section class="capsule-content" data-aos="fade-up">
+      <h2>Visualiza el problema</h2>
+      <p class="problema">
+        Muchas personas aprenden conectando datos sueltos, pero sin una estructura que dé coherencia.  
+        Como ramas sin tronco, terminan frágiles y dispersos.
+      </p>
+
+      <h2>Transformación con Nubia</h2>
+      <p class="solucion">
+        El modo Árbol te enseña a construir conocimiento con raíces sólidas.  
+        Todo parte de una idea madre y cada concepto nuevo se conecta como una rama viva.  
+        Dejas de memorizar y comienzas a comprender desde la raíz.
+      </p>
+
+      <div class="capsule-cta">
+        <a href="../capsulas.html" class="btn-secondary">Volver a Cápsulas</a>
+        <a href="../contact.html" class="btn-primary">Quiero plantar mi primer árbol</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" data-aos="fade-up">
+    <!-- ... tu footer idéntico al index.html ... -->
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script> AOS.init({ duration: 600, once: true }); </script>
+  <script src="../assets/js/scripts.js" defer></script>
+</body>
+</html>
