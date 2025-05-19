@@ -1,22 +1,131 @@
-<section class="capsula" id="analytic">
-  <header>
-    <img src="../assets/images/image-analytic-mode.webp" alt="Icono Analítico">
-    <h2>Modo Analytic</h2>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modo Analytic – Nubia</title>
+  <link rel="icon" href="../assets/images/favicon.png">
+
+  <!-- Normalize, Google Fonts, AOS y tu CSS -->
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="logo-container" aria-label="Inicio – Nubia">
+        <picture>
+          <source type="image/webp" srcset="../assets/images/logo-nubia.webp">
+          <img src="../assets/images/logo-nubia.png" alt="Logo Nubia" class="logo" loading="lazy">
+        </picture>
+      </a>
+
+      <nav class="main-nav" aria-label="Menú principal">
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../about.html">Sobre el proyecto</a></li>
+          <li><a href="../capsulas.html">Cápsulas educativas</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../recursos.html">Recursos</a></li>
+          <li><a href="../contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Abrir menú móvil" aria-expanded="false">☰</button>
+      <a href="#" class="cta-button explore-toggle" aria-haspopup="true" aria-expanded="false">Explorar ▼</a>
+      <div class="explore-menu">
+        <ul>
+          <li><a href="../capsulas.html">Cápsulas educativas</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../recursos.html">Recursos</a></li>
+          <li><a href="../contact.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mobile-nav-overlay"></div>
+    <nav id="mobile-menu" class="mobile-nav" aria-label="Menú móvil">
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../about.html">Sobre el proyecto</a></li>
+        <li><a href="../capsulas.html">Cápsulas educativas</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../recursos.html">Recursos</a></li>
+        <li><a href="../contact.html">Contacto</a></li>
+      </ul>
+    </nav>
   </header>
-  <p class="hook">
-    “¿Y si pudieras convertir cualquier caos de información en claridad absoluta?”
-  </p>
-  <p class="problema">
-    El exceso de datos no es lo que te bloquea, sino no saber por dónde empezar.  
-    El cerebro colapsa ante lo abstracto si no encuentra orden.
-  </p>
-  <p class="solucion">
-    Este modo te entrena para desmenuzar ideas complejas en partes simples.  
-    Aprendes a ver estructuras ocultas, patrones invisibles y relaciones lógicas.  
-    El análisis deja de ser frío y se convierte en tu herramienta para descubrir lo invisible.
-  </p>
-  <p class="cta">
-    Si alguna vez te abrumaste por “no saber cómo empezar”…  
-    esto puede cambiar la forma en que ves el conocimiento.
-  </p>
-</section>
+  <!-- FIN HEADER -->
+
+  <!-- HERO -->
+  <section class="capsule-hero" data-aos="fade-in">
+    <picture>
+      <source type="image/webp" srcset="../assets/images/image-analytic-mode.webp">
+      <img src="../assets/images/image-analytic-mode.jpg" alt="Modo Analytic">
+    </picture>
+    <div class="capsule-hero-overlay"></div>
+    <div class="capsule-hero-text">
+      <h1>Modo Analytic</h1>
+      <div class="subtitle">
+        “¿Y si pudieras convertir cualquier caos de información en claridad absoluta?”
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main class="capsule-content container" data-aos="fade-up">
+    <h2>Visualiza el problema</h2>
+    <p>
+      El exceso de datos no es lo que te bloquea, sino no saber por dónde empezar.  
+      El cerebro colapsa ante lo abstracto si no encuentra orden.
+    </p>
+
+    <h2>Transformación con Nubia</h2>
+    <p>
+      Este modo te entrena para desmenuzar ideas complejas en partes simples.  
+      Aprendes a ver estructuras ocultas, patrones invisibles y relaciones lógicas.  
+      El análisis deja de ser frío y se convierte en tu herramienta para descubrir lo invisible.
+    </p>
+
+    <div class="capsule-cta">
+      <a href="../capsulas.html" class="btn-secondary">Volver a Cápsulas</a>
+      <a href="#" class="btn-primary">Comenzar a Analizar</a>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" data-aos="fade-up">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h4>Enlaces rápidos</h4>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../about.html">Sobre el proyecto</a></li>
+          <li><a href="../capsulas.html">Cápsulas educativas</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <p><a href="mailto:info@nubia.edu">info@nubia.edu</a></p>
+        <p><a href="tel:+1234567890">+1 234 567 890</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Comunidad</h4>
+        <ul>
+          <li><a href="#">Telegram</a></li>
+          <li><a href="#">Discord</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Nubia – Tecnología con alma humana.
+    </div>
+  </footer>
+  <!-- FIN FOOTER -->
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script> AOS.init({ duration: 600, once: true }); </script>
+  <script src="../assets/js/scripts.js" defer></script>
+</body>
+</html>
