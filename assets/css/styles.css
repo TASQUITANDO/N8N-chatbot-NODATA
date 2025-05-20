@@ -764,3 +764,67 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: clamp(1rem,2.5vw,1.25rem);
 }
 
+/* ── TARJETAS COMUNES ── */
+.card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+}
+
+/* ── CONTACTO ── */
+.contact-section {
+  padding: 4rem 0;
+}
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Dentro de la card, reestilizamos inputs y botones un poco */
+.card .contact-form label {
+  color: var(--primary-dark);
+}
+.card .contact-form input,
+.card .contact-form select,
+.card .contact-form textarea {
+  border: 1px solid #ddd;
+  background: #fafafa;
+}
+.card .contact-form input:focus,
+.card .contact-form textarea:focus,
+.card .contact-form select:focus {
+  outline: 2px solid var(--accent);
+}
+
+/* Ajustes para la tarjeta de datos */
+.card.contact-info h3 {
+  margin-bottom: 1rem;
+  color: var(--primary-dark);
+}
+.card.contact-info a {
+  color: var(--accent);
+}
+.card.contact-info .social-link {
+  margin-right: 1rem;
+  padding: 0.25rem 0.5rem;
+  background: var(--light-bg);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background var(--transition-speed);
+}
+.card.contact-info .social-link:hover {
+  background: rgba(255,153,51,0.1);
+}
+
+/* Si quieres que el botón de enviar también sea “flotante” */
+.card .contact-form button {
+  border-radius: 30px;
+}
