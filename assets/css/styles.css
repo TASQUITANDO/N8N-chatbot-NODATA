@@ -671,3 +671,96 @@ img { max-width: 100%; height: auto; display: block; }
   background: var(--accent);
   color: #fff;
 }
+
+
+/* ── CONTACTO ── */
+.contact-section {
+  padding: 4rem 0;
+}
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Formulario */
+.contact-form {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+.contact-form fieldset {
+  border: none;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+}
+.contact-form .checkbox-field {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.contact-form button {
+  margin-top: 1rem;
+  background: var(--accent);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color var(--transition-speed);
+}
+.contact-form button:hover {
+  background: #e68a2e;
+}
+#formFeedback {
+  margin-top: 1rem;
+  color: green;
+  font-weight: 600;
+}
+
+/* Datos de contacto */
+.contact-info {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+.contact-info h3 {
+  margin-bottom: 1rem;
+}
+.contact-info p {
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+.contact-info .social-link {
+  display: inline-block;
+  margin-right: 1rem;
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+/* HERO CONTACTO */
+#contact-hero .hero-content h1 {
+  font-size: clamp(2rem,6vw,3rem);
+}
+#contact-hero .hero-content p {
+  font-size: clamp(1rem,2.5vw,1.25rem);
+}
+
