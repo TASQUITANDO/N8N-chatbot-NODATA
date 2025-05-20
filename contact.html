@@ -19,7 +19,6 @@
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-
   <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
@@ -34,94 +33,114 @@
           />
         </picture>
       </a>
-
       <nav class="main-nav" aria-label="Menú principal">
         <ul>
-          <li><a href="index.html#about">Sobre el proyecto</a></li>
-          <li><a href="index.html#capsulas">Cápsulas educativas</a></li>
-          <li><a href="blog.html">Bitácora / Blog</a></li>
-          <li><a href="recursos.html">Recursos & Comunidad</a></li>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="about.html">Sobre Nubia</a></li>
+          <li><a href="capsulas.html">Cápsulas</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="recursos.html">Recursos</a></li>
           <li><a href="contact.html" class="active">Contacto</a></li>
         </ul>
       </nav>
-
-      <a
-        href="#"
-        class="cta-button explore-toggle"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        Explorar
+      <button class="menu-toggle" aria-label="Abrir menú móvil">☰</button>
+      <a href="#" class="cta-button explore-toggle" aria-haspopup="true" aria-expanded="false">
+        Explorar ▼
       </a>
-      <div class="explore-menu" id="exploreMenu">
+      <div class="explore-menu">
         <ul>
-          <li><a href="capsulas.html">Cápsulas educativas</a></li>
-          <li><a href="blog.html">Bitácora / Blog</a></li>
-          <li><a href="recursos.html">Recursos & Comunidad</a></li>
+          <li><a href="capsulas.html">Cápsulas</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="recursos.html">Recursos</a></li>
           <li><a href="contact.html">Contacto</a></li>
         </ul>
       </div>
-
-      <button
-        class="menu-toggle"
-        aria-label="Abrir menú móvil"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-      >
-        ☰
-      </button>
     </div>
-    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <div class="mobile-nav-overlay"></div>
     <nav id="mobile-menu" class="mobile-nav" aria-label="Menú móvil">
       <ul>
-        <li><a href="index.html#about">Sobre el proyecto</a></li>
-        <li><a href="index.html#capsulas">Cápsulas educativas</a></li>
-        <li><a href="blog.html">Bitácora / Blog</a></li>
-        <li><a href="recursos.html">Recursos & Comunidad</a></li>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="about.html">Sobre Nubia</a></li>
+        <li><a href="capsulas.html">Cápsulas</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="recursos.html">Recursos</a></li>
         <li><a href="contact.html" class="active">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- CONTACTO -->
+  <!-- HERO CONTACTO -->
+  <section
+    id="contact-hero"
+    class="hero-section"
+    data-aos="fade-in"
+    aria-label="Contáctanos"
+  >
+    <picture class="hero-img">
+      <source type="image/webp" srcset="assets/images/hero-contacto.webp" />
+      <img
+        src="assets/images/hero-contacto.jpg"
+        alt="Contacta con Nubia"
+        loading="lazy"
+      />
+    </picture>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Contáctanos</h1>
+      <p>¿Tienes dudas? Escríbenos y te responderemos pronto.</p>
+    </div>
+  </section>
+
+  <!-- FORMULARIO & INFO -->
   <section id="contacto" class="contact-section" data-aos="fade-up">
     <div class="container">
-      <h1>Contáctanos</h1>
+
       <div class="contact-wrapper">
+        <!-- Formulario -->
         <form class="contact-form" novalidate>
           <fieldset>
             <label for="name">Nombre</label>
-            <input type="text" id="name" name="name" required />
+            <input type="text" id="name" name="name" placeholder="Tu nombre" required />
           </fieldset>
           <fieldset>
             <label for="email">Correo Electrónico</label>
-            <input type="email" id="email" name="email" required />
+            <input type="email" id="email" name="email" placeholder="tu@correo.com" required />
+          </fieldset>
+          <fieldset>
+            <label for="subject">Motivo</label>
+            <select id="subject" name="subject" required>
+              <option value="">Selecciona…</option>
+              <option value="colaboracion">Colaboración</option>
+              <option value="duda">Duda</option>
+              <option value="feedback">Feedback</option>
+              <option value="otro">Otro</option>
+            </select>
           </fieldset>
           <fieldset>
             <label for="message">Mensaje</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+            <textarea id="message" name="message" rows="5" placeholder="Escribe aquí…" required></textarea>
+          </fieldset>
+          <fieldset class="checkbox-field">
+            <input type="checkbox" id="subscribe" name="subscribe" />
+            <label for="subscribe">Suscribirme al boletín</label>
           </fieldset>
           <button type="submit">Enviar Mensaje</button>
           <div id="formFeedback" role="alert" aria-live="polite"></div>
         </form>
 
+        <!-- Datos de contacto -->
         <div class="contact-info">
           <h3>Otras vías de contacto</h3>
-          <p>
-            <strong>Email:</strong>
-            <a href="mailto:info@nubia.edu">info@nubia.edu</a>
-          </p>
-          <p>
-            <strong>Teléfono:</strong>
-            <a href="tel:+1234567890">+1 234 567 890</a>
-          </p>
+          <p><strong>Email:</strong> <a href="mailto:info@nubia.edu">info@nubia.edu</a></p>
+          <p><strong>Teléfono:</strong> <a href="tel:+1234567890">+1 234 567 890</a></p>
           <h3>Síguenos</h3>
           <p>
-            <a href="#">Telegram</a> |
-            <a href="#">Discord</a>
+            <a href="#" class="social-link">Telegram</a>
+            <a href="#" class="social-link">Discord</a>
           </p>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -156,9 +175,7 @@
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 600, once: true });
-  </script>
-  <script src="assets/js/scripts.js" defer></script>
+  <script> AOS.init({ duration: 600, once: true }); </script>
+  <script src="assets/js/script.js" defer></script>
 </body>
 </html>
