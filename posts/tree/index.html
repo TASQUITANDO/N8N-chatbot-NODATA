@@ -1,107 +1,119 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Cómo le perdí el miedo a la electrónica con un proyecto casero | Nubia</title>
-  <meta name="description" content="Historia real de cómo un novato montó su primer circuito con Arduino y venció sus miedos.">
-  <meta name="keywords" content="Nubia, electrónica, Arduino, aprendizaje práctico, friendly, tree">
-  <meta name="author" content="Alberto Tascón">
-  <link rel="stylesheet" href="../assets/css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reflexiones Modo Tree | Nubia</title>
+  <link rel="icon" href="../../assets/images/favicon.png" />
+
+  <!-- Normalize + Google Fonts + AOS + CSS propio -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/styles.css" />
 </head>
 <body>
-  <!-- HEADER -->
+
+  <!-- HEADER (igual al de raíz) -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="../index.html" class="logo-container" aria-label="Inicio – Nubia">
+      <a href="../../index.html" class="logo-container" aria-label="Inicio – Nubia">
         <picture>
-          <source type="image/webp" srcset="../assets/images/logo-nubia.webp">
-          <img src="../assets/images/logo-nubia.png" alt="Logo Nubia" class="logo" loading="lazy">
+          <source type="image/webp" srcset="../../assets/images/logo-nubia.webp" />
+          <img src="../../assets/images/logo-nubia.png" alt="Logo Nubia" class="logo" loading="lazy" />
         </picture>
       </a>
+
       <nav class="main-nav" aria-label="Menú principal">
         <ul>
-          <li><a href="../index.html">Inicio</a></li>
-          <li><a href="../about.html">Sobre Nubia</a></li>
-          <li><a href="../capsulas.html">Cápsulas</a></li>
-          <li><a href="../blog.html" class="active">Blog</a></li>
-          <li><a href="../recursos.html">Recursos</a></li>
-          <li><a href="../contact.html">Contacto</a></li>
+          <li><a href="../../about.html">Sobre el proyecto</a></li>
+          <li><a href="../../capsulas.html">Cápsulas educativas</a></li>
+          <li><a href="../../blog.html">Blog</a></li>
+          <li><a href="../../recursos.html">Recursos & Comunidad</a></li>
+          <li><a href="../../contact.html">Contacto</a></li>
         </ul>
       </nav>
+
+      <a href="#" class="cta-button explore-toggle" aria-haspopup="true" aria-expanded="false">
+        Explorar
+      </a>
+      <div class="explore-menu" id="exploreMenu">
+        <ul>
+          <li><a href="../../capsulas.html">Cápsulas</a></li>
+          <li><a href="../../blog.html">Blog</a></li>
+          <li><a href="../../recursos.html">Recursos</a></li>
+          <li><a href="../../contact.html">Contacto</a></li>
+        </ul>
+      </div>
+
+      <button class="menu-toggle" aria-label="Abrir menú móvil" aria-expanded="false">
+        ☰
+      </button>
     </div>
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <nav id="mobile-menu" class="mobile-nav" aria-label="Menú móvil">
+      <ul>
+        <li><a href="../../about.html">Sobre el proyecto</a></li>
+        <li><a href="../../capsulas.html">Cápsulas educativas</a></li>
+        <li><a href="../../blog.html">Blog</a></li>
+        <li><a href="../../recursos.html">Recursos & Comunidad</a></li>
+        <li><a href="../../contact.html">Contacto</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- CONTENIDO PRINCIPAL -->
-  <main class="post-content">
-    <article class="container" data-aos="fade-up">
-      <h1>Cómo le perdí el miedo a la electrónica con un proyecto casero</h1>
-      <p class="meta">🗓️ 15 de Mayo, 2025 | ✍️ Alberto Tascón | 🎭 Modos: Friendly & Tree</p>
+  <!-- HERO DE MODO -->
+  <section class="hero-section" data-aos="fade-in" aria-label="Modo Tree">
+    <picture class="hero-img">
+      <source type="image/webp" srcset="../../assets/images/blog/tree-thumb.webp" />
+      <img src="../../assets/images/blog/tree-thumb.webp" alt="Modo Tree" loading="lazy" />
+    </picture>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <h1>Reflexiones – Modo Tree</h1>
+      <p>Conectando raíces profundas con tu aprendizaje.</p>
+    </div>
+  </section>
 
-      <picture>
-        <source type="image/webp" srcset="../assets/images/blog/mi-primer-circuito-hero.webp">
-        <img src="../assets/images/blog/mi-primer-circuito-hero.jpg" alt="Proyecto Arduino casero" loading="lazy">
-      </picture>
-
-      <!-- Bloque Friendly -->
-      <section data-aos="fade-up" data-aos-delay="100">
-        <h2>Introducción <span class="badge badge-friendly">Friendly</span></h2>
-        <p>Cuando empecé, los cables y la placa Arduino me parecían un laberinto. Tenía miedo de conectar mal algo y quemar todo. Pero decidí acercarme como si hablara con un amigo: paso a paso, sin prisa y con curiosidad.</p>
-      </section>
-
-      <!-- Bloque Analytic -->
-      <section data-aos="fade-up" data-aos-delay="200">
-        <h2>Desarrollo <span class="badge badge-analytic">Analytic</span></h2>
-        <ol>
-          <li><strong>Herramientas:</strong> Arduino Uno, protoboard y cables.</li>
-          <li><strong>Paso 1:</strong> Conectar la alimentación (5 V y GND).</li>
-          <li><strong>Paso 2:</strong> Añadir el LED y la resistencia.</li>
-          <li><strong>Paso 3:</strong> Programar el parpadeo básico en el IDE.</li>
-          <li><strong>Paso 4:</strong> Probar y ajustar tiempo de delay.</li>
-        </ol>
-        <p>Cada paso lo ilustré con fotos y esquemas sencillos para no perderme.</p>
-      </section>
-
-      <!-- Bloque Tree -->
-      <section data-aos="fade-up" data-aos-delay="300">
-        <h2>Cierre y reflexión <span class="badge badge-tree">Tree</span></h2>
-        <p>Al final, mi primer circuito no solo encendió un LED, sino que sembró en mí la confianza para aprender todo lo que vino después. Las raíces de mi curiosidad empezaron a crecer firmes.</p>
-      </section>
-
-      <!-- CTA -->
-      <div class="cta-box" data-aos="fade-up" data-aos-delay="400">
-        <p>¿Te gustó esta historia? Explora más <a href="../capsulas.html">cápsulas educativas</a> o descarga el <a href="../assets/downloads/checklist-primer-circuito.pdf">Checklist para tu primer circuito</a>.</p>
+  <!-- LISTADO DE ENTRADAS -->
+  <main class="posts-section" data-aos="fade-up">
+    <div class="container">
+      <h2>Tus reflexiones Tree</h2>
+      <div class="posts-grid">
+        <!-- Ejemplo de entrada -->
+        <article class="blog-post">
+          <a href="reflexion-tree.html">
+            <img src="../../assets/images/blog/tree-entry1-thumb.webp"
+                 alt="Reflexión Tree 1" loading="lazy">
+            <div class="post-meta">
+              <h3>Cómo crecí mis raíces en el aprendizaje</h3>
+              <time datetime="2025-05-20">20 Mayo, 2025</time>
+            </div>
+          </a>
+        </article>
+        <!-- Más entradas aquí… -->
       </div>
-    </article>
+    </div>
   </main>
 
   <!-- FOOTER -->
-  <footer class="site-footer" data-aos="fade-up">
+  <footer class="site-footer">
     <div class="container footer-inner">
-      <div class="footer-col">
-        <h4>Enlaces rápidos</h4>
-        <ul>
-          <li><a href="../index.html">Inicio</a></li>
-          <li><a href="../capsulas.html">Cápsulas</a></li>
-          <li><a href="../blog.html">Blog</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contacto</h4>
-        <p><a href="mailto:info@nubia.edu">info@nubia.edu</a></p>
-      </div>
-      <div class="footer-col">
-        <h4>Comunidad</h4>
-        <ul>
-          <li><a href="#">Telegram</a></li>
-          <li><a href="#">Discord</a></li>
-        </ul>
-      </div>
+      <!-- …igual al de raíz… -->
     </div>
-    <div class="footer-bottom">&copy; 2025 Nubia – Tecnología con alma humana.</div>
+    <div class="footer-bottom">
+      &copy; 2025 Nubia – Tecnología con alma humana.
+    </div>
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script> AOS.init({ duration: 600, once: true }); </script>
-  <script src="../assets/js/script.js" defer></script>
+  <script src="../../assets/js/script.js" defer></script>
 </body>
 </html>
