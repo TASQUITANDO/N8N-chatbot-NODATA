@@ -1,3 +1,4 @@
+<!-- File: blog-entry.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,25 +8,37 @@
   <meta name="description" content="Reflexión sobre cómo medir la vida solo en métricas de rendimiento acaba deshumanizándonos y cómo recuperar la productividad con propósito.">
   <link rel="icon" href="../../assets/images/favicon.png"/>
 
-  <!-- Normalize + Google Fonts + AOS + CSS propio -->
+  <!-- Normalize + Google Fonts + AOS CSS -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
   />
   <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?
+      family=Montserrat:wght@300;400;600;700&
+      family=Playfair+Display:wght@400;700&
+      family=Caveat&
+      family=Inter:wght@400;600&
+      display=swap"
     rel="stylesheet"
   />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-<!-- CSS global de la web -->
+
+  <!-- CSS global de la web -->
   <link rel="stylesheet" href="../../assets/css/styles.css"/>
-<!-- CSS específico de las entradas de blog -->
+  <!-- CSS específico de la entrada -->
   <link rel="stylesheet" href="../../assets/css/blog-entry.css"/>
 
+  <!-- Lottie + GSAP -->
+  <script src="https://unpkg.com/lottie-web/build/player/lottie.min.js" defer></script>
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js" defer></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+  <!-- Nuestro script de la entrada -->
+  <script src="../../assets/js/blog-entry.js" defer></script>
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- HEADER (igual que siempre) -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="../../index.html" class="logo-container" aria-label="Inicio – Nubia">
@@ -66,83 +79,49 @@
     </nav>
   </header>
 
-  <!-- HERO DE LA ENTRADA -->
-  <section class="hero-section" data-aos="fade-in" aria-label="Eficiencia sin alma">
-    <picture class="hero-img">
-      <source type="image/webp" srcset="../../assets/images/blog/tree-entry1-hero.webp"/>
-      <img src="../../assets/images/blog/tree-entry1-hero.jpg"
-           alt="Eficiencia sin alma – Modo Tree"
-           loading="lazy"/>
-    </picture>
-    <div class="hero-overlay" aria-hidden="true"></div>
-    <div class="hero-content">
-      <h1 class="entry-title">
-        “Eficiencia <span class="highlight">sin alma</span>”:<br>
-        el riesgo de convertirnos en máquinas
-      </h1>
-      <p class="meta">
-        <time datetime="2025-05-20">20 Mayo, 2025</time> |
-        ✍️ Alberto Tascón |
-        🎭 Modo Tree
-      </p>
+  <!-- TÍTULO DE SUBPÁGINA -->
+  <header class="subpage-header">
+    <h1>✨ Reflexiones Humanas</h1>
+    <p class="subpage-subtitle">Tecnología que no olvida que somos personas.</p>
+  </header>
+
+  <!-- HERO ÉPICO -->
+  <section class="epic-hero">
+    <video class="epic-hero__video" autoplay muted loop playsinline>
+      <source src="../../assets/video/interactive-hero.mp4" type="video/mp4">
+    </video>
+    <div class="epic-hero__overlay"></div>
+    <div class="epic-hero__content">
+      <div id="lottie-heart-clock" class="epic-hero__lottie"></div>
+      <h1 class="epic-hero__title">¿Eficiencia o alma?</h1>
+      <a href="#reflexiona" class="epic-hero__cta">Reflexiona conmigo ↓</a>
     </div>
   </section>
 
-  <!-- CONTENIDO DEL ARTÍCULO -->
-  <main class="post-content container" data-aos="fade-up">
-    <article>
-      <p class="lead">
-        Vivimos en la <strong>era del rendimiento</strong>. Donde todo lo que hacemos parece tener que justificar su existencia en forma de <em>métricas</em>, resultados o progreso.
-      </p>
+  <!-- CITA DESTACADA -->
+  <section class="epic-quote">
+    <h2 class="epic-quote__text">La vida no es una hoja de cálculo.</h2>
+  </section>
 
-      <h2 class="section-title">¿Más o mejor?</h2>
-      <p>
-        “¿Qué lograste hoy?”, “¿Cuánto avanzaste?”, “¿Fue un día productivo?”. Y así, sin darnos cuenta, empezamos a medirnos con las mismas reglas que usamos para las máquinas.
-      </p>
+  <!-- QUIZ COLABORATIVO -->
+  <section class="epic-quiz" id="quiz">
+    <h3>¿Qué hiciste hoy que no tenía un propósito productivo, pero te hizo bien?</h3>
+    <form id="quiz-form">
+      <input type="text" id="quiz-input" placeholder="Escribe tu respuesta…" required>
+      <button type="submit">Compartir</button>
+    </form>
+    <div id="word-cloud" class="epic-quiz__cloud"></div>
+  </section>
 
-      <blockquote class="pull-quote">
-        “Pero… ¿y si el objetivo no fuera hacer más, sino <strong>vivir mejor</strong>?”
-      </blockquote>
+  <!-- SECCIÓN DE CIERRE -->
+  <section class="epic-conclusion" id="reflexiona">
+    <div class="epic-conclusion__stars"></div>
+    <p class="epic-conclusion__text">
+      Productividad con alma es recordar por qué hacemos lo que hacemos.
+    </p>
+  </section>
 
-      <p>
-        Nos enseñaron a <strong>optimizarlo todo</strong>: el tiempo, el cuerpo, los hábitos, la alimentación, incluso nuestras emociones. Y aunque muchas de esas herramientas pueden ser liberadoras, cuando se usan sin conciencia, terminan robándonos justo lo que veníamos a proteger: <u>nuestra humanidad</u>.
-      </p>
-
-      <h3 class="subsection-title">La trampa de la eficiencia</h3>
-      <p>
-        Una persona no es un sistema operativo. No tiene que estar siempre “corriendo a máxima capacidad”. Hay días en que la eficiencia nos ahoga. Nos desconecta. Nos hace sentir que si no estamos produciendo, entonces <strong>estamos fallando</strong>.
-      </p>
-
-      <p class="emphasis">
-        Y eso es <strong class="highlight">una trampa</strong>.
-      </p>
-
-      <p>
-        Porque la vida no es una hoja de cálculo. A veces el mayor avance es una conversación que no estaba planeada. Un paseo sin propósito. Un descanso sin culpa. Un error que te enseña más que cien aciertos.
-      </p>
-
-      <h3 class="subsection-title">Tecnología al servicio de lo humano</h3>
-      <p>
-        En Nubia, creemos en usar la tecnología para <strong>potenciar</strong>, no para deshumanizar. En construir sistemas que nos sirvan, no que nos esclavicen. La pregunta clave no es “¿Cuánto hiciste hoy?”, sino <em>“¿Qué sentido tuvo lo que hiciste?”</em>
-      </p>
-
-      <p class="conclusion">
-        <strong>Productividad con alma</strong> significa trabajar desde el propósito, no desde la ansiedad. Significa priorizar el <u>impacto real</u> sobre el número de tareas tachadas.
-      </p>
-
-      <footer class="post-footer">
-        <p>Porque si vas rápido, pero hacia donde no quieres ir… eso no es eficiencia. Es autoabandono.</p>
-        <p class="nota-nubia">
-          <strong>Nota Nubia:</strong> Este post lo escribí en modo <span class="badge tree">✨ Nubia Tree</span>, después de una semana donde sentí que vivía para tachar cosas pendientes… y me olvidé de mí.
-        </p>
-        <p class="back-link">
-          ← <a href="../../posts/tree/index.html">Volver a Reflexiones Modo Tree</a>
-        </p>
-      </footer>
-    </article>
-  </main>
-
-  <!-- FOOTER -->
+  <!-- FOOTER (igual que siempre) -->
   <footer class="site-footer" role="contentinfo" data-aos="fade-up">
     <div class="container footer-inner">
       <div class="footer-col">
@@ -166,7 +145,9 @@
         </ul>
       </div>
     </div>
+  </footer>
 
+  <!-- Scripts globales -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script> AOS.init({ duration: 600, once: true }); </script>
   <script src="../../assets/js/script.js" defer></script>
