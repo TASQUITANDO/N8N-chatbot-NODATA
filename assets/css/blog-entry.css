@@ -1,0 +1,118 @@
+/* === Estilos “Supervisual” para entradas de blog === */
+:root {
+  /* Variables dedicadas al blog */
+  --blog-primary: var(--primary-dark);
+  --blog-accent: var(--accent);
+  --blog-bg: var(--white);
+  --blog-text: var(--text-color);
+  --blog-radius: 8px;
+  --blog-transition: var(--transition-speed);
+}
+
+.post-content {
+  background: var(--blog-bg);
+  color: var(--blog-text);
+  padding: 2rem 1.5rem;
+  border-radius: var(--blog-radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  line-height: 1.7;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Lead destacado */
+.post-content .lead {
+  font-size: 1.35rem;
+  font-weight: 300;
+  border-left: 4px solid var(--blog-accent);
+  padding-left: 1rem;
+  margin-bottom: 2.5rem;
+  color: var(--blog-primary);
+}
+
+/* Títulos de sección */
+.post-content .section-title {
+  position: relative;
+  font-size: 2.25rem;
+  margin: 3rem 0 1rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: linear-gradient(90deg, var(--blog-accent), var(--blog-accent) 30%, transparent 0%);
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: transform var(--blog-transition);
+}
+.post-content .section-title::before {
+  content: "¿";
+  position: absolute;
+  left: -1.2rem;
+  top: 0;
+  font-size: 2.5rem;
+  color: var(--blog-accent);
+  transform: rotate(-5deg);
+}
+
+/* Subtítulos */
+.post-content .subsection-title {
+  font-size: 1.75rem;
+  margin: 2rem 0 .8rem;
+  padding-bottom: .3rem;
+  border-bottom: 2px solid var(--blog-accent);
+  color: var(--blog-primary);
+}
+
+/* Pull-quote */
+.post-content .pull-quote {
+  font-style: italic;
+  font-size: 1.4rem;
+  margin: 2.5rem auto;
+  padding: 1.5rem 2rem;
+  background: rgba(245,166,35,0.1);
+  border-left: 5px solid var(--blog-accent);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  max-width: 800px;
+}
+
+/* Highlight hover */
+.post-content .highlight {
+  background-image: linear-gradient(to right, var(--blog-accent) 70%, transparent 0%);
+  background-repeat: no-repeat;
+  background-size: 100% 1.05em;
+  background-position: 0 88%;
+  transition: background-size var(--blog-transition);
+}
+.post-content .highlight:hover {
+  background-size: 100% 100%;
+}
+
+/* Énfasis animado */
+@keyframes blog-pulse {
+  0%,100% { opacity: 1; }
+  50%    { opacity: .7; }
+}
+.post-content .emphasis {
+  animation: blog-pulse 2s ease-in-out infinite;
+  font-weight: 600;
+}
+
+/* Conclusión */
+.post-content .conclusion {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px dashed var(--blog-accent);
+  color: var(--blog-primary);
+}
+
+/* Badge */
+.post-content .badge.tree {
+  display: inline-block;
+  background: var(--blog-accent);
+  color: #fff;
+  padding: .3em .6em;
+  border-radius: var(--blog-radius);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  font-size: .85rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
