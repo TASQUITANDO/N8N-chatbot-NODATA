@@ -24,17 +24,6 @@
 @keyframes typewriter { from{width:0} to{width:100%} }
 @keyframes blink-cursor { 0%,100%{border-color:transparent}50%{border-color:var(--primary-dark)} }
 
-/* 2b. En móvil mostramos el texto completo y sin overflow */
-@media (max-width:768px) {
-  .epic-quote__text {
-    white-space: normal;
-    overflow: visible;
-    border: none;
-    width: auto;
-    animation: none;
-    font-size:2rem;
-  }
-}
 
 /* 3. Contenido principal */
 .epic-content {
@@ -145,15 +134,13 @@
     display: none;
   }
 
-  /* 2) Mantener typewriter en móvil, con fuente más pequeña y width 100% */
+  /* 2) Cita: máquina de escribir en una sola línea de ancho completo */
   .epic-quote__text {
     font-size: clamp(1.5rem, 5vw, 2rem);
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0; /* empezamos ocultos */
+    white-space: nowrap;      /* sin salto */
+    overflow: hidden;         /* recorta lo no escrito */
     border-right: .15em solid var(--primary-dark);
-
-    /* volvemos a aplicar la animación */
+    width: 0;                 /* empieza en 0 */
     animation:
       typewriter 3s steps(40) 0.5s forwards,
       blink-cursor 0.75s step-end infinite;
