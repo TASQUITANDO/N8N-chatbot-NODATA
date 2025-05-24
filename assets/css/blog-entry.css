@@ -138,3 +138,20 @@
   from { transform:translateX(-20px); opacity:0; }
   to   { transform:translateX(0);   opacity:1; }
 }
+
+@media (max-width: 768px) {
+  /* 1) Ocultar el icono puzle en el subpage header */
+  .subpage-header::before {
+    display: none;
+  }
+
+  /* 2) Ajustar la cita tipo máquina de escribir para que no se corte */
+  .epic-quote__text {
+    white-space: normal !important;
+    overflow: visible !important;
+    width: auto !important;
+    border: none !important;
+    font-size: calc(1rem + 1vw) !important;
+    animation: none !important;
+  }
+}
