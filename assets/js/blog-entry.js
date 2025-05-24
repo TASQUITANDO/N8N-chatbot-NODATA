@@ -47,3 +47,4 @@ document.addEventListener('DOMContentLoaded', ()=> {
   // 4) Conexión de constelaciones al hover
   // Aquí podrías inicializar un canvas/SVG que dibuje líneas al mover el ratón.
 });
+
