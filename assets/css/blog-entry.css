@@ -38,7 +38,7 @@
   font-size: clamp(2rem,8vw,4rem);
   font-family: 'Playfair Display', serif;
   margin-bottom: 2rem;
-  opacity: 0; /* GSAP animará esto */
+  opacity: 0; /* animado por GSAP */
   transform: translateY(20px);
 }
 .epic-hero__cta {
@@ -56,17 +56,31 @@
   50%     { transform: scale(1.05); }
 }
 
-/* 2. Cita animada */
+/* 2. Cita animada con efecto máquina de escribir */
 .epic-quote {
   padding: 6rem 1rem;
   background: var(--white);
   text-align: center;
 }
 .epic-quote__text {
-  font-family: 'Caveat', cursive;
+  font-family: 'VT323', monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: .15em solid var(--primary-dark);
   font-size: clamp(2rem,6vw,5rem);
-  opacity: 0;
-  transform: scale(0.8);
+  opacity: 1;
+  width: 0;
+  animation:
+    typewriter 3s steps(40) 0.5s forwards,
+    blink-cursor 0.75s step-end infinite;
+}
+@keyframes typewriter {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+@keyframes blink-cursor {
+  from, to { border-color: transparent; }
+  50%      { border-color: var(--primary-dark); }
 }
 
 /* 3. Contenido principal */
@@ -81,11 +95,25 @@
   max-width: 800px;
 }
 .epic-content h3 {
-  font-size: 2rem;
+  position: relative;
+  padding-left: 2.5rem;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem,5vw,3rem);
+  background: linear-gradient(90deg, var(--accent), #ffb347 50%, var(--primary-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-transform: none;
+  letter-spacing: 0;
   margin-bottom: 1.5rem;
-  color: var(--primary-dark);
-  text-transform: uppercase;
-  letter-spacing: .05em;
+}
+.epic-content h3::before {
+  content: '🧠';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.5em;
+  line-height: 1;
 }
 .epic-content p {
   margin-bottom: 1.25rem;
@@ -180,75 +208,7 @@
   opacity: 0;
 }
 
-/* 6. Subpage header */
-.subpage-header {
-  text-align: center;
-  padding: 4rem 1rem;
-  background: var(--white);
-}
-.subpage-header h1 {
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(2rem,8vw,4rem);
-  margin-bottom: .5rem;
-  background: linear-gradient(90deg, var(--accent), transparent);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-.subpage-subtitle {
-  font-size: 1.25rem;
-  color: var(--primary-dark);
-}
-
-
-/* ==== Typewriter effect para la cita “La vida no es una hoja de cálculo.” ==== */
-.epic-quote__text {
-  /* ya existían opacity y transform; ampliamos para animar escritura */
-  font-family: 'VT323', monospace;
-  font-size: clamp(2rem,6vw,5rem);
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: .15em solid var(--primary-dark);
-  width: 0;                         /* inicia “escrito” 0% */
-  animation:
-    typewriter 3s steps(40) 0.5s forwards,
-    blink-cursor 0.75s step-end infinite;
-}
-
-/* animación que expande el width de 0 a 100% */
-@keyframes typewriter {
-  from { width: 0; }
-  to   { width: 100%; }
-}
-/* parpadeo del cursor */
-@keyframes blink-cursor {
-  from, to { border-color: transparent; }
-  50%      { border-color: var(--primary-dark); }
-}
-
-/* ==== Nuevo estilo para el título “Eficiencia sin alma” ==== */
-.epic-content h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem,5vw,3rem);
-  background: linear-gradient(90deg, var(--accent), var(--primary-dark));
-  -webkit-background-clip: text;
-  color: transparent;
-  text-transform: none;
-  letter-spacing: 0;
-  margin-bottom: 1.5rem;
-  position: relative;
-  padding-left: 2.5rem;
-}
-/* emoji de cerebro antes */
-.epic-content h3::before {
-  content: '🧠';
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 1.5em;
-  line-height: 1;
-}
-
-/* ==== Mejora Subpage Header ==== */
+/* 6. Mejora Subpage Header */
 .subpage-header {
   position: relative;
   overflow: hidden;
@@ -256,8 +216,6 @@
   background: var(--white);
   text-align: center;
 }
-
-/* Icono ornamental */
 .subpage-header::before {
   content: '🧩';
   display: block;
@@ -266,8 +224,6 @@
   margin: 0 auto 1rem;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
-
-/* Título principal con degradado rico */
 .subpage-header h1 {
   font-family: 'Inter', sans-serif;
   font-size: clamp(2.5rem,8vw,5rem);
@@ -284,8 +240,6 @@
 .subpage-header h1:hover {
   transform: scale(1.03);
 }
-
-/* Subtítulo con estilo sutil */
 .subpage-subtitle {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.25rem;
@@ -293,8 +247,6 @@
   opacity: .8;
   margin-top: .5rem;
 }
-
-/* Toque nubia: línea animada debajo del título */
 .subpage-header::after {
   content: '';
   display: block;
@@ -306,8 +258,18 @@
   animation: slide-in 1s ease-out forwards;
   opacity: 0;
 }
-
 @keyframes slide-in {
   from { transform: translateX(-20px); opacity: 0; }
   to   { transform: translateX(0);   opacity: 1; }
+}
+
+/* 7. Mobile: ampliar cita en máquina de escribir a full width */
+@media (max-width: 768px) {
+  .epic-quote__text {
+    font-size: 2rem;
+    width: 100%;  
+    white-space: normal;
+    border: none;
+    animation: none;
+  }
 }
