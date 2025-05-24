@@ -140,18 +140,22 @@
 }
 
 @media (max-width: 768px) {
-  /* 1) Ocultar el icono puzle en el subpage header */
+  /* 1) Ocultar icono puzle */
   .subpage-header::before {
     display: none;
   }
 
-  /* 2) Ajustar la cita tipo máquina de escribir para que no se corte */
+  /* 2) Mantener typewriter en móvil, con fuente más pequeña y width 100% */
   .epic-quote__text {
-    white-space: normal !important;
-    overflow: visible !important;
-    width: auto !important;
-    border: none !important;
-    font-size: calc(1rem + 1vw) !important;
-    animation: none !important;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0; /* empezamos ocultos */
+    border-right: .15em solid var(--primary-dark);
+
+    /* volvemos a aplicar la animación */
+    animation:
+      typewriter 3s steps(40) 0.5s forwards,
+      blink-cursor 0.75s step-end infinite;
   }
 }
