@@ -69,7 +69,51 @@
   transform: scale(0.8);
 }
 
-/* 3. Quiz colaborativo */
+/* 3. Contenido principal */
+.epic-content {
+  padding: 4rem 1rem;
+  background: var(--white);
+  color: var(--text-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  line-height: 1.7;
+  margin: 2rem auto;
+  max-width: 800px;
+}
+.epic-content h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-dark);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.epic-content p {
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+}
+.epic-content .emphasis {
+  animation: blog-pulse 2s ease-in-out infinite;
+  font-weight: 600;
+}
+@keyframes blog-pulse {
+  0%,100% { opacity: 1; }
+  50%    { opacity: .7; }
+}
+.epic-content .conclusion {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 2px dashed var(--accent);
+  color: var(--primary-dark);
+}
+.epic-content .nota-nubia {
+  font-style: italic;
+  color: var(--primary-dark);
+  margin-top: 1.5rem;
+}
+
+/* 4. Quiz colaborativo */
 .epic-quiz {
   padding: 4rem 1rem;
   background: var(--light-bg);
@@ -113,7 +157,7 @@
   font-size: .9rem;
 }
 
-/* 4. Conclusión con constelaciones */
+/* 5. Conclusión con constelaciones */
 .epic-conclusion {
   position: relative;
   padding: 6rem 1rem;
@@ -136,7 +180,7 @@
   opacity: 0;
 }
 
-/* 5. Subpage header */
+/* 6. Subpage header */
 .subpage-header {
   text-align: center;
   padding: 4rem 1rem;
@@ -154,4 +198,3 @@
   font-size: 1.25rem;
   color: var(--primary-dark);
 }
-
