@@ -1,275 +1,140 @@
 /* File: assets/css/blog-entry.css */
 
-/* 1. Hero vídeo full-screen */
-.epic-hero {
-  position: relative;
-  height: calc(100vh - var(--header-height));
-  overflow: hidden;
-}
-.epic-hero__video {
-  position: absolute;
-  top: 50%; left: 50%;
-  width: auto; height: 100%;
-  min-width: 100%; min-height: 100%;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-}
-.epic-hero__overlay {
-  position: absolute; inset: 0;
-  background: rgba(0,0,0,0.4);
-}
-.epic-hero__content {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  color: var(--white);
-  text-align: center;
-  padding: 0 1rem;
-}
-.epic-hero__lottie {
-  width: 200px; height: 200px;
-  margin-bottom: 1rem;
-}
-.epic-hero__title {
-  font-size: clamp(2rem,8vw,4rem);
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 2rem;
-  opacity: 0; /* animado por GSAP */
-  transform: translateY(20px);
-}
-.epic-hero__cta {
-  display: inline-block;
-  padding: .75rem 1.5rem;
-  background: var(--accent);
-  color: var(--white);
-  border-radius: 30px;
-  font-weight: 600;
-  animation: pulse-slow 2.5s ease-in-out infinite;
-  text-decoration: none;
-}
-@keyframes pulse-slow {
-  0%,100% { transform: scale(1); }
-  50%     { transform: scale(1.05); }
-}
+/* 1. Hero vídeo full-screen (sin cambios) */
+.epic-hero { position: relative; height: calc(100vh - var(--header-height)); overflow: hidden; }
+.epic-hero__video { position: absolute; top:50%; left:50%; min-width:100%; min-height:100%; transform:translate(-50%,-50%); object-fit:cover; }
+.epic-hero__overlay { position:absolute; inset:0; background:rgba(0,0,0,0.4); }
+.epic-hero__content { position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; color:var(--white); text-align:center; padding:0 1rem; }
+.epic-hero__lottie { width:200px; height:200px; margin-bottom:1rem; }
+.epic-hero__title { font-size:clamp(2rem,8vw,4rem); font-family:'Playfair Display', serif; margin-bottom:2rem; opacity:0; transform:translateY(20px); }
+.epic-hero__cta { display:inline-block; padding:.75rem 1.5rem; background:var(--accent); color:var(--white); border-radius:30px; font-weight:600; animation:pulse-slow 2.5s ease-in-out infinite; text-decoration:none; }
+@keyframes pulse-slow { 0%,100%{transform:scale(1)}50%{transform:scale(1.05)} }
 
-/* 2. Cita animada con efecto máquina de escribir */
-.epic-quote {
-  padding: 6rem 1rem;
-  background: var(--white);
-  text-align: center;
-}
+/* 2. Cita animada con máquina de escribir */
+.epic-quote { padding:6rem 1rem; background:var(--white); text-align:center; }
 .epic-quote__text {
-  font-family: 'VT323', monospace;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: .15em solid var(--primary-dark);
-  font-size: clamp(2rem,6vw,5rem);
-  opacity: 1;
-  width: 0;
-  animation:
-    typewriter 3s steps(40) 0.5s forwards,
-    blink-cursor 0.75s step-end infinite;
+  font-family:'VT323', monospace;
+  font-size:clamp(2rem,6vw,5rem);
+  white-space:nowrap;
+  overflow:hidden;
+  border-right:.15em solid var(--primary-dark);
+  width:0;
+  animation:typewriter 3s steps(40) .5s forwards, blink-cursor .75s step-end infinite;
 }
-@keyframes typewriter {
-  from { width: 0; }
-  to   { width: 100%; }
-}
-@keyframes blink-cursor {
-  from, to { border-color: transparent; }
-  50%      { border-color: var(--primary-dark); }
+@keyframes typewriter { from{width:0} to{width:100%} }
+@keyframes blink-cursor { 0%,100%{border-color:transparent}50%{border-color:var(--primary-dark)} }
+
+/* 2b. En móvil mostramos el texto completo y sin overflow */
+@media (max-width:768px) {
+  .epic-quote__text {
+    white-space: normal;
+    overflow: visible;
+    border: none;
+    width: auto;
+    animation: none;
+    font-size:2rem;
+  }
 }
 
 /* 3. Contenido principal */
 .epic-content {
-  padding: 4rem 1rem;
-  background: var(--white);
-  color: var(--text-color);
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  line-height: 1.7;
-  margin: 2rem auto;
-  max-width: 800px;
+  padding:4rem 1rem;
+  background:var(--white);
+  color:var(--text-color);
+  border-radius:8px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.05);
+  line-height:1.7;
+  margin:2rem auto;
+  max-width:800px;
 }
 .epic-content h3 {
-  position: relative;
-  padding-left: 2.5rem;
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem,5vw,3rem);
-  background: linear-gradient(90deg, var(--accent), #ffb347 50%, var(--primary-dark));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-transform: none;
-  letter-spacing: 0;
-  margin-bottom: 1.5rem;
+  position:relative;
+  padding-left:0;
+  font-family:'Playfair Display', serif;
+  font-size:clamp(2rem,5vw,3rem);
+  background:linear-gradient(45deg, var(--accent), #ffb347 50%, var(--primary-dark));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  text-transform:none;
+  letter-spacing:0;
+  margin-bottom:1.5rem;
 }
-.epic-content h3::before {
-  content: '🧠';
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 1.5em;
-  line-height: 1;
-}
-.epic-content p {
-  margin-bottom: 1.25rem;
-  font-size: 1rem;
-}
-.epic-content .emphasis {
-  animation: blog-pulse 2s ease-in-out infinite;
-  font-weight: 600;
-}
-@keyframes blog-pulse {
-  0%,100% { opacity: 1; }
-  50%    { opacity: .7; }
-}
+.epic-content p { margin-bottom:1.25rem; font-size:1rem; }
+.epic-content .emphasis { animation:blog-pulse 2s ease-in-out infinite; font-weight:600; }
+@keyframes blog-pulse { 0%,100%{opacity:1}50%{opacity:.7} }
 .epic-content .conclusion {
-  text-align: center;
-  font-size: 1.2rem;
-  margin-top: 2rem;
-  padding-top: 1rem;
-  border-top: 2px dashed var(--accent);
-  color: var(--primary-dark);
+  text-align:center;
+  font-size:1.2rem;
+  margin-top:2rem;
+  padding-top:1rem;
+  border-top:2px dashed var(--accent);
+  color:var(--primary-dark);
 }
 .epic-content .nota-nubia {
-  font-style: italic;
-  color: var(--primary-dark);
-  margin-top: 1.5rem;
+  font-style:italic;
+  color:var(--primary-dark);
+  margin-top:1.5rem;
 }
 
-/* 4. Quiz colaborativo */
-.epic-quiz {
-  padding: 4rem 1rem;
-  background: var(--light-bg);
-  text-align: center;
-}
-.epic-quiz h3 {
-  margin-bottom: 1.5rem;
-  font-size: 1.75rem;
-}
-#quiz-form {
-  display: flex;
-  justify-content: center;
-  gap: .5rem;
-  margin-bottom: 2rem;
-}
-#quiz-input {
-  width: 300px;
-  padding: .75rem 1rem;
-  border: 2px solid var(--accent);
-  border-radius: 30px;
-}
-#quiz-form button {
-  padding: .75rem 1.5rem;
-  background: var(--accent);
-  color: var(--white);
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-}
-.epic-quiz__cloud {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: .75rem;
-}
-.word-cloud__word {
-  background: var(--accent);
-  color: #fff;
-  padding: .35rem .75rem;
-  border-radius: 20px;
-  font-size: .9rem;
-}
+/* 4. Quiz colaborativo (sin cambios) */
+.epic-quiz { padding:4rem 1rem; background:var(--light-bg); text-align:center; }
+.epic-quiz h3 { margin-bottom:1.5rem; font-size:1.75rem; }
+#quiz-form { display:flex; justify-content:center; gap:.5rem; margin-bottom:2rem; }
+#quiz-input { width:300px; padding:.75rem 1rem; border:2px solid var(--accent); border-radius:30px; }
+#quiz-form button { padding:.75rem 1.5rem; background:var(--accent); color:var(--white); border:none; border-radius:30px; cursor:pointer; }
+.epic-quiz__cloud { display:flex; flex-wrap:wrap; justify-content:center; gap:.75rem; }
+.word-cloud__word { background:var(--accent); color:#fff; padding:.35rem .75rem; border-radius:20px; font-size:.9rem; }
 
-/* 5. Conclusión con constelaciones */
-.epic-conclusion {
-  position: relative;
-  padding: 6rem 1rem;
-  background: #111;
-  color: var(--white);
-  overflow: hidden;
-}
-.epic-conclusion__stars {
-  position: absolute; inset: 0;
-  background: url('../../assets/images/constellations.svg') center/cover no-repeat;
-  pointer-events: none;
-}
-.epic-conclusion__text {
-  position: relative;
-  font-size: 1.5rem;
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto;
-  z-index: 2;
-  opacity: 0;
-}
+/* 5. Conclusión con constelaciones (sin cambios) */
+.epic-conclusion { position:relative; padding:6rem 1rem; background:#111; color:var(--white); overflow:hidden; }
+.epic-conclusion__stars { position:absolute; inset:0; background:url('../../assets/images/constellations.svg') center/cover no-repeat; pointer-events:none; }
+.epic-conclusion__text { position:relative; font-size:1.5rem; text-align:center; max-width:600px; margin:0 auto; z-index:2; opacity:0; }
 
-/* 6. Mejora Subpage Header */
+/* 6. Mejora Subpage Header: sin emojis, degradado definido */
 .subpage-header {
-  position: relative;
-  overflow: hidden;
-  padding: 6rem 1rem;
-  background: var(--white);
-  text-align: center;
-}
-.subpage-header::before {
-  content: '🧩';
-  display: block;
-  font-size: 3rem;
-  color: var(--accent);
-  margin: 0 auto 1rem;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  position:relative;
+  overflow:hidden;
+  padding:6rem 1rem;
+  background:var(--white);
+  text-align:center;
 }
 .subpage-header h1 {
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(2.5rem,8vw,5rem);
-  margin: 0;
-  background: linear-gradient(45deg, var(--accent), #ffb347 50%, var(--primary-dark));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  transition: transform 0.4s;
+  font-family:'Inter', sans-serif;
+  font-size:clamp(2.5rem,8vw,5rem);
+  margin:0;
+  background:linear-gradient(45deg, var(--accent), var(--primary-dark));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  text-shadow:0 2px 6px rgba(0,0,0,0.1);
+  letter-spacing:-0.02em;
+  line-height:1.1;
+  transition:transform .4s;
 }
 .subpage-header h1:hover {
-  transform: scale(1.03);
+  transform:scale(1.03);
 }
 .subpage-subtitle {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.25rem;
-  color: var(--primary-dark);
-  opacity: .8;
-  margin-top: .5rem;
+  font-family:'Montserrat', sans-serif;
+  font-size:1.25rem;
+  color:var(--primary-dark);
+  opacity:.8;
+  margin-top:.5rem;
 }
+/* línea animada debajo */
 .subpage-header::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 4px;
-  margin: 1.5rem auto 0;
-  background: var(--accent);
-  border-radius: 2px;
-  animation: slide-in 1s ease-out forwards;
-  opacity: 0;
+  content:'';
+  display:block;
+  width:60px;
+  height:4px;
+  margin:1.5rem auto 0;
+  background:var(--accent);
+  border-radius:2px;
+  animation:slide-in 1s ease-out forwards;
+  opacity:0;
 }
 @keyframes slide-in {
-  from { transform: translateX(-20px); opacity: 0; }
-  to   { transform: translateX(0);   opacity: 1; }
-}
-
-/* 7. Mobile: ampliar cita en máquina de escribir a full width */
-@media (max-width: 768px) {
-  .epic-quote__text {
-    font-size: 2rem;
-    width: 100%;  
-    white-space: normal;
-    border: none;
-    animation: none;
-  }
+  from { transform:translateX(-20px); opacity:0; }
+  to   { transform:translateX(0);   opacity:1; }
 }
