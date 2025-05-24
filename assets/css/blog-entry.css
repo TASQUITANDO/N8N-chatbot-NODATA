@@ -198,3 +198,52 @@
   font-size: 1.25rem;
   color: var(--primary-dark);
 }
+
+
+/* ==== Typewriter effect para la cita “La vida no es una hoja de cálculo.” ==== */
+.epic-quote__text {
+  /* ya existían opacity y transform; ampliamos para animar escritura */
+  font-family: 'VT323', monospace;
+  font-size: clamp(2rem,6vw,5rem);
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: .15em solid var(--primary-dark);
+  width: 0;                         /* inicia “escrito” 0% */
+  animation:
+    typewriter 3s steps(40) 0.5s forwards,
+    blink-cursor 0.75s step-end infinite;
+}
+
+/* animación que expande el width de 0 a 100% */
+@keyframes typewriter {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+/* parpadeo del cursor */
+@keyframes blink-cursor {
+  from, to { border-color: transparent; }
+  50%      { border-color: var(--primary-dark); }
+}
+
+/* ==== Nuevo estilo para el título “Eficiencia sin alma” ==== */
+.epic-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem,5vw,3rem);
+  background: linear-gradient(90deg, var(--accent), var(--primary-dark));
+  -webkit-background-clip: text;
+  color: transparent;
+  text-transform: none;
+  letter-spacing: 0;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 2.5rem;
+}
+/* emoji de cerebro antes */
+.epic-content h3::before {
+  content: '🧠';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.5em;
+  line-height: 1;
+}
