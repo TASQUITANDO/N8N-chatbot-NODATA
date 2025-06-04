@@ -1,0 +1,175 @@
+<!-- File: blog-entry.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>La IA no es inteligente: es estadística con buena memoria | Nubia Tree</title>
+  <meta name="description" content="Reflexión sobre por qué los modelos de IA imitan patrones sin comprender y cómo eso afecta nuestras expectativas.">
+  <link rel="icon" href="../../assets/images/favicon.png"/>
+
+  <!-- Normalize + Google Fonts + AOS CSS -->
+  
+  <!-- Tipografía “máquina de escribir” y display para los títulos -->
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    <!-- Tipografía “máquina de escribir” y display para los títulos -->
+
+  
+  <link
+    href="https://fonts.googleapis.com/css2?
+      family=Montserrat:wght@300;400;600;700&
+      family=Playfair+Display:wght@400;700&
+      family=Caveat&
+      family=Inter:wght@400;600&
+      display=swap"
+    rel="stylesheet"
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+
+  <!-- CSS global de la web -->
+  <link rel="stylesheet" href="../../assets/css/styles.css"/>
+  <!-- CSS específico de la entrada -->
+  <link rel="stylesheet" href="../../assets/css/blog-entry.css"/>
+
+  <!-- Lottie + GSAP -->
+  <script src="https://unpkg.com/lottie-web/build/player/lottie.min.js" defer></script>
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js" defer></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+  <!-- Nuestro script de la entrada -->
+  <script src="../../assets/js/blog-entry.js" defer></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../../index.html" class="logo-container" aria-label="Inicio – Nubia">
+        <picture>
+          <source type="image/webp" srcset="../../assets/images/logo-nubia.webp"/>
+          <img src="../../assets/images/logo-nubia.png" alt="Logo Nubia" class="logo" loading="lazy"/>
+        </picture>
+      </a>
+      <nav class="main-nav" aria-label="Menú principal">
+        <ul>
+          <li><a href="../../about.html">Sobre el proyecto</a></li>
+          <li><a href="../../capsulas.html">Cápsulas educativas</a></li>
+          <li><a href="../../blog.html">Blog</a></li>
+          <li><a href="../../recursos.html">Recursos</a></li>
+          <li><a href="../../contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" aria-label="Abrir menú móvil">☰</button>
+      <a href="#" class="cta-button explore-toggle">Explorar ▼</a>
+      <div class="explore-menu" id="exploreMenu">
+        <ul>
+          <li><a href="../../capsulas.html">Cápsulas</a></li>
+          <li><a href="../../blog.html">Blog</a></li>
+          <li><a href="../../recursos.html">Recursos</a></li>
+          <li><a href="../../contact.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <nav id="mobile-menu" class="mobile-nav">
+      <ul>
+        <li><a href="../../about.html">Sobre el proyecto</a></li>
+        <li><a href="../../capsulas.html">Cápsulas educativas</a></li>
+        <li><a href="../../blog.html">Blog</a></li>
+        <li><a href="../../recursos.html">Recursos</a></li>
+        <li><a href="../../contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- SUBPAGE HEADER -->
+  <header class="subpage-header">
+    <h1>Reflexiones Humanas</h1>
+    <p class="subpage-subtitle">Tecnología que no olvida que somos personas.</p>
+  </header>
+
+  <!-- HERO ÉPICO -->
+  <section class="epic-hero">
+    <video class="epic-hero__video" autoplay muted loop playsinline>
+      <source src="../../assets/video/interactive-hero.mp4" type="video/mp4">
+    </video>
+    <div class="epic-hero__overlay"></div>
+    <div class="epic-hero__content">
+      <div id="lottie-heart-clock" class="epic-hero__lottie"></div>
+      <h1 class="epic-hero__title">¿Inteligencia o memoria?</h1>
+      <a href="#reflexiona" class="epic-hero__cta">Reflexiona conmigo ↓</a>
+    </div>
+  </section>
+
+  <!-- CITA DESTACADA -->
+  <section class="epic-quote">
+    <h2 class="epic-quote__text">La IA aprende patrones, nosotros entendemos.</h2>
+  </section>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="epic-content container" id="reflexiona">
+    <article>
+      <h3>La IA no es inteligente: es estadística con buena memoria</h3>
+      <p>¿Te has preguntado alguna vez si realmente estás hablando con una “inteligencia”... o solo con un espejo que repite patrones?</p>
+      <p>Vivimos en una época donde confundimos eficiencia con entendimiento. Muchos creen que una IA "piensa", pero lo que realmente hace es predecir la palabra más probable que sigue a otra. No razona ni comprende el contexto como tú cuando conversas con un amigo.</p>
+      <p>Los modelos como ChatGPT son enormes sistemas estadísticos entrenados con billones de fragmentos de texto. Esa aparente “inteligencia” es, en realidad, una coreografía precisa de patrones lingüísticos almacenados.</p>
+      <p>¿Y qué pasa cuando creemos que responder bien es lo mismo que pensar bien? Le atribuimos capacidades humanas a una máquina que solo simula serlo. Lo preocupante no es lo que la IA puede hacer, sino lo que asumimos que puede. Y ahí, sin darnos cuenta, cedemos poder.</p>
+      <p class="conclusion">Tal vez el verdadero riesgo no sea una IA demasiado lista… sino una humanidad demasiado confiada en lo que quiere creer. La pregunta no es si la IA entiende… sino si nosotros entendemos qué es realmente.</p>
+      <p class="nota-nubia"><strong>Nota Nubia:</strong> Entrada creada en modo <span class="badge tree">Nubia Tree</span>, reflexionando sobre los límites de la inteligencia artificial.</p>
+    </article>
+  </main>
+
+  <!-- QUIZ COLABORATIVO -->
+  <section class="epic-quiz">
+    <h3>¿Qué hiciste hoy que no tenía un propósito productivo, pero te hizo bien?</h3>
+    <form id="quiz-form">
+      <input type="text" id="quiz-input" placeholder="Escribe tu respuesta…" required>
+      <button type="submit">Compartir</button>
+    </form>
+    <div id="word-cloud" class="epic-quiz__cloud"></div>
+  </section>
+
+  <!-- SECCIÓN DE CIERRE -->
+  <section class="epic-conclusion">
+    <div class="epic-conclusion__stars"></div>
+    <p class="epic-conclusion__text">
+      Comprender la IA es recordar que el criterio sigue siendo nuestro.
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo" data-aos="fade-up">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h4>Enlaces rápidos</h4>
+        <ul>
+          <li><a href="about.html">Sobre el proyecto</a></li>
+          <li><a href="capsulas.html">Cápsulas educativas</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <p><a href="mailto:info@nubia.edu">info@nubia.edu</a></p>
+        <p><a href="tel:+1234567890">+1 234 567 890</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Comunidad</h4>
+        <ul>
+          <li><a href="#">Telegram</a></li>
+          <li><a href="#">Discord</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts globales -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script> AOS.init({ duration: 600, once: true }); </script>
+  <script src="../../assets/js/script.js" defer></script>
+</body>
+</html>
+
