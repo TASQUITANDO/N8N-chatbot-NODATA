@@ -1,6 +1,6 @@
 # 🌐 Nubia – Haciendo lo técnico accesible para todos
 
-![Banner Nubia](./assets/banner-nubia.png) <!-- Puedes cambiar la ruta según tu estructura -->
+![Banner Nubia](./assets/images/hero.jpg) <!-- Puedes cambiar la ruta según tu estructura -->
 
 Bienvenid@ al repositorio oficial de **Nubia**, una iniciativa educativa que transforma el conocimiento técnico en algo claro, visual y aplicable para cualquier persona.
 
