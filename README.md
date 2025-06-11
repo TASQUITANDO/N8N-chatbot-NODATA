@@ -18,6 +18,36 @@ Aquí estamos construyendo los recursos y contenidos del ecosistema Nubia:
 - 🧵 Narrativas educativas basadas en los **Modos Nubia**
 - 🌍 Contenidos conectados con nuestra rama HBIA (*Human-Based Intelligence & Action*)
 
+## 📂 Estructura del repositorio
+
+```text
+N8N-chatbot-NODATA/
+├── about.html
+├── blog.html
+├── contact.html
+├── index.html
+├── recursos.html
+├── capsulas.html
+├── assets/
+│   ├── css/
+│   ├── images/
+│   ├── js/
+│   └── video/
+├── posts/
+│   ├── analytic/
+│   ├── friendly/
+│   ├── pro/
+│   ├── secure/
+│   ├── shock/
+│   └── tree/
+└── capsulas/
+    ├── analytic.html
+    ├── friendly.html
+    ├── pro.html
+    ├── security.html
+    ├── shock.html
+    └── tree.html
+```
 ---
 
 ## 🌱 ¿Qué es Nubia?
